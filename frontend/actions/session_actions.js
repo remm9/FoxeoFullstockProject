@@ -22,12 +22,17 @@ const logoutCurrentUser = () => ({
 });
 
 export const signup = formUser => dispatch => siggnup(formUser)
-    .then(user => dispatch(receiveCurrentUser(user))
+    .then((user => dispatch(receiveCurrentUser(user)), 
+        error => dispatch(receiveErrors(error.responseJSON)) 
+    ), 
 );
 
 
 export const login = formUser => dispatch => loggin(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)));
+    .then((user => dispatch(receiveCurrentUser(user)),
+        error => dispatch(receiveErrors(error.responseJSON))
+    ),
+); // syntax is the same as above, not sure about error
 
 
 export const logout = () => dispatch => loggout()
