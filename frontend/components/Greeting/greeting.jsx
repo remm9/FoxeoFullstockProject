@@ -12,9 +12,10 @@ export default ({ currentUser, logout }) => {
                 <span className="splash-nav">
                     {/* <div className="modal-background"></div> */}
                     <ul>
-                        <a className="splash-header-logo" href="#/">foxeo</a>
+                        <a className="splash-header-logo" href="#/">Foxeo</a>
                         <Link className="btn" to="/signup">Sign Up</Link>
                         <Link className="btn" to="/login">Log In</Link>
+                        <Link className="btn" to="/signup">+ New Video</Link>
                     </ul>
                 </span>
                     
