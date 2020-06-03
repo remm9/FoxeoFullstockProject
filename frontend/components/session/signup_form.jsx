@@ -22,7 +22,7 @@ class Signup extends React.Component {
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            .then(() => this.props.history.push('/videos')); //conmment back in when doing routes
+            .then(() => this.props.history.push('/users')); //change to /videos later
     }
 
 

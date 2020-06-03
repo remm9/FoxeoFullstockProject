@@ -21,13 +21,14 @@ class Login extends React.Component {
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            .then(() => this.props.history.push('/videos')); //conmment back in when doing routes
+            .then(() => this.props.history.push('/users')); //change to /videos later
     }
 
 
     render() {
         return (
             <div className="session-form">
+            {/* <div className="modal-child"> */}
                 <h2>Log in to Foxeo</h2>
                 <form>
                     <label>Email:

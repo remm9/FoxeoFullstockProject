@@ -1,0 +1,25 @@
+.logged-in-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    /* background-color: aqua; */
+}
+
+.splash-page ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: aqua; */
+}
+
+.splash-header-logo {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    font-feature-settings: "lnum";
+    font-style: italic;
+    font-weight: 40px;
+}

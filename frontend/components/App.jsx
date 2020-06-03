@@ -13,10 +13,10 @@ const App = () => (
             <h1>Foxeo App</h1>
             <GreetingContainer/>
         </div>
-        {/* <Switch>  */}
-            <AuthRoute path="/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignupFormContainer} />
-        {/* <Switch/> */}
+
+        <AuthRoute path="/login" component={LoginFormContainer} />
+        <AuthRoute path="/signup" component={SignupFormContainer} />
+    
     </>
 );
 

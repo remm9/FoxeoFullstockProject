@@ -3,19 +3,26 @@ import { Link } from 'react-router-dom';
 
 export default ({ currentUser, logout }) => {
     const welcomePage = currentUser ? (
-        <div>
+        <div className="logged-in-page">
             <p>Hello, {currentUser.username}</p>
             <button onClick={logout}>Log Out</button>
         </div>
     ) : (
-            <div>
-                <Link className="btn" to="/signup">Sign Up</Link>
-                <Link className="btn" to="/login">Log In</Link>
-            </div>
+            <span className="splash-page">
+                <span className="splash-nav">
+                    {/* <div className="modal-background"></div> */}
+                    <ul>
+                        <a className="splash-header-logo" href="#/">foxeo</a>
+                        <Link className="btn" to="/signup">Sign Up</Link>
+                        <Link className="btn" to="/login">Log In</Link>
+                    </ul>
+                </span>
+                    
+            </span>
         );
 
     return (
-        <header className="Greeting">
+        <header className="greeting">
             {/* <h1 className="logo">Bench BNB</h1> */}
             <div>
                 {welcomePage}
