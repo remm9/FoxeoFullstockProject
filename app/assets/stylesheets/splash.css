@@ -1,7 +1,8 @@
 .splash-container {
     height: calc(100vh - 70px);
     overflow-y: scroll;
-    background-color: rgb(251, 242, 246);
+    /* background-color: rgb(251, 242, 246); */
+    background-image: linear-gradient(#fbf2f6 0%, white 50%);
     /* background: linear-gradient (90deg, rgb(251, 242, 246), 100%, white, 100%); */
     transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s, visibility 0.2s ease 0s;
 }
@@ -137,6 +138,12 @@
 .tag {
     margin-left: 10px;
     /* background-color: cornsilk; */
+}
+
+.tag-2 {
+    zoom: 40%;
+    /* height: 300px; */
+    /* align-items: center; */
 }
 
 .footer-1 {
