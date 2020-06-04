@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
+
 
 class Splash extends React.Component {
 
@@ -26,7 +28,8 @@ class Splash extends React.Component {
                         <p className="text-section">
                             Get together with your entire team using single safe, enterprise-level video solution.
                         </p>
-                        <Link className="btn" to="/signup">Go live </Link>
+                        <Link className="btn" onClick={() => props.openModal('signup')}>Go live -></Link>
+                        {/* <Link className="btn" to="/signup">Go live -></Link> */}
                     </div>
                 </div>
                 <div className="splash-section-2">
@@ -38,7 +41,9 @@ class Splash extends React.Component {
                         <p className="text-section">
                             Get help from a specialist to boost your video's look
                         </p>
-                        <Link className="btn" to="/signup">Start uploading</Link>
+                        <Link className="btn" onClick={() => props.openModal('signup')}>Start uploading -></Link>
+
+                        {/* <Link className="btn" to="/signup">Start uploading -></Link> */}
                     </div>    
                     <div className="img-2">
                         <img src="assets/vertov.png" alt="" />
@@ -53,7 +58,9 @@ class Splash extends React.Component {
                         <p className="text-section">
                             Employ powerful marketing tools in order to viewers attention. Get detailed stats on how your video is performing.
                         </p>
-                        <Link className="btn" to="/signup">Increase your audience</Link>
+                        {/* <Link className="btn" to="/signup">Increase your audience -></Link> */}
+                        <Link className="btn" onClick={() => props.openModal('signup')}>Increase your audience -></Link>
+
                     </div>    
                 </div>
                 <div className="splash-section-4">
@@ -65,7 +72,9 @@ class Splash extends React.Component {
                         <p className="text-section">
                             Your video has a right to remain private. Stay secure a multitude of privacy options.
                         </p>
-                        <Link className="btn" to="/signup">Start working together</Link>
+                        {/* <Link className="btn" to="/signup">Start working together -></Link>  */}
+                        <Link className="btn" onClick={() => props.openModal('signup')}>Start working together -></Link>
+
                     </div>
                     <div className="img-4">
                         <img src="https://i.vimeocdn.com/custom_asset/953" alt="" />
@@ -85,3 +94,5 @@ class Splash extends React.Component {
 }
 
 export default Splash;
+
+

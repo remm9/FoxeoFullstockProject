@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
 
 class Login extends React.Component {
     constructor(props) {
@@ -27,25 +29,30 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="session-form">
+            <div className="login-form">
                 {/* <div className="modal-child"> */}
-                <h2>Log in to Foxeo</h2>
+                <div>
+                    <h2 className="login-header">Log in to Foxeo</h2>
+                    {/* <p className="close-x">x</p> */}
+                </div>
                 <form>
-                    <label>Email:
-                        <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleInput('email')}
-                        />
-                    </label>
-                    <label>Password:
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput('password')}
-                        />
-                    </label>
-                    <button onClick={this.handleSubmit}>Log in with email</button>
+                    <input className="login-email"
+                        type="text"
+                        value={this.state.email}
+                        placeholder="Email adress"
+                        onChange={this.handleInput('email')}
+                    />
+                    <input className="login-password"
+                        type="password"
+                        value={this.state.password}
+                        placeholder="Password"
+                        onChange={this.handleInput('password')}
+                    />
+                    <button className="login-button" onClick={this.handleSubmit}>Log in with email</button>
+
+                    <span className="login-footer">Don't have an account?
+                        <Link className="login-form-btn" onClick={() => props.openModal('signup')}>Join</Link>
+                    </span>
                 </form>
             </div>
         );
