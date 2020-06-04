@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
+
+
 
 export default ({ currentUser, logout }) => {
     const welcomePage = currentUser ? (
@@ -8,18 +11,17 @@ export default ({ currentUser, logout }) => {
             <button onClick={logout}>Log Out</button>
         </div>
     ) : (
-            <span className="splash-page">
-                <span className="splash-nav">
+                <div className="splash-nav">
                     {/* <div className="modal-background"></div> */}
                     <ul>
-                        <a className="splash-header-logo" href="#/">Foxeo</a>
-                        <Link className="btn" to="/signup">Sign Up</Link>
-                        <Link className="btn" to="/login">Log In</Link>
-                        <Link className="btn" to="/signup">+ New Video</Link>
+                        {/* <a className="splash-header-logo" href="#/"><img src="/foxeo_logo.png" alt=""/></a> */}
+                        <a className="splash-header-logo" href="#/"><img src="assets/foxeo_logo.png" alt=""/></a>
+                        {/* <button onClick={() => openModal('signup')}>Sign Up</button> */}
+                        <Link className="signup-btn" to="/signup">Join</Link>
+                        <Link className="login-btn" to="/login">Log In</Link>
+                        <Link className="new-video-btn" to="/signup">+  New Video</Link>
                     </ul>
-                </span>
-                    
-            </span>
+                </div>
         );
 
     return (

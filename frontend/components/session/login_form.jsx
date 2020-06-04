@@ -28,7 +28,7 @@ class Login extends React.Component {
     render() {
         return (
             <div className="session-form">
-            {/* <div className="modal-child"> */}
+                {/* <div className="modal-child"> */}
                 <h2>Log in to Foxeo</h2>
                 <form>
                     <label>Email:

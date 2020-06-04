@@ -8,18 +8,3 @@
     /* background-color: aqua; */
 }
 
-.splash-page ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    /* background-color: aqua; */
-}
-
-.splash-header-logo {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    font-feature-settings: "lnum";
-    font-style: italic;
-    font-weight: 40px;
-}
