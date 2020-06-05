@@ -12,15 +12,18 @@ export default (props) => {
                 <a className="loggedin-header-logo"><img src="assets/foxeo_logo.png" alt="" /></a>
                 <button className="loggedin-manage">Manage Videos</button>
                 <button className="loggedin-watch">Watch</button>
-                <button className="loggedin-user">{props.currentUser.username[0]}
-                    <ul className="user-info">
-                        <div className="user-name">{props.currentUser.username}</div>
-                        <li>User Videos</li>
-                        <li>User Comments</li>
-                        <li>User Likes</li>
-                        <li><Link to="" className="loggedin-logout" onClick={props.logout}>Log Out</Link></li> 
+            <div  className="dropdown">
+                <button className="dropbtn">{props.currentUser.username[0]}
+                    <ul className="dropdown-content">
+                        <a className="user-name">{props.currentUser.username}</a>
+                        <a>User Videos</a>
+                        <a>User Comments</a>
+                        <a>User Likes</a>
+                        <a><Link to="" className="loggedin-logout" onClick={props.logout}>Log Out</Link></a> 
                     </ul>
                 </button> 
+            </div>
+
                 <button className="loggedin-upload">+ New Video</button>
 
             </div>
