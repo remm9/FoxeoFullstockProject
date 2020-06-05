@@ -1,1 +1,2 @@
-json.extract! @user, :username, :email, :id
+# debugger
+json.extract! user, :username, :email, :id

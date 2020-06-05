@@ -21,13 +21,24 @@ const logoutCurrentUser = () => ({
 
 });
 
-export const signup = formUser => dispatch => siggnup(formUser)
-    .then(user => dispatch(receiveCurrentUser(user))
+
+export const signup = user => dispatch => (
+    siggnup(user).then(user => (
+        dispatch(receiveCurrentUser(user))
+    ), err => (
+        dispatch(receiveErrors(err.responseJSON))
+    ))
 );
 
 
-export const login = formUser => dispatch => loggin(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)));
+
+export const login = user => dispatch => {
+    return loggin(user).then(user => {
+        dispatch(receiveCurrentUser(user))
+    }, err => (
+        dispatch(receiveErrors(err.responseJSON))
+    ))
+};
 
 
 export const logout = () => dispatch => loggout()
