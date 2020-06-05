@@ -44,7 +44,7 @@ class Splash extends React.Component {
 
                     </div>    
                     <div className="img-2">
-                        <img src="assets/vertov.png" alt="" />
+                        <img src={window.vertovURL} alt="" />
                     </div>
                 </div>
                 <div className="splash-section-3">
@@ -78,8 +78,8 @@ class Splash extends React.Component {
                 </div>
                 <h1 className="footer-statement">Be one with our commutity of artists and brands</h1>
                 <div className="footer">
-                    <a className="tag" href="https://github.com/remm9/FoxeoFullstockProject"><img src="assets/GitHub-Mark-32px.png" alt=""/></a>
-                    <a className="tag-2" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src="assets/Linkedin-01.png" alt=""/></a>
+                    <a className="tag" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitURL} alt=""/></a>
+                    <a className="tag-2" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src={window.linkURL} alt=""/></a>
                     <div className="footer-1"> @2020 Be safe and stay healthy. Made in NYC</div>
             
                 </div>
