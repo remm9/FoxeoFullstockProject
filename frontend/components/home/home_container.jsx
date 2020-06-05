@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Home from './home';
-import { receiveCurrentUser } from '../../actions/session_actions';
+import { fetchUser } from '../../actions/user_actons';;
 import { openModal } from '../../actions/modal_actions'
 
 const mSTP = state => ({
@@ -8,7 +8,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-    receiveCurrentUser: (user) => dispatch(receiveCurrentUser(user)), // fetchUser 
+    fetchUser: (user) => dispatch(fetchUser(user)), // fetchUser 
 });
 
 

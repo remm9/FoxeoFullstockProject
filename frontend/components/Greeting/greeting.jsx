@@ -7,6 +7,7 @@ import { openModal } from '../../actions/modal_actions';
 export default (props) => {
     const welcomePage = props.currentUser ? ( //create nav and side bar for currnt user 
         <div className="loggedin-page">
+            <div className="rainbow"></div>
             <div className="loggedin-nav">
                 <a className="loggedin-header-logo"><img src="assets/foxeo_logo.png" alt="" /></a>
                 <button className="loggedin-manage">Manage Videos</button>
