@@ -20,6 +20,7 @@ const mDTP = dispatch => ({
             Join
         </button>
     ),
+    openModal: () => dispatch(openModal('signup')),
     closeModal: () => dispatch(closeModal())
 })
 

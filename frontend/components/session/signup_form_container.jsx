@@ -19,6 +19,7 @@ const mDTP = dispatch => ({
             Login
         </button>
     ),
+    openModal: () => dispatch(openModal('login')),
     closeModal: () => dispatch(closeModal())
 })
 
