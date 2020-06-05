@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { openModal } from '../../actions/modal_actions';
+// import { openModal } from '../../actions/modal_actions';
 
 class Signup extends React.Component {
     constructor(props) {
@@ -24,7 +24,7 @@ class Signup extends React.Component {
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            .then(() => this.props.history.push('/users')); //change to /videos later
+            // .then(() => this.props.history.push('/users')); //change to /videos later
     }
 
 

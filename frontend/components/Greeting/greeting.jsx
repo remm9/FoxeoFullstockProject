@@ -15,11 +15,13 @@ export default (props) => {
             <div  className="dropdown">
                 <button className="dropbtn">{props.currentUser.username[0]}
                     <ul className="dropdown-content">
-                        <a className="user-name">{props.currentUser.username}</a>
-                        <a>User Videos</a>
-                        <a>User Comments</a>
-                        <a>User Likes</a>
-                        <a><Link to="" className="loggedin-logout" onClick={props.logout}>Log Out</Link></a> 
+                        <div className="user-name">{props.currentUser.username}</div>
+                        <div className="a-items">
+                            <a>Videos</a>
+                            <a>Comments</a>
+                            <a>Likes</a>
+                        </div>
+                        <Link to="" className="loggedin-logout" onClick={props.logout}>Log Out</Link>
                     </ul>
                 </button> 
             </div>
@@ -29,15 +31,16 @@ export default (props) => {
             </div>
             <div className="loggedin-sidebar">
 
-                <button className="loggedin-upload">+ New Video</button>
-
-                <Link to="" className="sidebar-home">Home</Link>
-                <Link to="" className="sidebar-videos">Videos</Link>
-                <Link to="" className="sidebar-upload">Upload</Link>
+                <button className="sidebar-new-video">+ New Video</button>
+                <ul className="sidebar-list">
+                    <Link to="" className="sidebar-home">Home</Link>
+                    <Link to="" className="sidebar-videos">Videos</Link>
+                    <Link to="" className="sidebar-upload">Upload</Link>
+                </ul>
 
                 <a className="git-logo" href="https://github.com/remm9/FoxeoFullstockProject"><img src="assets/GitHub-Mark-32px.png" alt="" /></a>
                 <a className="link-logo" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src="assets/Linkedin-01.png" alt="" /></a>
-                <button className="loggedin-logout" onClick={props.logout}>Log Out</button>
+                {/* <button className="loggedin-logout" onClick={props.logout}>Log Out</button> */}
             </div>
         </div>
     ) : (

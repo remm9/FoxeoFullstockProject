@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { openModal } from '../../actions/modal_actions';
+// import { openModal } from '../../actions/modal_actions';
 
 class Login extends React.Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class Login extends React.Component {
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            .then(() => this.props.history.push('/users')); //change to /videos later
+            // .then(() => this.props.history.push('/users')); //change to /videos later
     }
 
 
@@ -51,7 +51,7 @@ class Login extends React.Component {
                     <button className="login-button" onClick={this.handleSubmit}>Log in with email</button>
 
                     <span className="login-footer">Don't have an account?
-                        <button className="login-form-btn" onClick={() => this.props.openModal()}>Join</button>
+                        <button className="login-form-btn" onClick={() => this.props.openModal('signup')}>Join</button>
                     </span>
                 </form>
             </div>
