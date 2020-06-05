@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mSTP = ({ errors }) => ({
+
         formType: 'signup',
         errors: errors.session,
         // navLink: <Link to="/login">Please Login</Link>,

@@ -1,0 +1,11 @@
+.loggedin-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 227px;
+    background-color: #F2F4F5;
+    height: 100%;
+}
+
+.link-logo {
+    zoom: 20%;
+}

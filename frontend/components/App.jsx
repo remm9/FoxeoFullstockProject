@@ -6,15 +6,18 @@ import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute } from '../util/route_util';
 import Modal from './modal/modal'
 import Splash from './splash/splash_container'
+import Home from './home/home_container'
 
 const App = () => (
     <>
         <Modal />
-        <div>
+
             {/* <h1>Foxeo App</h1> */}
-            <GreetingContainer/>
-        </div>
-        <Route exact path='/' component={Splash} />
+        <GreetingContainer/>
+        <Switch>
+            <Route path="/home" component={Home} />
+            <Route exact path='/' component={Splash} />
+        </Switch>
         {/* <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} /> */}
     

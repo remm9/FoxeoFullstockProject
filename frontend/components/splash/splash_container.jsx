@@ -8,7 +8,8 @@ const mSTP = ({ session }) => ({
 });
 
 const mDTP = dispatch => ({
-    newUserSignup: () => dispatch(openModal('signup'))
+    // newUserSignup: () => dispatch(openModal('signup'))
+    openModal: (str) => dispatch(openModal(str))
 });
 
 export default connect(mSTP, mDTP)(Splash);
