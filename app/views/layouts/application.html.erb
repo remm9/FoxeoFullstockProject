@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="/assets/app_asset_fonts/BLACKR.ttf">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script type="text/javascript">
+      window.logoURL = "<%= image_url('foxeo_logo.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.gitURL = "<%= image_url('GitHub-Mark-32px.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.linkURL = "<%= image_url('Linkedin-01.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.vertovURL = "<%= image_url('vertov.png') %>";
+    </script>
     <% if current_user %>
       <script>
         window.currentUser = {

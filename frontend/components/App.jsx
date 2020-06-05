@@ -11,13 +11,13 @@ import Home from './home/home_container'
 
 const App = () => (
     <>
+        {/* <h1>Foxeo App</h1> */}
+        
         <Modal />
-
-            {/* <h1>Foxeo App</h1> */}
         <GreetingContainer/>
+        <ProtectedRoute path="/home" component={Home} />
+        <AuthRoute exact path='/' component={Splash} />
 
-            <ProtectedRoute path="/home" component={Home} />
-            <AuthRoute exact path='/' component={Splash} />
         
         {/* <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} /> */}
