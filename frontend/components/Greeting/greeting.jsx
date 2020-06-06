@@ -9,39 +9,45 @@ export default (props) => {
         <div className="loggedin-page">
             <div className="rainbow"></div>
             <div className="loggedin-nav">
-                <a className="loggedin-header-logo"><img src={window.logoURL} alt="" /></a>
+                <a href="#/home" className="loggedin-header-logo"><img src={window.logoURL} alt="" /></a>
                 <button className="loggedin-manage">Manage Videos</button>
                 <button className="loggedin-watch">Watch</button>
-            <div  className="dropdown">
-                <button className="dropbtn">{props.currentUser.username[0]}
-                    <ul className="dropdown-content">
-                        <div className="user-name">{props.currentUser.username}</div>
-                        <div className="a-items">
-                            <a>Videos</a>
-                            <a>Comments</a>
-                            <a>Likes</a>
-                        </div>
-                        <Link to="" className="loggedin-logout" onClick={props.logout}>Log Out</Link>
-                    </ul>
-                </button> 
-            </div>
+                <div  className="dropdown">
+                    <button className="dropbtn">{props.currentUser.username[0]}
+                        <ul className="dropdown-content">
+                            <div className="user-name">{props.currentUser.username}</div>
+                            <div className="a-items">
+                                <a>Videos</a>
+                                <a>Comments</a>
+                                <a>Likes</a>
+                            </div>
+                            <Link to="" className="loggedin-logout" onClick={props.logout}>Log Out</Link>
+                        </ul>
+                    </button> 
+                </div>
 
                 <button className="loggedin-upload">+ New Video</button>
-
             </div>
+
             <div className="loggedin-sidebar">
 
                 <button className="sidebar-new-video">+ New Video</button>
+                <div className="line"></div>
                 <ul className="sidebar-list">
-                    <Link to="" className="sidebar-home">Home</Link>
-                    <Link to="" className="sidebar-videos">Videos</Link>
-                    <Link to="" className="sidebar-upload">Upload</Link>
+                    <a href="#/home" className="sidebar-home"> Home</a>
+                    <a href="#/video" className="sidebar-videos">Videos</a>
+                    <a to="" className="sidebar-upload">Upload</a>
                 </ul>
+                <div className="line"></div>
+                <div className="git-link">
+                    <a className="git-logo" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitLogoURL} alt="" /></a>
+                    <a className="link-logo" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src={window.linkSmallURL} alt="" /></a>
+                </div>
 
-                <a className="git-logo" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitURL} alt="" /></a>
-                <a className="link-logo" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src={window.linkURL} alt="" /></a>
+                <div className="line-2"></div>
                 {/* <button className="loggedin-logout" onClick={props.logout}>Log Out</button> */}
             </div>
+
         </div>
     ) : (
                 <div className="splash-nav">

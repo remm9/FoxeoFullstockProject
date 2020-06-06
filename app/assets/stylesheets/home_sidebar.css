@@ -2,12 +2,25 @@
     display: flex;
     flex-direction: column;
     width: 227px;
-    background-color: rgb(247, 248, 249);
+    background-color: rgba(245, 244, 244, 0.781);
     height: 100%;
+    overflow-x: hidden;
+    position: fixed;
+    height: 100%;
+    z-index: 1;
+    top: 65px;
+    left: 0;
+}
+
+.git-logo {
+    zoom: 10%;
+    margin-left: 200px;
+    margin-top: 170px;
 }
 
 .link-logo {
-    zoom: 20%;
+    zoom: 47%;
+    margin-left: 40px;
 }
 
 .sidebar-new-video {
@@ -17,12 +30,68 @@
     height: 39px;
     border: 1px solid rgb(0, 173, 239);
     border-radius: 2.5px;
-    margin-top: 26px;
+    margin-top: 27px;
     margin-left: 26px;
     font-size: 15px;
-    margin-bottom: 26px;
+    margin-bottom: 20px;
+}
+
+.sidebar-new-video::first-letter {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.line {
+    border-top: 0.5px solid lightgray;
+    width: 174px;
+    margin-left: 25px;
+    color: rgb(248, 248, 248);
+    margin-bottom: 7px;
+}
+
+.line-2 {
+    border-top: 0.5px solid lightgray;
+    width: 174px;
+    margin-left: 25px;
+    color: rgb(248, 248, 248);
+    margin-bottom: 7px;
+    margin-top: 72px;
 }
 
 .sidebar-list {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.sidebar-list a {
+    /* height: 20px; */
+    padding: 15px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar-list a:focus {
+    background-color: rgb(234, 236, 238);
+}
+
+.sidebar-list a:hover {
+    background-color: rgb(224, 224, 224);;
+}
+
+.git-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 187px;
+    /* border: grey 1px solid; */
+    background-color: white;
+    margin-left: 20px;
+    margin-top: 66px;
+    height: 150px;
 }
