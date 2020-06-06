@@ -27,6 +27,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "websocket-extensions", ">= 0.1.5"
 
+gem "aws-sdk-s3"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -49,6 +51,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'annotate'
+  gem 'pry'
 end
 
 group :test do

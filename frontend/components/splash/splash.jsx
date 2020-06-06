@@ -64,7 +64,7 @@ class Splash extends React.Component {
                     <div className="secton-content-4">
                         <h3 className="section-header">It's all about joint effort.</h3>
                         <p className="text-section">
-                            Manage your teem on your own turms and improove your workflow with time-stamped feedback. 
+                            Manage your teem on your own terms and improove your workflow with time-stamped feedback. 
                         </p>
                         <p className="text-section">
                             Your video has a right to remain private. Stay secure a multitude of privacy options.

@@ -8,7 +8,10 @@ class Video extends React.Component {
 
     render() {
         return (
-            <h1 className="video-container">Videos</h1>
+            <div className="video-container">
+                <h1 className="video-container">Videos</h1>
+
+            </div>
         );
     }
 

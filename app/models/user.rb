@@ -18,6 +18,12 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
 
+    has_one_attached :movie
+
+    has_many :videos
+        #foregn_key: :owner_id, #not sure if it's needed
+        #class_name: 'Video'
+
     def self.find_by_credentials(email, password)
         # debugger
         user = User.find_by(email: email)

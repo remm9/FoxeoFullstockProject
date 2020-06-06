@@ -1,4 +1,4 @@
-.video-container {
+div.video-container {
     height: calc(100vh - 65px);
     overflow-y: scroll;
     margin-left: 227px;
