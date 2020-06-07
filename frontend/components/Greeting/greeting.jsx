@@ -36,7 +36,7 @@ export default (props) => {
                 <ul className="sidebar-list">
                     <a href="#/home" className="sidebar-home"> Home</a>
                     <a href="#/video" className="sidebar-videos">Videos</a>
-                    <a to="" className="sidebar-upload">Upload</a>
+                    <a href="#/upload" className="sidebar-upload">Upload</a>
                 </ul>
                 <div className="line"></div>
                 <div className="git-link">

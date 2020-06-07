@@ -8,6 +8,7 @@ import Modal from './modal/modal';
 import Splash from './splash/splash_container';
 import Home from './home/home_container';
 import Video from './video/video_container';
+import Upload from './upload/upload_container' 
 
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
         <GreetingContainer/>
         <ProtectedRoute path="/home" component={Home} />
         <ProtectedRoute path="/video" component={Video} />
+        <ProtectedRoute path="/upload" component={Upload} />
         <AuthRoute exact path='/' component={Splash} />
 
         

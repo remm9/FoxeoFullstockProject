@@ -1,0 +1,6 @@
+div.upload-component {
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+    margin-left: 227px;
+
+}
