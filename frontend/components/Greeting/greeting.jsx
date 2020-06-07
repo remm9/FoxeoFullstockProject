@@ -17,7 +17,7 @@ export default (props) => {
                         <ul className="dropdown-content">
                             <div className="user-name">{props.currentUser.username}</div>
                             <div className="a-items">
-                                <a>Videos</a>
+                                <a href="#/video" className="sidebar-videos">Videos</a>
                                 <a>Comments</a>
                                 <a>Likes</a>
                             </div>
@@ -26,17 +26,18 @@ export default (props) => {
                     </button> 
                 </div>
 
-                <button className="loggedin-upload">+ New Video</button>
+                <a className="nav-new-video" href="#/upload">+ New Video</a>
             </div>
 
             <div className="loggedin-sidebar">
-
-                <button className="sidebar-new-video">+ New Video</button>
+                <a className="sidebar-new-video" href="#/upload">+ New Video</a>
                 <div className="line"></div>
                 <ul className="sidebar-list">
                     <a href="#/home" className="sidebar-home"> Home</a>
                     <a href="#/video" className="sidebar-videos">Videos</a>
-                    <a href="#/upload" className="sidebar-upload">Upload</a>
+                    {/* <a href="#/video" className="sidebar-videos">Videos</a> */}
+                    <a>Profile</a>
+                   
                 </ul>
                 <div className="line"></div>
                 <div className="git-link">
