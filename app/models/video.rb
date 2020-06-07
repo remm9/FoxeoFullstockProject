@@ -1,6 +1,6 @@
 class Video < ApplicationRecord
     validates :video_title, :video_description, :owner_id, presence: true
-    validates :owner_id, uniqueness: true
+    validates :video_title, uniqueness: true
 
     has_one_attached :photo
     has_one_attached :video

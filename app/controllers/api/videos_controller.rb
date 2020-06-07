@@ -17,11 +17,11 @@ class Api::VideosController < ApplicationController
 
     def create
         @video = Video.new(video_params)
-        @video.owner_id = curretn_user.id # comment in if needed
+        @video.owner_id = current_user.id # comment in if needed
         if @video.save
             render :show
         else
-            render :json @video.errors.full_messages, status 422
+            render json: @video.errors.full_messages , status: 422
         end
     end
 
@@ -30,7 +30,7 @@ class Api::VideosController < ApplicationController
         if @video.update(video_params)
             render :show
         else
-            render :json @video.errors.full_messages, status 422
+            render json: @video.errors.full_messages, status: 422
         end
     end
 
@@ -43,4 +43,5 @@ class Api::VideosController < ApplicationController
     def video_params 
         params.require(:video).permit(:video_title, :video_description, :owner_id)
     end
+
 end
