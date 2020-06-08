@@ -43,7 +43,7 @@ class Upload extends React.Component {
         formData.append('video[video_description]', this.state.video_description);
     
         if (this.state.video_file) {
-            debugger
+            // debugger
             formData.append('video[video_url]', this.state.video_file);
         }
         $.ajax({
@@ -62,37 +62,43 @@ class Upload extends React.Component {
 
     render()  {
         console.log(this.state)
-        const preview = this.state.video_url ? <img src={this.state.video_url} /> : null;
+        // const preview = this.state.video_url ? <img src={this.state.video_url} /> : null;
         return (
         
             <div className="upload-component">
 
-                <h1>Upload a video</h1>
                 {/* <form className="upload-component" onSubmit={this.handleSubmit}> */}
-                <form className="upload-component" onSubmit={this.handleSubmit}>
+                <form className="upload-form" onSubmit={this.handleSubmit}>
+                    <h1 className="upload-title">Upload video</h1>
 
-                    <label>Title
+                    <input 
+                        type="file" 
+                        onChange={this.handleFile}
+                        className="upload-file"
+                    />
+                    <label>
                         <input 
                             type="text"
                             value={this.state.video_title}
                             onChange={this.update('video_title')}
-                            placeholder="Enter video title" />
+                            placeholder="Enter video title" 
+                            className="upload-imput-title"
+                        />
                     </label>
                     
-                    <label>Description
+                    <label>
                         <textarea
                             value={this.state.video_description}
                             onChange={this.update("video_description")}
-                            placeholder="Enter video description"    
+                            placeholder="Enter video description"  
+                            className="upload-imput-description"  
                         />
                     </label>
-
-                    <input type="file" onChange={this.handleFile}/>
                     {/* <h3>Video preview </h3>
                     {preview} */}
-                    <button>Upload</button>
+                    
+                    <button className="upload-button" ><img src="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" alt=""/>Upload</button>
                 </form>
-
             </div> 
         );
     }

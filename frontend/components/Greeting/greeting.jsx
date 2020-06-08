@@ -17,7 +17,7 @@ export default (props) => {
                         <ul className="dropdown-content">
                             <div className="user-name">{props.currentUser.username}</div>
                             <div className="a-items">
-                                <a href="#/video" className="sidebar-videos">Videos</a>
+                                <a href="#/videos" className="sidebar-videos">Videos</a>
                                 <a>Comments</a>
                                 <a>Likes</a>
                             </div>
@@ -34,7 +34,7 @@ export default (props) => {
                 <div className="line"></div>
                 <ul className="sidebar-list">
                     <a href="#/home" className="sidebar-home"> Home</a>
-                    <a href="#/video" className="sidebar-videos">Videos</a>
+                    <a href="#/videos" className="sidebar-videos">Videos</a>
                     {/* <a href="#/video" className="sidebar-videos">Videos</a> */}
                     <a>Profile</a>
                    

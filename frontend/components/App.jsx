@@ -18,7 +18,7 @@ const App = () => (
         <Modal />
         <GreetingContainer/>
         <ProtectedRoute path="/home" component={Home} />
-        <ProtectedRoute path="/video" component={Video} />
+        <ProtectedRoute path="/videos" component={Video} />
         <ProtectedRoute path="/upload" component={Upload} />
         <AuthRoute exact path='/' component={Splash} />
 
