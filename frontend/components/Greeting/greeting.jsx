@@ -47,7 +47,7 @@ export default (props) => {
                         Videos
                     </a>
                     {/* <a href="#/video" className="sidebar-videos">Videos</a> */}
-                    <a>Profile</a>
+                    <a href="/user"><img className="user-profile" src={window.smileyURL} alt=""/> Profile</a>
                    
                 </ul>
                 <div className="line"></div>

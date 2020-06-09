@@ -22,3 +22,4 @@ divov = User.create!(username: "Oleg Divov", email: "odivov@gmail.com", password
 video1 = Video.create!(video_title: "nice foxes", video_description: "foxes are super friendly during spring months", owner_id: robert.id )
 video2 = Video.create!(video_title: "fox and cheese", video_description: "there is never enough of cheese", owner_id: lem.id )
 video3 = Video.create!(video_title: "fox on a couch", video_description: "occupational hazard", owner_id: divov.id )
+video4 = Video.create!(video_title: "wave", video_description: "runing wave", owner_id: divov.id, video_url: "https://foxeo-dev.s3.amazonaws.com/TCdNuSWbLJ72k1XAfu7RDP4F" )
