@@ -9,6 +9,7 @@ import Splash from './splash/splash_container';
 import Home from './home/home_container';
 import Video from './video/video_container';
 import Upload from './upload/upload_container' 
+import Index from './upload/upload_container'
 
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
         <ProtectedRoute path="/home" component={Home} />
         <ProtectedRoute path="/videos" component={Video} />
         {/* <Route path="/videos/:id" component={Video}> */}
+        <ProtectedRoute path="/index" component={Index}/>
         <ProtectedRoute path="/upload" component={Upload} />
         <AuthRoute exact path='/' component={Splash} />
 

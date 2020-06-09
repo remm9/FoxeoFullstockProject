@@ -19,7 +19,16 @@ divov = User.create!(username: "Oleg Divov", email: "odivov@gmail.com", password
 
 #videos
 
-video1 = Video.create!(video_title: "nice foxes", video_description: "foxes are super friendly during spring months", owner_id: robert.id )
-video2 = Video.create!(video_title: "fox and cheese", video_description: "there is never enough of cheese", owner_id: lem.id )
-video3 = Video.create!(video_title: "fox on a couch", video_description: "occupational hazard", owner_id: divov.id )
-video4 = Video.create!(video_title: "wave", video_description: "runing wave", owner_id: divov.id, video_url: "https://foxeo-dev.s3.amazonaws.com/TCdNuSWbLJ72k1XAfu7RDP4F" )
+video1 = Video.create!(video_title: "Night city", video_description: "NYC night skyline and lights", owner_id: 13, video_url: "https://foxeo-seeds.s10.amazonaws.com/IMG_9591.MOV")
+video2 = Video.create!(video_title: "Beach walk", video_description: "Enjoying nice beach with friends", owner_id: 10, video_url: "https://foxeo-seeds.s3.amazonaws.com/IMG_9637.MOV" )
+video3 = Video.create!(video_title: "fox on a couch", video_description: "occupational hazard", owner_id: 10, "https://foxeo-seeds.s3.amazonaws.com/videoplayback.mp4")
+video4 = Video.create!(video_title: "Doberman", video_description: "Young european doby ", owner_id: 13, video_url: "https://foxeo-seeds.s3.amazonaws.com/videoplayback+(2).mp4")
+video5 = Video.create!(video_title: "Sunny beach", video_description: "Another beautiful day at the beach", owner_id: 13, video_url: "https://foxeo-seeds.s3.amazonaws.com/IMG_9658.MOV")
+video6 = Video.create!(video_title: "Funny dog", video_description: "Neighbor's dog was happy to see us", owner_id: 13, video_url: "https://foxeo-seeds.s3.amazonaws.com/IMG_9675.MOV")
+video7 = Video.create!(video_title: "Dark sky", video_description: "A gloomy day and a rough see", owner_id: 12, video_url: "https://foxeo-seeds.s3.amazonaws.com/IMG_9702.MOV")
+video8 = Video.create!(video_title: "Sunset", video_description: "Colorful sunset in Staten Island ", owner_id: 12, video_url: "https://foxeo-seeds.s3.amazonaws.com/IMG_9757.MOV")
+video9 = Video.create!(video_title: "Bridge", video_description: "Verrazano bridge from Staten Island side", owner_id: 12, video_url: "https://foxeo-seeds.s3.amazonaws.com/IMG_9801.MOV")
+video10 = Video.create!(video_title: "Dragonfly ", video_description: "Dragonfly 35 bypass", owner_id: 12, video_url: "https://foxeo-seeds.s3.amazonaws.com/videoplayback+(3).mp4")
+video11 = Video.create!(video_title: "Track sprint", video_description: "New Zealand championship", owner_id: 12, video_url: "https://foxeo-seeds.s3.amazonaws.com/videoplayback+(4).mp4")
+video12 = Video.create!(video_title: "Alisa's fur", video_description: "The fox looses her winter coat in the spring", owner_id: 12, video_url: "https://foxeo-seeds.s3.amazonaws.com/videoplayback+(1).mp4")
+video13 = Video.create!(video_title: "NYC", video_description: "Office view on Brooklyn Bridge", owner_id: 12, video_url: "https://foxeo-seeds.s3.amazonaws.com/IMG_9589.MOV")

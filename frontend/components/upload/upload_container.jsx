@@ -3,10 +3,10 @@ import Upload from './upload';
 import { fetchVideo } from '../../actions/video_actions';
 
 const mSTP = state => {
-    debugger
+    // debugger
     return { 
         video: state.entities.videos[state.session.id],
-        // errors: state.errors[state.session.id]
+        // errors: state.session.id.errors
     }
 };
 
