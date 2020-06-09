@@ -49,9 +49,9 @@ class Splash extends React.Component {
                     </div>
                 </div>
                 <div className="splash-section-3">
-                    <div>
-                        <img src="https://i.vimeocdn.com/custom_asset/959.png" alt="" />
-                    </div>
+                    
+                    <img src="https://i.vimeocdn.com/custom_asset/959.png" alt="" />
+            
                     <div className="secton-content-3">
                         <h3 className="section-header">Upload locally, be viewed universally.</h3>
                         <p className="text-section">

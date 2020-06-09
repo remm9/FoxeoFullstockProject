@@ -67,9 +67,9 @@ class Signup extends React.Component {
                 
                     <button className="signup-button" onClick={this.handleSubmit}>Join with email</button>
 
-                    <span className="signup-footer">Already have an account?
+                    <div className="signup-footer">Already have an account?
                         <button className="signup-form-btn" onClick={() => this.props.openModal('login')}>Log In</button>
-                    </span>
+                    </div>
                 </form>
             </div>
         );

@@ -60,10 +60,10 @@
 }
 
 .splash-section-2 {
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     margin-top: 100px;
-    justify-content: space-between;
 }
 
 .secton-content-2 {
@@ -80,22 +80,24 @@
 
 .splash-section-3 {
     display: flex;
+    justify-content: space-between;
     margin-top: 100px;
+    width: 100%;
 }
 
 .secton-content-3 {
-    display: flex;
+   display: flex;
     flex-direction: column;
     margin-top: 230px;
-    margin-left: 120px;
+    margin-right: 120px;
     width: 400px;
-    width: 100%;
 }
 
 .splash-section-4 {
     display: flex;
     margin-top: 100px;
     justify-content: space-between;
+    width: 100%;
 }
 
 .secton-content-4 {
@@ -104,7 +106,6 @@
     margin-top: 200px;
     margin-left: 120px;
     width: 400px;
-    width: 100%;
 }
 
 .img-4 {

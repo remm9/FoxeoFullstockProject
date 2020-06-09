@@ -63,9 +63,9 @@ class Login extends React.Component {
                     
                     <button className="login-button" onClick={this.handleSubmit}>Log in with email</button>
 
-                    <span className="login-footer">Don't have an account?
+                    <div className="login-footer">Don't have an account?
                         <button className="login-form-btn" onClick={() => this.props.openModal('signup')}>Join</button>
-                    </span>
+                    </div>
                 </form>
             </div>
         );

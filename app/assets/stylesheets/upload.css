@@ -54,8 +54,19 @@ div.upload-component {
     height: 34px;
     font-size: 15px;
     /* text-indent: 15px; */
-    color: white;
+    color: black;
     background-color: #7fc400;
     border-radius: 4px;
     border-color: #7fc400;
+}
+
+.upload-svg {
+    height: 60px;
+    margin-top: 15px;
+}
+
+.upload-logo {
+    height: 15px;
+    color: white;
+    margin-right: 5px;
 }
