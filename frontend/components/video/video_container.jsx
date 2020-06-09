@@ -2,12 +2,15 @@ import { connect } from 'react-redux';
 import Video from './video';
 import { fetchVideo } from '../../actions/video_actions';
 
-const mSTP = state => ({
-    video: state.entities.videos[state.session.id],
+const mSTP = (state, ownProps) => ({
+    // video: state.entities.videos[ownProps.match.params.session.id],
+    // video: state.entities.videos[ownProps.match.params.videoId],
+    video: state.entities.videos[38],
 });
 
 const mDTP = dispatch => ({
-    fetchVideo: (video) => dispatch(fetchVideo(video)), // probably need refactoring
+    fetchVideo: videoId => dispatch(fetchVideo(videoId)),
+     // probably need refactoring
 });
 
 

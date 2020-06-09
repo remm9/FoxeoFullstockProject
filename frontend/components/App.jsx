@@ -19,6 +19,7 @@ const App = () => (
         <GreetingContainer/>
         <ProtectedRoute path="/home" component={Home} />
         <ProtectedRoute path="/videos" component={Video} />
+        {/* <Route path="/videos/:id" component={Video}> */}
         <ProtectedRoute path="/upload" component={Upload} />
         <AuthRoute exact path='/' component={Splash} />
 

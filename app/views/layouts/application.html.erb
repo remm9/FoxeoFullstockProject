@@ -4,7 +4,6 @@
     <title>FoxeoFullstockProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="/assets/app_asset_fonts/BLACKR.ttf">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
@@ -14,9 +13,6 @@
       window.gitURL = "<%= image_url('GitHub-Mark-32px.png') %>";
     </script>
     <script type="text/javascript">
-      window.linkURL = "<%= image_url('Linkedin-01.png') %>";
-    </script>
-    <script type="text/javascript">
       window.vertovURL = "<%= image_url('vertov.png') %>";
     </script>
      <script type="text/javascript">
@@ -24,6 +20,12 @@
     </script>
      <script type="text/javascript">
       window.linkSmallURL = "<%= image_url('linkedin_small.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.gitWhiteURL = "<%= image_url('github.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.linkSplashURL = "<%= image_url('linkedin-splash.png') %>";
     </script>
     <% if current_user %>
       <script>

@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
             render "api/users/show"
             # render json: @user
         else
-            render :json => { :errors => @user.errors.full_messages }, :status => 404
+            render json: @user.errors.full_messages, status: 422
         end
     end
 

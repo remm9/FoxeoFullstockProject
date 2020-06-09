@@ -41,10 +41,10 @@ class Upload extends React.Component {
         const formData = new FormData();
         formData.append('video[video_title]', this.state.video_title);
         formData.append('video[video_description]', this.state.video_description);
-    
+        
         if (this.state.video_file) {
             // debugger
-            formData.append('video[video_url]', this.state.video_file);
+            formData.append('video[video_url]', this.state.video_file); //????
         }
         $.ajax({
             url: '/api/videos',
@@ -64,13 +64,10 @@ class Upload extends React.Component {
         console.log(this.state)
         // const preview = this.state.video_url ? <img src={this.state.video_url} /> : null;
         return (
-        
             <div className="upload-component">
-
                 {/* <form className="upload-component" onSubmit={this.handleSubmit}> */}
                 <form className="upload-form" onSubmit={this.handleSubmit}>
                     <h1 className="upload-title">Upload video</h1>
-
                     <input 
                         type="file" 
                         onChange={this.handleFile}
@@ -95,8 +92,7 @@ class Upload extends React.Component {
                         />
                     </label>
                     {/* <h3>Video preview </h3>
-                    {preview} */}
-                    
+                    {preview} */}                  
                     <button className="upload-button" ><img src="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" alt=""/>Upload</button>
                 </form>
             </div> 

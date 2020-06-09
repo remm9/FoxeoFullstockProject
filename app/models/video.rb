@@ -14,7 +14,7 @@ class Video < ApplicationRecord
     validates :video_title, uniqueness: true
 
     has_one_attached :photo
-    has_one_attached :video
+    has_one_attached :video_url
 
     belongs_to :user,
         foreign_key: :owner_id,

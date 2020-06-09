@@ -27,6 +27,15 @@ class Signup extends React.Component {
             // .then(() => this.props.history.push('/users')); //change to /videos later
     }
 
+    mapErrors() {
+        // debugger
+        if (this.props.errors.length) {
+            return this.props.errors.map(error => {
+                return <p>{error}</p>
+            })
+        }
+    }
+
 
     render() {
         return (
@@ -53,6 +62,8 @@ class Signup extends React.Component {
                             placeholder="Password"
                             onChange={this.handleInput('password')}
                         />
+
+                    <div className="errors">{this.mapErrors()}</div>
                 
                     <button className="signup-button" onClick={this.handleSubmit}>Join with email</button>
 

@@ -1,61 +1,49 @@
 .splash-container {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 90px);
     overflow-y: scroll;
-    /* background-color: rgb(251, 242, 246); */
     background-image: linear-gradient(#fbf2f6 0%, white 50%);
-    /* background: linear-gradient (90deg, rgb(251, 242, 246), 100%, white, 100%); */
-    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s, visibility 0.2s ease 0s;
-}
-
-.splash-page ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    /* background-color: aqua; */
 }
 
-.new-user-header {
-    display: inline-flex;
-    justify-content: center;
-    width: 100%;
+ .new-user-header {
     font-size: 77px;
-    margin-left: 380px;
-    /* margin-right: 200px; */
-    width: 600px;
+    margin-top: 42px;
+    margin-bottom: 30px;
+    width: 550px;
+    font-weight: 600;
 }
 
 .new-user-subheader {
-    display: inline-flex;
-    justify-content: center;
-    /* width: 100%; */
-    margin-left: 450px;
-    width: 358px;
-    /* align-items: center; */
-    /* align-content: center; */
+    width: 333px;
     text-align: center;
     font-size: 20px;
     font-weight: normal;
 }
 
 .splash-section-1 {
-    display: flex;
+    display: inline-flex;
+    width: 100%;
     margin-top: 100px;
+    justify-content: space-between;
 }
 
 .secton-content {
     display: flex;
     flex-direction: column;
-    margin-top: 120px;
-    margin-left: 100px;
-    width: 450px;
+    margin-top: 150px;
 }
 
 .section-header {
     font-size: 35px;
+    font-weight: 700;
 }
 .text-section {
-    line-height: 1.5
+    margin-top: 15px;
+    line-height: 1.5;
+    width: 350px;
+    margin-right: 150px;
 }
 
 .btn {
@@ -72,7 +60,8 @@
 }
 
 .splash-section-2 {
-    display: flex;
+    display: inline-flex;
+    width: 100%;
     margin-top: 100px;
     justify-content: space-between;
 }
@@ -80,9 +69,9 @@
 .secton-content-2 {
     display: flex;
     flex-direction: column;
-    margin-top: 150px;
-    margin-left: 100px;
-    width: 450px;
+    margin-top: 180px;
+    margin-left: 150px;
+    width: 350px;
 }
 
 .img-2 {
@@ -92,15 +81,15 @@
 .splash-section-3 {
     display: flex;
     margin-top: 100px;
-    /* justify-content: space-between; */
 }
 
 .secton-content-3 {
     display: flex;
     flex-direction: column;
-    margin-top: 200px;
+    margin-top: 230px;
     margin-left: 120px;
     width: 400px;
+    width: 100%;
 }
 
 .splash-section-4 {
@@ -112,9 +101,10 @@
 .secton-content-4 {
     display: flex;
     flex-direction: column;
-    margin-top: 180px;
+    margin-top: 200px;
     margin-left: 120px;
     width: 400px;
+    width: 100%;
 }
 
 .img-4 {
@@ -122,41 +112,69 @@
 }
 
 .footer-statement {
-    /* display: inline-flex; */
     justify-content: center;
-    margin-left: 400px;
     margin-top: 100px;
     margin-bottom: 100px;
+    font-size: 34px;
+    font-weight: 600;
     width: 500px;
     text-align: center;
-
 }
 
 .footer {
     display: flex;
-    flex-direction: row;
-    /* justify-content: space-between; */
-    align-items: center;
-    background-color: #5f9ea0;
+    flex-direction: column;
+    /* align-items: center; */
+    background-color: rgb(26, 46, 59);
     padding-left: 5px; 
+    width: 100%;
+
+}
+
+
+.bottom {
+    display: inline-flex;
+    justify-content: space-between;
+    border-bottom: lightgray 1px solid;
+    margin-left: 54px;
+    margin-right: 54px;
+}
+
+.links {
+    display: inline-flex;
+    justify-content: space-around;
+    /* margin-right: 54px; */
+    margin-top: 23px;
 }
 
 .tag {
-    margin-left: 10px;
-    /* background-color: cornsilk; */
+    zoom: 12%;
+    margin-top: 93px;
 }
 
 .tag-2 {
-    zoom: 40%;
-    /* height: 300px; */
-    /* align-items: center; */
+    zoom: 70%;
+    margin-left: 15px;
+    object-fit: cover;
+}
+
+.footer-header-logo {
+    color: white;
+    margin-top: 30px;
+    /* margin-left: 54px; */
+    margin-bottom: 70px;
+    color: li
 }
 
 .footer-1 {
-    /* justify-content: end; */
+    height: 23px;
+    color: white;
+    margin-left: 54px;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
-#next {  /* code for moving arrow */
+#next {  
   cursor: pointer;
   position: absolute;
   float: right;
@@ -189,5 +207,5 @@
 }
 #next:hover span {
   transform: translateX(50%);
-}
+} 
 

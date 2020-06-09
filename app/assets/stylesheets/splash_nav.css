@@ -3,18 +3,17 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.splash-nav ul {
-    /* display: inline-flex; */
-    margin: 0px;
-    /* margin-top: 10px; */
-    padding-left: 0px;
+.splash-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgb(251, 242, 246);
     padding-top: 25px;
     padding-bottom: 30px;
-    background-color: rgb(251, 242, 246);
-    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s, visibility 0.2s ease 0s;
 }
 
-.splash-header-logo {
+ .splash-header-logo {
     color: rgb(26, 46, 59);
     margin-left: 75px;
     margin-top: 25px;
@@ -52,10 +51,14 @@ body {
     text-decoration: none;
 }
 
+.splash-right-nav {
+    margin-top: 19px;
+    margin-right: 57px;
+}
+
 .new-video-btn {
     margin-right: 5px;
     padding-left: 20px;
-    margin-left: 690px;
     border: solid 1px black;
     background-color: black;
     border-radius: 3.5px;
@@ -65,12 +68,12 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: white;
-    text-decoration: none;
+    text-decoration: none;  
 }
 
 .new-video-btn:first-letter {
     font-size: 50px;
 }
 
-
+ 
 

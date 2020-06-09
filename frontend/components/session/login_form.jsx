@@ -26,6 +26,15 @@ class Login extends React.Component {
             // .then(() => this.props.history.push('/users')); //change to /videos later
     }
 
+    mapErrors() {
+        // debugger
+        if (this.props.errors.length) {
+            return this.props.errors.map(error => {
+                return <p>{error}</p>
+            })
+        }
+    }
+
 
     render() {
         return (
@@ -48,6 +57,10 @@ class Login extends React.Component {
                         placeholder="Password"
                         onChange={this.handleInput('password')}
                     />
+                    
+                    <div className="errors">{this.mapErrors()}</div>
+            
+                    
                     <button className="login-button" onClick={this.handleSubmit}>Log in with email</button>
 
                     <span className="login-footer">Don't have an account?
