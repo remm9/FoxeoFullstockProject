@@ -23,7 +23,7 @@ class Upload extends React.Component {
     }
 
     mapErrors() {
-        debugger
+        // debugger
         if (this.props.errors.length) {
             return this.props.errors.map(error => {
                 return <p>{error}</p>
@@ -65,12 +65,13 @@ class Upload extends React.Component {
             (response) => console.log(response.message),
             (response) => {
                 console.log(response.responseJSON)
+                console.log(this.state)
             }
-        ).then(this.setState({ video_title: "", video_description: "", video_url: null}));
+        ).then(this.setState({ video_title: "", video_description: ""}));
     }
 
     render()  {
-        console.log(this.state)
+        // console.log(this.state)
         // const preview = this.state.video_url ? <img src={this.state.video_url} /> : null;
         return (
             <div className="upload-component">
@@ -80,6 +81,7 @@ class Upload extends React.Component {
                     <h1 className="upload-title">Upload video</h1>
                     <input 
                         type="file" 
+                        // value={this.state.video_file}
                         onChange={this.handleFile}
                         className="upload-file"
                     />
@@ -103,7 +105,7 @@ class Upload extends React.Component {
                     </label>
                     {/* <h3>Video preview </h3>
                     {preview} */}    
-                    {/* <div classNamxe="errors">{this.mapErrors()}</div> */}
+                    <div className="errors">{this.mapErrors()}</div>
 
                     <button className="upload-button">
                         <svg className="upload-logo" viewBox="0 0 24 24"><path d="M20.921 11.498a6.37 6.37 0 00.079-.953C21 6.93 17.978 4 14.25 4c-2.701 0-5.024 1.542-6.103 3.764a3.428 3.428 0 00-1.772-.491C4.511 7.273 3 8.738 3 10.545c0 .324.05.636.141.931C1.32 12.035 0 13.686 0 15.636 0 18.046 2.015 20 4.5 20H11v-5.379L9.561 16.06a.5.5 0 01-.707 0l-.707-.707a.5.5 0 010-.707l3.5-3.5a.5.5 0 01.707 0l3.5 3.5a.5.5 0 010 .707l-.707.707a.5.5 0 01-.707 0L13 14.621V20h6.5c2.485 0 4.5-1.954 4.5-4.364 0-1.928-1.291-3.561-3.079-4.138z"></path></svg>

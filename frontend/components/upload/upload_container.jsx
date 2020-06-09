@@ -6,7 +6,7 @@ const mSTP = state => {
     // debugger
     return { 
         video: state.entities.videos[state.session.id],
-        // errors: state.session.id.errors
+        errors: state.errors
     }
 };
 

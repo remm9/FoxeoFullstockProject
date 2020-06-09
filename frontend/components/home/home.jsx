@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchVideos } from '../../actions/video_actions' 
 
 class Home extends React.Component {
 
@@ -10,6 +11,8 @@ class Home extends React.Component {
         return (
             <div className="home-container">
             <h1 className="home-container">Welcome Home</h1>
+            {/* <p>{Video.all.ids}</p> */}
+             <p>{console.log(this.props)}</p>
              
             </div>
         );

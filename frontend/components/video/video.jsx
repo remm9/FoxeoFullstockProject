@@ -10,7 +10,7 @@ class Video extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchVideo(38);
+        this.props.fetchVideo(3);
     }
 
 
