@@ -20,7 +20,7 @@ divov = User.create!(username: "Oleg Divov", email: "odivov@gmail.com", password
 #videos
 
 video1 = Video.create!(video_title: "Night city", video_description: "NYC night skyline and lights", owner_id: divov.id)
-video1.video_url.attach(io: open("https://foxeo-seeds.3.amazonaws.com/IMG_9591.MOV"), filename: 'IMG_9591.MOV')
+video1.video_url.attach(io: open("https://foxeo-seeds.s3.amazonaws.com/IMG_9591.MOV"), filename: 'IMG_9591.MOV')
 video2 = Video.create!(video_title: "Beach walk", video_description: "Enjoying nice beach with friends", owner_id: robert.id)
 video2.video_url.attach(io: open("https://foxeo-seeds.s3.amazonaws.com/IMG_9637.MOV"), filename: "IMG_9637.MOV" )
 video3 = Video.create!(video_title: "fox on a couch", video_description: "occupational hazard", owner_id: robert.id)
