@@ -13,8 +13,8 @@ export default (props) => {
             <div className="loggedin-nav">
                 <div className="left-nav">
                     <a href="#/home" className="loggedin-header-logo"><img src={window.logoURL} alt="" /></a>
-                    <button className="loggedin-manage">Manage Videos</button>
-                    <button className="loggedin-watch">Watch</button>
+                    <a href="#/videos" className="loggedin-manage">Manage Videos</a>
+                    <a href="#/home" className="loggedin-watch">Watch</a>
                 </div>
                 <div className="right-nav">
                     <div  className="dropdown">

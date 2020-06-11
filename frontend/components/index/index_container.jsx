@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Index from './video';
+import Index from './index';
 import { fetchVideos } from '../../actions/video_actions';
 
 const mSTP = state => {

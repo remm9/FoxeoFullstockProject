@@ -13,13 +13,16 @@ class Video extends React.Component {
         this.props.fetchVideo(3);
     }
 
-
+    toggleMute() {
+        video.muted = !video.muted;
+    }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         if (!this.props.video) { return null }
         return (
             <div className="video-container">
+        
                 <h1 className="video-container">Videos</h1>
                 <video 
                     className="video-player"
@@ -27,7 +30,7 @@ class Video extends React.Component {
                     src={this.props.video.video_url} 
                     autoPlay="autoplay"
                     muted
-                >
+                    >
                 </video>
             </div>
         );
