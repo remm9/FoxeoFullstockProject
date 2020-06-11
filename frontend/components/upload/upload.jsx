@@ -33,7 +33,7 @@ class Upload extends React.Component {
 
 
     handleFile(e) {
-        debugger
+        // debugger
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         reader.onloadend = () =>
@@ -78,7 +78,7 @@ class Upload extends React.Component {
     
 
     render()  {
-        console.log(this.state)
+        // console.log(this.state)
         // const preview = this.state.video_url ? <img src={this.state.video_url} /> : null;
         return (
             <div className="upload-component">

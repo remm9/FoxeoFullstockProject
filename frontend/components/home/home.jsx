@@ -8,7 +8,7 @@ class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(props)
+        // console.log(props)
         this.userName = this.userName.bind(this)
     }
 
@@ -29,13 +29,13 @@ class Home extends React.Component {
     }
 
     randomVideoGrid() {
-        debugger
+        // debugger
         const result = []
         const videoIds = Object.keys(this.props.videos);
         videoIds.forEach(video => {
             result.push(videoIds[Math.floor(Math.random() * videoIds.length)]);
         })
-        console.log(result)
+        // console.log(result)
         return result.slice(6);
     }
 

@@ -5,6 +5,9 @@ import { openModal } from '../../actions/modal_actions';
 
 
 export default (props) => {
+
+
+
     const welcomePage = props.currentUser ? ( //create nav and side bar for currnt user 
         <div className="loggedin-page">
 
@@ -56,7 +59,7 @@ export default (props) => {
                     <a className="link-logo" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src={window.linkSmallURL} alt="" /></a>
                 </div>
 
-                <div className="line-2"></div>
+                <div className="ouline-2"></div>
                 {/* <button className="loggedin-logout" onClick={props.logout}>Log Out</button> */}
             </div>
 
@@ -79,7 +82,6 @@ export default (props) => {
 
     return (
         <header className="greeting">
-            {/* <h1 className="logo">Bench BNB</h1> */}
             <div>
                 {welcomePage}
             </div>

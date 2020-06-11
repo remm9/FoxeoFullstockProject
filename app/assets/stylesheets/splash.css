@@ -60,6 +60,8 @@
 }
 
 .btn {
+    display: flex;
+    flex-direction: row;
     margin-top: 15px;
     text-decoration: none;
     font-weight: bold;
@@ -222,4 +224,8 @@
 #next:hover span {
   transform: translateX(50%);
 } 
+
+#arrow {
+    height: 19px;
+}
 

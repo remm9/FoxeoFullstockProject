@@ -14,20 +14,27 @@ class Play extends React.Component {
         // debugger
         // console.log(this.props)
         // this.props.fetchVideo(3);
-        this.props.fetchVideo(this.props.match.params.id)
+        this.props.fetchVideo(this.props.match.params.id).then(() => {
+            const video = document.querySelector('.video-player');
+            video.muted = !video.muted;
+            video.play()
+        })
     }
 
     toggleMute(e) {
         // debugger
         const video = e.target
-        setTimeout(() => {
-        video.muted = !video.muted;
-        video.play();
-        }, 500) 
+        video.pause();
+        video.volume = 0.25;
+        // setTimeout(() => {
+        // video.muted = !video.muted;
+        // video.load();
+        // video.play();
+        // }, 500) 
     }
 
     render() {
-        console.log(this.props.video)
+        // console.log(this.props.video)
         // debugger
         if (!this.props.video) { return null }
         return (

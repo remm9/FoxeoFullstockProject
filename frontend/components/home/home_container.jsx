@@ -8,6 +8,7 @@ const mSTP = state => {
     const videos = Object.values(state.entities.videos)
     // console.log(videos)
     return ({
+        currentUser: state.entities.users[state.session.id],
         videos
     })
 };

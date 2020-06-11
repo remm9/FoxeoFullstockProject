@@ -1,16 +1,22 @@
 import { connect } from 'react-redux';
-import Video from './video';
-import { fetchVideo } from '../../actions/video_actions';
+import Video from './video'
+import { fetchVideos } from '../../actions/video_actions';
+import { fetchUser } from '../../actions/user_actons';
+import { login } from '../../actions/session_actions';
 
-const mSTP = (state, ownProps) => ({
-    // video: state.entities.videos[ownProps.match.params.session.id],
-    // video: state.entities.videos[ownProps.match.params.videoId],
-    video: state.entities.videos[3],
-});
+const mSTP = state => {
+    const videos = Object.values(state.entities.videos)
+    // console.log(state)
+    return ({
+        currentUser: state.entities.users[state.session.id],
+        videos
+    })
+};
 
 const mDTP = dispatch => ({
-    fetchVideo: videoId => dispatch(fetchVideo(videoId)),
-     // probably need refactoring
+    fetchVideos: () => dispatch(fetchVideos()),
+    fetchUser: userId => dispatch(fetchUser(userId)),
+    login: user => dispatch(login(user))
 });
 
 

@@ -35,6 +35,15 @@ class Login extends React.Component {
         }
     }
 
+    // viewDemoClick(event) {
+    //     // debugger
+    //     event.preventDefault();
+    //     const demoUser = {
+    //         username: 'test',
+    //         password: 'hunter2'
+    //     };
+    //     this.props.processForm(demoUser);
+    // }
 
     render() {
         return (

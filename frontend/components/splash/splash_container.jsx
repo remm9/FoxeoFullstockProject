@@ -7,6 +7,7 @@ import { login } from '../../actions/session_actions'
 const mSTP = (state={}) => ({  //({ session })
     // currentUser: session.currentUser,
         username: 'Demo User',
+        email: 'test@gmail.com',
         password: 'hunter2'
 });
 

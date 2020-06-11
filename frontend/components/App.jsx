@@ -18,7 +18,7 @@ const App = () => (
         
         <Modal />
         <GreetingContainer/>
-        <Route path="/home" component={Home} />
+        <ProtectedRoute path="/home" component={Home} />
         <Route path="/videos" component={Video} />
         <Route path="/play/:id" component={Play} />
         {/* <Route path="/demo" component={Demo}/> */}

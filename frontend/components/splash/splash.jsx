@@ -15,7 +15,8 @@ class Splash extends React.Component {
         // debugger
         event.preventDefault();
         const demoUser = {
-            username: 'Demo User',
+            // username: 'Demo User',
+            email: 'test@gmail.com',
             password: 'hunter2'
         };
         this.props.processForm(demoUser);
@@ -46,7 +47,10 @@ class Splash extends React.Component {
                         <p className="text-section">
                             Get together with your entire team using single safe, enterprise-level video solution.
                         </p>
-                        <button className="btn" onClick={() => this.props.openModal('signup')}>Go live ></button>
+                        <button className="btn" onClick={() => this.props.openModal('signup')}>
+                            <h2 className="btn-text">Go live </h2> 
+                            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19"><g fill="#1A2E3A" fillRule="evenodd"><path fillRule="nonzero" d="M12.566 8.51v1.061l-.53-.53.53-.53zm-3.56-2.45L10.065 5l4.066 4.066-4.066 4.066-1.06-1.06 3.004-3.006L9.005 6.06z"></path><path d="M5 8.35h8v1.5H5z"></path></g></svg>
+                            </button>
                     </div>
                 </div>
                 <div className="splash-section-2">
@@ -58,7 +62,11 @@ class Splash extends React.Component {
                         <p className="text-section">
                             Get help from a specialist to boost your video's look.
                         </p>
-                        <button className="btn" onClick={() => this.props.openModal('signup')}>Start uploading ></button>
+                        <button className="btn" onClick={() => this.props.openModal('signup')}>
+                            
+                            <h2 className="btn-text">Start uploading </h2> 
+                            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19"><g fill="#1A2E3A" fillRule="evenodd"><path fillRule="nonzero" d="M12.566 8.51v1.061l-.53-.53.53-.53zm-3.56-2.45L10.065 5l4.066 4.066-4.066 4.066-1.06-1.06 3.004-3.006L9.005 6.06z"></path><path d="M5 8.35h8v1.5H5z"></path></g></svg>
+                        </button>
 
                     </div>    
                     <div className="img-2">
@@ -74,7 +82,10 @@ class Splash extends React.Component {
                         <p className="text-section">
                             Employ powerful marketing tools in order to get viewers attention. Get detailed stats on how your video is performing.
                         </p>
-                        <button className="btn" onClick={() => this.props.openModal('signup')}>Increase your audience ></button>
+                        <button className="btn" onClick={() => this.props.openModal('signup')}>
+                            <h2 className="btn-text">Increase your audience </h2>  
+                            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19"><g fill="#1A2E3A" fillRule="evenodd"><path fillRule="nonzero" d="M12.566 8.51v1.061l-.53-.53.53-.53zm-3.56-2.45L10.065 5l4.066 4.066-4.066 4.066-1.06-1.06 3.004-3.006L9.005 6.06z"></path><path d="M5 8.35h8v1.5H5z"></path></g></svg>
+                        </button>
 
                     </div>    
                 </div>
@@ -87,7 +98,10 @@ class Splash extends React.Component {
                         <p className="text-section">
                             Your video has a right to remain private. Stay secure a multitude of privacy options.
                         </p>
-                        <button className="btn" onClick={() => this.props.openModal('signup')}>Start working together ></button>
+                        <button className="btn" onClick={() => this.props.openModal('signup')}>
+                            <h2 className="btn-text">Start working together </h2> 
+                            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19"><g fill="#1A2E3A" fillRule="evenodd"><path fillRule="nonzero" d="M12.566 8.51v1.061l-.53-.53.53-.53zm-3.56-2.45L10.065 5l4.066 4.066-4.066 4.066-1.06-1.06 3.004-3.006L9.005 6.06z"></path><path d="M5 8.35h8v1.5H5z"></path></g></svg>
+                        </button>
 
                     </div>
                     <div className="img-4">
