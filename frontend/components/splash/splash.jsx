@@ -1,12 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { openModal } from '../../actions/modal_actions';
+import { openModal } from '../../actions/modal_actions';
+
 
 
 class Splash extends React.Component {
 
     constructor(props) {
         super(props);
+        this.viewDemoClick = this.viewDemoClick.bind(this);
+    }
+
+    viewDemoClick(event) {
+        // debugger
+        event.preventDefault();
+        const demoUser = {
+            username: 'Demo User',
+            password: 'hunter2'
+        };
+        this.props.processForm(demoUser);
     }
 
     render() {
@@ -18,6 +30,11 @@ class Splash extends React.Component {
                 </div>
                 <div>
                     <h3 className="new-user-subheader">Create a video, bring it live, work with other artists and make it available to the world.</h3>
+                </div>
+
+                <div>
+                    {/* <button id="demo-login" onClick={'/home'}>View Demo</button> */}
+                    <button id="demo-login" onClick={this.viewDemoClick}>View Demo</button>
                 </div>
                 <div className="splash-section-1">
                     <img src="https://i.vimeocdn.com/custom_asset/1204" alt=""/>
@@ -80,7 +97,7 @@ class Splash extends React.Component {
                 <h1 className="footer-statement">Be one with our community of artists and brands</h1>
                 <div className="footer">
                     <div className="bottom">
-                       <a href="#/home" className="footer-header-logo"><img src="https://fontmeme.com/permalink/200609/8c7313b0d8cd1284ac5a4372b4862e73.png" alt="" /></a>
+                       <a href="#/" className="footer-header-logo"><img src="https://fontmeme.com/permalink/200609/8c7313b0d8cd1284ac5a4372b4862e73.png" alt="" /></a>
                         <div className="links">
                             <a className="tag" href="https://github.com/remm9/FoxeoFullstockProject"><img src="https://www.seekpng.com/png/full/192-1923313_2-februari-github-logo-png-white.png" alt=""/></a>
                             <a className="tag-2" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src={window.linkSplashURL} alt=""/></a>

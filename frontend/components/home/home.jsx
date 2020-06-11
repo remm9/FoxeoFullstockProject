@@ -1,12 +1,15 @@
 import React from 'react';
 import { fetchVideos } from '../../actions/video_actions';
 import { fetchUser } from '../../util/user_api_util';
+import Play from '../play/play_container'
+import {Link} from 'react-router-dom'
 
 class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        // console.log(props)
+        console.log(props)
+        this.userName = this.userName.bind(this)
     }
 
     componentDidMount() {
@@ -20,24 +23,46 @@ class Home extends React.Component {
 
     userName(owner_id) {
         // debugger
+        // console.log(this.props)
         // console.log(this.props.fetchUser(owner_id))
         return this.props.fetchUser(owner_id).username;
     }
 
+    randomVideoGrid() {
+        debugger
+        const result = []
+        const videoIds = Object.keys(this.props.videos);
+        videoIds.forEach(video => {
+            result.push(videoIds[Math.floor(Math.random() * videoIds.length)]);
+        })
+        console.log(result)
+        return result.slice(6);
+    }
+
+    
     render() {
+        // debugger
         const videos = this.props.videos;
         const videoList = videos.map(video => {
             return (
                 <ul key={video.id} >
                     <div className="home-list-item">
-                        <video 
-                            className="home-video"
-                            src={video.video_url}
-                            poster=""
-                            width="320" 
-                            height="240"
-                            >    
-                        </video>
+                        <div className="home-video-header">
+                            <h2 className="home-video-header-1">Added to</h2>
+                            <h2 className="home-video-header-2">Foxeo Staff Picks</h2>
+                        </div>
+                        <Link to={`/play/${video.id}`}>
+                            <video 
+                                className="home-video"
+                                src={video.video_url}
+                                poster=""
+                                width="320" 
+                                height="240"
+                                // onClick={this.eventHandeler(video.id)}
+                                
+                                >    
+                            </video>
+                        </Link>
                         <h2 className="video-title">{video.video_title}</h2>
                         <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
                         {/* <h2>{this.userName(video.owner_id)}</h2> */}

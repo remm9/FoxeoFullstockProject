@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Home from './home'
 import { fetchVideos } from '../../actions/video_actions';
 import { fetchUser } from '../../actions/user_actons';
+import { login } from '../../actions/session_actions';
 
 const mSTP = state => {
     const videos = Object.values(state.entities.videos)
@@ -13,7 +14,8 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
     fetchVideos: () => dispatch(fetchVideos()),
-    fetchUser: userId => dispatch(fetchUser(userId))
+    fetchUser: userId => dispatch(fetchUser(userId)),
+    login: user => dispatch(login(user))
 });
 
 

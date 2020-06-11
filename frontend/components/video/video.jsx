@@ -10,7 +10,9 @@ class Video extends React.Component {
     }
 
     componentDidMount() {
+        console.log(this.props)
         this.props.fetchVideo(3);
+        // this.props.fetchVideo(this.props.video.id)
     }
 
     toggleMute() {
@@ -29,7 +31,7 @@ class Video extends React.Component {
                     controls="controls"
                     src={this.props.video.video_url} 
                     autoPlay="autoplay"
-                    muted
+                    muted //={this.toggleMute()}
                     >
                 </video>
             </div>
