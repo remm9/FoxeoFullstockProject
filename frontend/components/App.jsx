@@ -10,6 +10,7 @@ import Home from './home/home_container';
 import Video from './video/video_container';
 import Upload from './upload/upload_container' 
 import Play from './play/play_container'
+import User from './user/user_container'
 
 
 const App = () => (
@@ -21,8 +22,7 @@ const App = () => (
         <ProtectedRoute path="/home" component={Home} />
         <Route path="/videos" component={Video} />
         <Route path="/play/:id" component={Play} />
-        {/* <Route path="/demo" component={Demo}/> */}
-        {/* <ProtectedRoute path="/index" component={Index}/> */}
+        <ProtectedRoute path="/user" component={User}/> 
         <ProtectedRoute path="/upload" component={Upload} />
         <AuthRoute exact path='/' component={Splash} />
 

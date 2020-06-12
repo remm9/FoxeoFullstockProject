@@ -1,15 +1,12 @@
 import React from 'react';
 import { fetchVideos } from '../../actions/video_actions';
 import { fetchUser } from '../../util/user_api_util';
-import Play from '../play/play_container'
 import { Link } from 'react-router-dom'
 
-class Video extends React.Component {
+class User extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.user = currenUser;
-        // console.log(props)
         this.userName = this.userName.bind(this)
     }
 
@@ -23,41 +20,17 @@ class Video extends React.Component {
     }
 
     userName(id) {
-        // debugger
-        // console.log(this.props)
-        // console.log(this.props.fetchUser(4))
-        // return this.props.fetchUser(id).username;
         return this.props.currentUser.userName
     }
 
     render() {
         const userVideos = this.props.videos.filter(video => video.owner_id == this.props.currentUser.id)
-        // console.log(this.props)
-        // debugger
         const videoList = userVideos.map(video => {
             return (
                 <ul key={video.id} >
                     <div className="home-list-item">
-                        <div className="home-video-header">
-                            <h2 className="home-video-header-1">Added to</h2>
-                            <h2 className="home-video-header-2">Foxeo Staff Picks</h2>
-                        </div>
-                        <Link to={`/play/${video.id}`}>
-                            <video
-                                className="home-video"
-                                src={video.video_url}
-                                poster=""
-                                width="320"
-                                height="240"
-                            // onClick={this.eventHandeler(video.id)}
-
-                            >
-                            </video>
-                        </Link>
                         <h2 className="video-title">{video.video_title}</h2>
                         <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
-                        {/* <h2>{this.userName(video.owner_id)}</h2> */}
-                        <h2 className="video-user-name">{this.props.currentUser.username}</h2>
                     </div>
                 </ul>
             )
@@ -82,4 +55,4 @@ class Video extends React.Component {
     }
 }
 
-export default Video;
+export default User;

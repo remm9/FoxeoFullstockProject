@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchVideos } from '../../actions/video_actions';
 import { fetchUser } from '../../util/user_api_util';
+import { fetchUsers } from '../../util/user_api_util';
 import Play from '../play/play_container'
 import {Link} from 'react-router-dom'
 
@@ -65,7 +66,7 @@ class Home extends React.Component {
                         </Link>
                         <h2 className="video-title">{video.video_title}</h2>
                         <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
-                        {/* <h2>{this.userName(video.owner_id)}</h2> */}
+                        {/* <h2>{this.props.owner.username}</h2> */}
                     </div> 
                 </ul>
             )
