@@ -45,7 +45,7 @@
 <img width="897" alt="Screen Shot 2020-06-12 at 11 15 39" src="https://user-images.githubusercontent.com/59717705/84518098-2d1e6b80-ac9e-11ea-8a92-bd754e100687.png">
 
 
-  The video autoplays with sound on:
+  On click the video autoplays with sound on:
 
   ![autoplay](https://user-images.githubusercontent.com/59717705/84521633-4f66b800-aca3-11ea-8377-ac3e6c8e5753.gif)
 
