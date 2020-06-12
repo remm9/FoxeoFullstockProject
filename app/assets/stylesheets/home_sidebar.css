@@ -117,6 +117,13 @@
 }
 
 .user-profile {
-    zoom: 3.8%;
+    display: inline-flex;
+}
+
+.smiley-svg {
     margin-right: 8px;
+}
+
+.user-profile-text {
+    margin-top: 4px;
 }

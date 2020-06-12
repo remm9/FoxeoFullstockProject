@@ -13,3 +13,12 @@ div.video-container {
     height: 500px;
     background-color: black;
 } */
+
+.video-footer {
+    position: absolute;
+    bottom: 0;
+    display: inline-flex;
+    align-self: flex-start;
+    margin-left: 60px;
+    margin-bottom: 25px;
+}

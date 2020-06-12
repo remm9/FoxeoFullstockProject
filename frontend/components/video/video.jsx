@@ -22,11 +22,12 @@ class Video extends React.Component {
         return dateCreated.toLocaleDateString();
     }
 
-    userName(owner_id) {
+    userName(id) {
         // debugger
         // console.log(this.props)
-        // console.log(this.props.fetchUser(owner_id))
-        return this.props.fetchUser(owner_id).username;
+        // console.log(this.props.fetchUser(4))
+        // return this.props.fetchUser(id).username;
+        return this.props.currentUser.userName
     }
 
     render() {
@@ -56,6 +57,7 @@ class Video extends React.Component {
                         <h2 className="video-title">{video.video_title}</h2>
                         <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
                         {/* <h2>{this.userName(video.owner_id)}</h2> */}
+                        <h2 className="video-user-name">{this.props.currentUser.username}</h2>
                     </div>
                 </ul>
             )
@@ -67,7 +69,7 @@ class Video extends React.Component {
                 <ul className="home-ul">
                     {videoList}
                 </ul>
-                <div className="home-footer">
+                <div className="video-footer">
                     <h2 className="home-footer-1">@2020</h2>
                     <h2 className="home-footer-2">
                         Made with
