@@ -15,18 +15,18 @@ class Play extends React.Component {
         return dateCreated.toLocaleDateString();
     }
 
+    // toggleMute(e) {
+    //     const video = e.target
+    //     video.pause();
+    //     video.volume = 0.25;
+    // }
+
     componentDidMount() {
         this.props.fetchVideo(this.props.match.params.id).then(() => {
             const video = document.querySelector('.video-player');
             video.muted = !video.muted;
             video.play()
         })
-    }
-
-    toggleMute(e) {
-        const video = e.target
-        video.pause();
-        video.volume = 0.25;
     }
 
     render() {

@@ -20,26 +20,27 @@ class User extends React.Component {
     }
 
     userName(id) {
-        return this.props.currentUser.userName
+        return this.props.currentUser.username
     }
 
     render() {
         const userVideos = this.props.videos.filter(video => video.owner_id == this.props.currentUser.id)
         const videoList = userVideos.map(video => {
             return (
-                <ul key={video.id} >
-                    <div className="home-list-item">
-                        <h2 className="video-title">{video.video_title}</h2>
-                        <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
+                <ul key={video.id} className="user-ul">
+                    <div className="user-list-item">
+                        <h2 className="user-title">{video.video_title}</h2>
+                        <h2 className="user-description">{video.video_description}</h2>
+                        <h2 className="user-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
                     </div>
                 </ul>
             )
         })
 
         return (
-            <div className="home-container">
-                <h1 className="home-title">Your Videos</h1>
-                <ul className="home-ul">
+            <div className="user-container">
+                <h1 className="user-title">{this.props.currentUser.username}</h1>
+                <ul className="user-ul">
                     {videoList}
                 </ul>
                 <div className="video-footer">

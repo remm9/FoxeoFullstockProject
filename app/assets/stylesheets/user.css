@@ -1,0 +1,9 @@
+div.user-container {
+    height: calc(100vh - 66px);
+    overflow-y: scroll;
+    margin-left: 227px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+}
