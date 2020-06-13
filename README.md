@@ -5,7 +5,7 @@
 
 [Please visit live site](https://foxeo.herokuapp.com/)
 
-### Foxeo is a Vimeo's clone and is intended for storing and viewing artistic videos.
+ Foxeo is a Vimeo's clone and is intended for storing and viewing artistic videos.
 
 ### The site allows for:
 
