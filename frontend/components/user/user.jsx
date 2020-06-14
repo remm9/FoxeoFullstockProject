@@ -39,7 +39,7 @@ class User extends React.Component {
 
         return (
             <div className="user-container">
-                <h1 className="user-title">{this.props.currentUser.username}</h1>
+                <h1 className="user-username">{this.props.currentUser.username[0]}</h1>
                 <ul className="user-ul">
                     {videoList}
                 </ul>

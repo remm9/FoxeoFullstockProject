@@ -64,6 +64,14 @@ div.home-container {
     color: grey;
 }
 
+.video-owner-name {
+    color: #17272E;
+    font-size: 14px;
+    margin-left: 15px;
+    font-weight: 900;
+    margin-top: 27px;
+}
+
 .video-user-name {
     color: #17272E;
     font-size: 14px;

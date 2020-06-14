@@ -10,23 +10,16 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         // console.log(props)
-        this.userName = this.userName.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchVideos();
+        this.props.fetchUsers();
     };
 
     dateCreated(date) {
         const dateCreated = new Date(date)
         return dateCreated.toLocaleDateString();
-    }
-
-    userName(owner_id) {
-        // debugger
-        // console.log(this.props)
-        // console.log(this.props.fetchUser(owner_id))
-        return this.props.fetchUser(owner_id).username;
     }
 
     randomVideoGrid() {
@@ -44,7 +37,12 @@ class Home extends React.Component {
     render() {
         // debugger
         const videos = this.props.videos;
+        const users = this.props.users;
+        // console.log(users)
         const videoList = videos.map(video => {
+            const owner = users.filter(user => user.id === video.owner_id)
+            // debugger
+            // console.log(owner.find(user => user.username).username)
             return (
                 <ul key={video.id} >
                     <div className="home-list-item">
@@ -66,7 +64,7 @@ class Home extends React.Component {
                         </Link>
                         <h2 className="video-title">{video.video_title}</h2>
                         <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
-                        {/* <h2>{this.props.owner.username}</h2> */}
+                        <h2 className="video-owner-name">{owner.find(user => user.username).username}</h2>
                     </div> 
                 </ul>
             )

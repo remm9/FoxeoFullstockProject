@@ -2,13 +2,14 @@ import { connect } from 'react-redux';
 import Home from './home'
 import { fetchVideos } from '../../actions/video_actions';
 import { fetchUser } from '../../actions/user_actons';
+import { fetchUsers } from '../../actions/user_actons';
 import { login } from '../../actions/session_actions';
 
 const mSTP = state => {
     const videos = Object.values(state.entities.videos)
     const users = Object.values(state.entities.users)
-    console.log(videos)
-    console.log(state)
+    // console.log(videos)
+    // console.log(users)
     // const videoId = ownProps.match.params.videoId
     // const video = entities.videos[videoId];
 
@@ -18,6 +19,7 @@ const mSTP = state => {
     return ({
         currentUser: state.entities.users[state.session.id],
         videos,
+        users,
         
         // video,
         // owner
@@ -27,7 +29,7 @@ const mSTP = state => {
 const mDTP = dispatch => ({
     fetchVideos: () => dispatch(fetchVideos()),
     fetchUser: userId => dispatch(fetchUser(userId)),
-    // fetchUsers: () => dispatch(fetchUsers()),
+    fetchUsers: () => dispatch(fetchUsers()),
     login: user => dispatch(login(user))
 });
 

@@ -24,6 +24,8 @@ export default (props) => {
                         <button className="dropbtn">{props.currentUser.username[0]}
                             <ul className="dropdown-content">
                                 <div className="user-name">{props.currentUser.username}</div>
+                                <a id="user-profile-link" href="#/user">View Profile</a>
+            
                                 <div className="a-items">
                                     <a href="#/videos" className="sidebar-videos">Videos</a>
                                     <a>Comments</a>
