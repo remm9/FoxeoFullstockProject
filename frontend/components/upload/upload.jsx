@@ -1,4 +1,5 @@
 import React from 'react';
+import { deleteVideo } from '../../util/video_api_util';
 
 class Upload extends React.Component {
 
@@ -13,7 +14,7 @@ class Upload extends React.Component {
         };
         this.update = this.update.bind(this);
         this.handleFile = this.handleFile.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
@@ -31,18 +32,22 @@ class Upload extends React.Component {
         }
     }
 
-
     handleFile(e) {
-        // debugger
-        const reader = new FileReader();
         const file = e.currentTarget.files[0];
-        reader.onloadend = () =>
-            this.setState({ video_file: file, video_url: reader.result });
-
-        if (file) {
-            reader.readAsDataURL(file);
+        const reader = new FileReader();
+        if (file.name.toLowerCase().split(".")[1] !== "mov") {
+            alert("You must select a MOV file for upload");
+            reader.onloadend = () => 
+                this.setState({ video_url: "", video_file: null });
         } else {
-            this.setState({ video_url: "", video_file: null });
+            reader.onloadend = () =>
+                this.setState({ video_file: file, video_url: reader.result });
+            // console.log(file.name.toLowerCase().split(".")[1] === "mov")
+            if (file) {
+                reader.readAsDataURL(file);
+            // } else {
+            //     this.setState({ video_url: "", video_file: null });
+            }      
         }
     }
 
@@ -54,7 +59,9 @@ class Upload extends React.Component {
         
         if (this.state.video_file) {
             // debugger
-            formData.append('video[video_url]', this.state.video_file); //????
+            formData.append('video[video_url]', this.state.video_file)
+        } else {
+            return new Error("You must select a MOV file for upload")
         }
         $.ajax({
             url: '/api/videos',
@@ -66,7 +73,8 @@ class Upload extends React.Component {
             (response) => console.log(response.message),
             (response) => {
                 console.log(response.responseJSON)
-                console.log(this.state) // this line throws correct error
+                // this.props.history.push('/videos')
+                // console.log(this.state) // this line throws correct error
             }
         ).then(() => {
             this.setState(
@@ -88,9 +96,9 @@ class Upload extends React.Component {
                     <h1 className="upload-title">Upload video</h1>
                     <input 
                         type="file" 
-                        // value={this.state.video_file}
-                        onChange={this.handleFile}
                         className="upload-file"
+                        onChange={this.handleFile}
+                        accept="video/MOV"
                     />
                     <label>
                         <input 

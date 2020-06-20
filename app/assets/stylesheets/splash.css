@@ -42,7 +42,7 @@
     justify-content: space-between;
 }
 
-.secton-content {
+.section-content-1 {
     display: flex;
     flex-direction: column;
     margin-top: 150px;
@@ -81,7 +81,7 @@
     margin-top: 100px;
 }
 
-.secton-content-2 {
+.section-content-2 {
     display: flex;
     flex-direction: column;
     margin-top: 180px;
@@ -100,7 +100,7 @@
     width: 100%;
 }
 
-.secton-content-3 {
+.section-content-3 {
    display: flex;
     flex-direction: column;
     margin-top: 230px;
@@ -115,7 +115,7 @@
     width: 100%;
 }
 
-.secton-content-4 {
+.section-content-4 {
     display: flex;
     flex-direction: column;
     margin-top: 200px;

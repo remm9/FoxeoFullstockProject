@@ -39,7 +39,7 @@ class Splash extends React.Component {
                 </div>
                 <div className="splash-section-1">
                     <img src="https://i.vimeocdn.com/custom_asset/1204" alt=""/>
-                    <div className="secton-content">
+                    <div className="section-content-1">
                         <h3 className="section-header">Simply Add.</h3>
                         <p className="text-section">
                             Any moment can be saved and relived with a simple and robust streaming.
@@ -54,7 +54,7 @@ class Splash extends React.Component {
                     </div>
                 </div>
                 <div className="splash-section-2">
-                    <div className="secton-content-2">
+                    <div className="section-content-2">
                         <h3 className="section-header">Become a new classic.</h3>
                         <p className="text-section">
                             Create ground breaking videos with professional tools at your disposal.
@@ -77,7 +77,7 @@ class Splash extends React.Component {
                     
                     <img src="https://i.vimeocdn.com/custom_asset/959.png" alt="" />
             
-                    <div className="secton-content-3">
+                    <div className="section-content-3">
                         <h3 className="section-header">Upload locally, be viewed universally.</h3>
                         <p className="text-section">
                             Employ powerful marketing tools in order to get viewers attention. Get detailed stats on how your video is performing.
@@ -90,7 +90,7 @@ class Splash extends React.Component {
                     </div>    
                 </div>
                 <div className="splash-section-4">
-                    <div className="secton-content-4">
+                    <div className="section-content-4">
                         <h3 className="section-header">It's all about joint effort.</h3>
                         <p className="text-section">
                             Manage your team on your own terms and improve your workflow with time-stamped feedback. 
