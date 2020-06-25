@@ -35,6 +35,12 @@
     cursor: pointer;
 }
 
+#demo-login:hover {
+    background-color: #b63d6e;
+    border: 1px solid #b63d6e;
+
+}
+
 .splash-section-1 {
     display: inline-flex;
     width: 100%;
