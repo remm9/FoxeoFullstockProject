@@ -1,6 +1,5 @@
 import React from 'react';
-import { fetchVideo } from '../../actions/video_actions';
-import { Link } from 'react-router-dom';
+
 
 
 class Play extends React.Component {

@@ -95,11 +95,9 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
-    /* margin-left: 732px; */
-    /* margin-left: 50px; */
     position: relative;
     display: inline-block;
-    
+    z-index: 20;
 }
 
 /* .dropdbtn:hover { transform: scale(2.1); } */
