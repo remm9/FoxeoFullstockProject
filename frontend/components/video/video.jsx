@@ -70,7 +70,7 @@ class Video extends React.Component {
                     <ul id="home-ul">
                         <div id="video-page-list">{videoList}</div>
                     </ul>
-                    <div className="home-footer">
+                    <div id="video-footer">
                         <h2 className="home-footer-1">@2020</h2>
                         <h2 className="home-footer-2">
                             Made with
