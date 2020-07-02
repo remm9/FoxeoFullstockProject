@@ -16,7 +16,7 @@ export default (props) => {
             <div className="loggedin-nav">
                 <div className="left-nav">
                     <a href="#/home" className="loggedin-header-logo"><img src={window.logoURL} alt="" /></a>
-                    <a href="#/videos" className="loggedin-manage">Manage Videos</a>
+                    <a href="#/videos" className="loggedin-manage">Your Videos</a>
                     <a href="#/home" className="loggedin-watch">Watch</a>
                 </div>
                 <div className="right-nav">
@@ -24,6 +24,8 @@ export default (props) => {
                         <button className="dropbtn">{props.currentUser.username[0]}
                             <ul className="dropdown-content">
                                 <div className="user-name">{props.currentUser.username}</div>
+                                <a id="user-profile-link" href="#/user">View Profile</a>
+            
                                 <div className="a-items">
                                     <a href="#/videos" className="sidebar-videos">Videos</a>
                                     <a>Comments</a>
@@ -50,12 +52,19 @@ export default (props) => {
                         Videos
                     </a>
                     {/* <a href="#/video" className="sidebar-videos">Videos</a> */}
-                    <a href="/user"><img className="user-profile" src={window.smileyURL} alt=""/> Profile</a>
+                    <a href="#/user" className="user-profile">
+                        <div>
+                            <svg className="smiley-svg" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" /></svg>
+                        </div>
+                        <div className="user-profile-text">
+                            Profile
+                        </div>
+                    </a>
                    
                 </ul>
                 <div className="line"></div>
                 <div className="git-link">
-                    <a className="git-logo" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitLogoURL} alt="" /></a>
+                    <a className="git-logo" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitBlackURL} alt="" /></a>
                     <a className="link-logo" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src={window.linkSmallURL} alt="" /></a>
                 </div>
 
@@ -67,7 +76,7 @@ export default (props) => {
     ) : (
                 <div className="splash-nav">
             
-                        <div className="splash-left-nav">
+                        <div className="splash-left">
                             <a className="splash-header-logo" href="#/"><img src={window.logoURL} alt=""/></a>
                             <Link className="signup-btn" to="" onClick={() => props.openModal('signup')}>Join</Link>
                             <Link className="login-btn" to=""onClick={() => props.openModal('login')}>Log In</Link>

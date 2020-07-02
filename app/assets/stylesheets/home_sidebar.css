@@ -52,7 +52,9 @@
 }
 
 .sidebar-new-video:hover {
-    background-color: rgb(0, 111, 155);;
+    background-color: rgb(0, 111, 155);
+    border: 1px solid rgb(0, 111, 155);
+
 }
 
 .line {
@@ -117,6 +119,13 @@
 }
 
 .user-profile {
-    zoom: 3.8%;
+    display: inline-flex;
+}
+
+.smiley-svg {
     margin-right: 8px;
+}
+
+.user-profile-text {
+    margin-top: 4px;
 }

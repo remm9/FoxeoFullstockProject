@@ -1,25 +1,24 @@
 import { connect } from 'react-redux';
-import Video from './video'
-import { fetchVideos } from '../../actions/video_actions';
+import User from './user'
+import { fetchVideos, deleteVideo } from '../../actions/video_actions';
 import { fetchUser } from '../../actions/user_actons';
 import { login } from '../../actions/session_actions';
 
 const mSTP = state => {
     const videos = Object.values(state.entities.videos)
-    // console.log(state)
-    // debugger
+    
     return ({
-        // users: state.entities.users,
         currentUser: state.entities.users[state.session.id],
-        videos
+        videos,
     })
 };
 
 const mDTP = dispatch => ({
     fetchVideos: () => dispatch(fetchVideos()),
     fetchUser: userId => dispatch(fetchUser(userId)),
+    deleteVideo: videoId => dispatch(deleteVideo(videoId)),
     login: user => dispatch(login(user))
 });
 
 
-export default connect(mSTP, mDTP)(Video);
+export default connect(mSTP, mDTP)(User);
