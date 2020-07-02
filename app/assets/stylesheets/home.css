@@ -19,6 +19,15 @@ div.video-page-container {
     height: 669px;
 }
 
+@media only screen and (max-width: 1150px ) {
+    #video-list {
+        flex-direction: column;
+    }
+    #video-page-list {
+        flex-direction: column;
+    }
+}
+
 #video-page-list {
     display: flex;
     flex-direction: column;

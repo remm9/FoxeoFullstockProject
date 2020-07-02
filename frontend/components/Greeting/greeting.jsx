@@ -64,7 +64,7 @@ export default (props) => {
                 </ul>
                 <div className="line"></div>
                 <div className="git-link">
-                    <a className="git-logo" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitLogoURL} alt="" /></a>
+                    <a className="git-logo" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitBlackURL} alt="" /></a>
                     <a className="link-logo" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src={window.linkSmallURL} alt="" /></a>
                 </div>
 

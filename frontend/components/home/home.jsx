@@ -56,36 +56,39 @@ class Home extends React.Component {
         const videoList = videos.map(video => {
             if (video) {
                 const owner = users.filter(user => user.id === video.owner_id)
+                if (owner) { 
+                    const videoOwner = owner.find(user => user.username)
             // const ownerVideo = users.filter(user => user.id === el.owner_id)
     
         // const videos = this.props.videos;
         // const videoList = videos.map(video => {
         //     const owner = users.filter(user => user.id === video.owner_id)
-                return (
-                    <ul key={video.id} >
-                        <div className="home-list-item">
-                            <div className="home-video-header">
-                                <h2 className="home-video-header-1">Added to</h2>
-                                <h2 className="home-video-header-2">Foxeo Staff Picks</h2>
-                            </div>
-                            <Link to={`/play/${video.id}`}>
-                                <video 
-                                    className="home-video"
-                                    src={video.video_url}
-                                    poster=""
-                                    width="320" 
-                                    height="240"
-                                    // onClick={this.eventHandeler(video.id)}
-                                    
-                                    >    
-                                </video>
-                            </Link>
-                            <h2 className="video-title">{video.video_title}</h2>
-                            <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
-                            <h2 className="video-owner-name">{owner.find(user => user.username).username}</h2>
-                        </div> 
-                    </ul>
-                )
+                    return (
+                        <ul key={video.id} >
+                            <div className="home-list-item">
+                                <div className="home-video-header">
+                                    <h2 className="home-video-header-1">Added to</h2>
+                                    <h2 className="home-video-header-2">Foxeo Staff Picks</h2>
+                                </div>
+                                <Link to={`/play/${video.id}`}>
+                                    <video 
+                                        className="home-video"
+                                        src={video.video_url}
+                                        poster=""
+                                        width="320" 
+                                        height="240"
+                                        // onClick={this.eventHandeler(video.id)}
+                                        
+                                        >    
+                                    </video>
+                                </Link>
+                                <h2 className="video-title">{video.video_title}</h2>
+                                <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
+                                <h2 className="video-owner-name">{videoOwner.username}</h2>
+                            </div> 
+                        </ul>
+                    )
+                }
             }
         })
 
