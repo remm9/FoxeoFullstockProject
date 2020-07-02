@@ -56,6 +56,11 @@ class User extends React.Component {
                 </div>
                 <h2 className="user-full-name">{this.props.currentUser.username}</h2>
                 <h2 className="user-email">{this.props.currentUser.email}</h2>
+                <div className="user-stats">
+                    <h2 className="first">Videos: {userVideos.length}</h2>
+                    <h2 className="second">Comments:</h2>
+                    <h2 className="last">Likes:</h2>
+                </div>
                 <h1 className="video-list-header">Your Videos</h1>
                 <ul className="user-ul-list">
                     {videoList}
