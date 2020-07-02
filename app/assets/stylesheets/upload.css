@@ -84,3 +84,8 @@ div.upload-component {
     color: white;
     margin-right: 5px;
 }
+
+.upload-errors {
+    text-align: center;
+    color: red;
+}

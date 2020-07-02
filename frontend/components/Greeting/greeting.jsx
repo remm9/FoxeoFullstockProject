@@ -16,7 +16,7 @@ export default (props) => {
             <div className="loggedin-nav">
                 <div className="left-nav">
                     <a href="#/home" className="loggedin-header-logo"><img src={window.logoURL} alt="" /></a>
-                    <a href="#/videos" className="loggedin-manage">Manage Videos</a>
+                    <a href="#/videos" className="loggedin-manage">Your Videos</a>
                     <a href="#/home" className="loggedin-watch">Watch</a>
                 </div>
                 <div className="right-nav">
@@ -24,6 +24,8 @@ export default (props) => {
                         <button className="dropbtn">{props.currentUser.username[0]}
                             <ul className="dropdown-content">
                                 <div className="user-name">{props.currentUser.username}</div>
+                                <a id="user-profile-link" href="#/user">View Profile</a>
+            
                                 <div className="a-items">
                                     <a href="#/videos" className="sidebar-videos">Videos</a>
                                     <a>Comments</a>
@@ -62,7 +64,7 @@ export default (props) => {
                 </ul>
                 <div className="line"></div>
                 <div className="git-link">
-                    <a className="git-logo" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitLogoURL} alt="" /></a>
+                    <a className="git-logo" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitBlackURL} alt="" /></a>
                     <a className="link-logo" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src={window.linkSmallURL} alt="" /></a>
                 </div>
 
@@ -74,7 +76,7 @@ export default (props) => {
     ) : (
                 <div className="splash-nav">
             
-                        <div className="splash-left-nav">
+                        <div className="splash-left">
                             <a className="splash-header-logo" href="#/"><img src={window.logoURL} alt=""/></a>
                             <Link className="signup-btn" to="" onClick={() => props.openModal('signup')}>Join</Link>
                             <Link className="login-btn" to=""onClick={() => props.openModal('login')}>Log In</Link>

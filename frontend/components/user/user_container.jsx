@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import User from './user'
-import { fetchVideos } from '../../actions/video_actions';
+import { fetchVideos, deleteVideo } from '../../actions/video_actions';
 import { fetchUser } from '../../actions/user_actons';
 import { login } from '../../actions/session_actions';
 
@@ -16,6 +16,7 @@ const mSTP = state => {
 const mDTP = dispatch => ({
     fetchVideos: () => dispatch(fetchVideos()),
     fetchUser: userId => dispatch(fetchUser(userId)),
+    deleteVideo: videoId => dispatch(deleteVideo(videoId)),
     login: user => dispatch(login(user))
 });
 

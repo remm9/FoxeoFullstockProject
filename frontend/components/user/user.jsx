@@ -7,11 +7,14 @@ class User extends React.Component {
 
     constructor(props) {
         super(props);
-        this.userName = this.userName.bind(this)
+        this.userName = this.userName.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchVideos();
+        // this.props.deleteVideo(videoId);
     };
 
     dateCreated(date) {
@@ -20,7 +23,12 @@ class User extends React.Component {
     }
 
     userName(id) {
-        return this.props.currentUser.username
+        return this.props.currentUser.username;
+    }
+
+    handleDelete(videoId) {
+        this.props.deleteVideo(videoId)
+            .then(window.location.reload())
     }
 
     render() {
@@ -33,17 +41,31 @@ class User extends React.Component {
                         <h2 className="user-description">{video.video_description}</h2>
                         <h2 className="user-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
                     </div>
+                    <div className="buttons">
+                        <button className="edit-video">Edit video</button>
+                        <button type="button" className="delete-video" onClick={() => this.handleDelete(video.id)}>Delete Video</button>
+                    </div>
                 </ul>
             )
         })
 
         return (
             <div className="user-container">
-                <h1 className="user-title">{this.props.currentUser.username}</h1>
-                <ul className="user-ul">
+                <div>
+                    <h1 id="user-initial">{this.props.currentUser.username[0]}</h1>
+                </div>
+                <h2 className="user-full-name">{this.props.currentUser.username}</h2>
+                <h2 className="user-email">{this.props.currentUser.email}</h2>
+                <div className="user-stats">
+                    <h2 className="first">Videos: {userVideos.length}</h2>
+                    <h2 className="second">Comments:</h2>
+                    <h2 className="last">Likes:</h2>
+                </div>
+                <h1 className="video-list-header">Your Videos</h1>
+                <ul className="user-ul-list">
                     {videoList}
                 </ul>
-                <div className="video-footer">
+                <div id="user-footer">
                     <h2 className="home-footer-1">@2020</h2>
                     <h2 className="home-footer-2">
                         Made with

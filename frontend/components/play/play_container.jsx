@@ -1,17 +1,19 @@
 import { connect } from 'react-redux';
 import Play from './play';
 import { fetchVideo } from '../../actions/video_actions';
+import { fetchUsers } from '../../actions/user_actons';
 
 const mSTP = (state, ownProps) => {
-    // console.log(state)
+    const users = Object.values(state.entities.users)
     return {
         video: state.entities.videos[ownProps.match.params.id],
-        // video: state.entities.videos[3],
+        users
     }
 };
 
 const mDTP = dispatch => ({
     fetchVideo: videoId => dispatch(fetchVideo(videoId)),
+    fetchUsers: () => dispatch(fetchUsers()),
 });
 
 

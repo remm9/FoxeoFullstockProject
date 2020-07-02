@@ -1,9 +1,136 @@
-div.user-container {
-    height: calc(100vh - 66px);
-    overflow-y: scroll;
-    margin-left: 227px;
+.user-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-around; */
+    height: calc(100vh - 66px);
+    overflow-y: scroll;
+    overflow-x: scroll;
+    margin-left: 227px;
+}
+
+#user-initial {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid rgb(226, 73, 59);
+    background-color: #ee493a;
+    margin-top: 45px;
+    color: white;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: transparent;
+}
+
+.delete-video {
+    width: 121px;
+    height: 40px;
+    margin: 5px;
+    color: white;
+    font-weight: 500;
+    background-color: #ee493a;
+    border: 1px solid #ee493a;
+    border-radius: 3.4px;
+    cursor: pointer;
+}
+
+.delete-video:hover {
+    background-color: #a23026;
+    border: 1px solid #a23026;
+}
+
+.edit-video {
+    width: 121px;
+    height: 40px;
+    margin: 5px;
+    color: white;
+    font-weight: 500;
+    background-color: #7fc400;
+    border: 1px solid #7fc400;
+    border-radius: 3.4px;
+    cursor: pointer;
+}
+
+.edit-video:hover {
+    background-color: #5e8f03;
+    border: 1px solid #5e8f03;
+}
+
+#user-footer {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-left: 60px;
+    margin-bottom: 25px;
+    margin-top: 100px;
+    bottom: 0;
+}
+
+.user-ul {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid lightgray;
+    width: 50vw;
+}
+
+.user-full-name {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.user-email {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.video-list-header {
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+.user-list-item h2 {
+    margin: 10px;
+    /* text-align: center; */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.user-title {
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.user-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.user-stats h2 {
+    margin: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.first {
+    border-right: 1px solid gray;
+    padding-right: 20px;
+}
+
+.last {
+    border-left: 1px solid gray;
+    padding-left: 20px;
 }

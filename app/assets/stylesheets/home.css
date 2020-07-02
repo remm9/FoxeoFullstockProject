@@ -1,28 +1,49 @@
 div.home-container {
-    height: calc(100vh - 66px);
+    height: calc(100vh - 150px);
     overflow-y: scroll;
     margin-left: 227px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
 }
 
-.home-ul {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
+div.video-page-container {
+    height: calc(100vh - 150px);
+    overflow-y: scroll;
+    margin-left: 227px;
+}
+
+#video-list {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-} 
+    width: 155vw;
+    margin-left: 40px;
+    height: 669px;
+}
+
+@media only screen and (max-width: 1150px ) {
+    #video-list {
+        flex-direction: column;
+    }
+    #video-page-list {
+        flex-direction: column;
+    }
+}
+
+#video-page-list {
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-left: 40px;
+    height: 669px;
+}
 
 .home-list-item {
     width: 260px;
     height: 300px;
     border: 0.5px solid lightgray;
     border-radius: 5.5px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 15px;
     box-shadow: 0 4px 8px 0 rgba(113, 113, 113, 0.2), 0 6px 20px 0 rgba(142, 142, 142, 0.1);
 }
 
@@ -36,16 +57,16 @@ div.home-container {
 } 
 
 .home-video:hover {
-    /* transition: 0.5s; */
-    /* opacity: 0.5; */
-    /* image: linear-gradient(to top, rgba(255,0,0,0), rgba(255,0,0,1)); */
-    /* color: rgb(125, 125, 125); */
     color: black;
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
     -webkit-mask-size: 100% 98%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: top;
-
+    /* box-shadow: 0 0 8px rgba(158, 158, 158, 0.6);
+    -moz-box-shadow: 0 0 8px rgba(155, 155, 155, 0.6);
+    -webkit-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
+    -o-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
+    box-shadow: lightgray; */
 }
 
 .video-title {
@@ -64,6 +85,14 @@ div.home-container {
     color: grey;
 }
 
+.video-owner-name {
+    color: #17272E;
+    font-size: 14px;
+    margin-left: 15px;
+    font-weight: 900;
+    margin-top: 27px;
+}
+
 .video-user-name {
     color: #17272E;
     font-size: 14px;
@@ -74,10 +103,22 @@ div.home-container {
 }
 
 .home-title {
+    overflow-y: scroll;
     align-self: start;
     font-size: 27px;
-    margin-left: 60px;
+    margin-left: 282px;
     margin-top: 33px;
+    margin-bottom: 17px;
+    font-weight: 500;
+}
+
+.video-page-title {
+    overflow-y: scroll;
+    align-self: start;
+    font-size: 27px;
+    margin-left: 282px;
+    margin-top: 33px;
+    margin-bottom: 17px;
     font-weight: 500;
 }
 
