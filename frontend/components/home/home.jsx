@@ -33,41 +33,60 @@ class Home extends React.Component {
         return result.slice(6);
     }
 
+    randomHomeList() {
+        const videos = this.props.videos;
+        const keyArray = Object.keys(videos);
+        const randomVideoList = [];
+        const homeVideoList = [];
+        
+        for(let i = 0; i < videos.length; i++) {
+            const random = keyArray[Math.floor(Math.random() * keyArray.length)];
+            if (!homeVideoList.includes(random)) homeVideoList.push(random)
+        }
+        homeVideoList.forEach(key => {
+            if (!randomVideoList.includes(videos[key])) randomVideoList.push(videos[key]);
+        })
+        return randomVideoList;
+    }
+
     
     render() {
-        // debugger
-        const videos = this.props.videos;
+        const videos = this.randomHomeList();
         const users = this.props.users;
-        // console.log(users)
         const videoList = videos.map(video => {
-            const owner = users.filter(user => user.id === video.owner_id)
-            // debugger
-            // console.log(owner.find(user => user.username).username)
-            return (
-                <ul key={video.id} >
-                    <div className="home-list-item">
-                        <div className="home-video-header">
-                            <h2 className="home-video-header-1">Added to</h2>
-                            <h2 className="home-video-header-2">Foxeo Staff Picks</h2>
-                        </div>
-                        <Link to={`/play/${video.id}`}>
-                            <video 
-                                className="home-video"
-                                src={video.video_url}
-                                poster=""
-                                width="320" 
-                                height="240"
-                                // onClick={this.eventHandeler(video.id)}
-                                
-                                >    
-                            </video>
-                        </Link>
-                        <h2 className="video-title">{video.video_title}</h2>
-                        <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
-                        <h2 className="video-owner-name">{owner.find(user => user.username).username}</h2>
-                    </div> 
-                </ul>
-            )
+            if (video) {
+                const owner = users.filter(user => user.id === video.owner_id)
+            // const ownerVideo = users.filter(user => user.id === el.owner_id)
+    
+        // const videos = this.props.videos;
+        // const videoList = videos.map(video => {
+        //     const owner = users.filter(user => user.id === video.owner_id)
+                return (
+                    <ul key={video.id} >
+                        <div className="home-list-item">
+                            <div className="home-video-header">
+                                <h2 className="home-video-header-1">Added to</h2>
+                                <h2 className="home-video-header-2">Foxeo Staff Picks</h2>
+                            </div>
+                            <Link to={`/play/${video.id}`}>
+                                <video 
+                                    className="home-video"
+                                    src={video.video_url}
+                                    poster=""
+                                    width="320" 
+                                    height="240"
+                                    // onClick={this.eventHandeler(video.id)}
+                                    
+                                    >    
+                                </video>
+                            </Link>
+                            <h2 className="video-title">{video.video_title}</h2>
+                            <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
+                            <h2 className="video-owner-name">{owner.find(user => user.username).username}</h2>
+                        </div> 
+                    </ul>
+                )
+            }
         })
 
         return (
