@@ -16,7 +16,7 @@ export default (props) => {
             <div className="loggedin-nav">
                 <div className="left-nav">
                     <a href="#/home" className="loggedin-header-logo"><img src={window.logoURL} alt="" /></a>
-                    <a href="#/videos" className="loggedin-manage">Manage Videos</a>
+                    <a href="#/videos" className="loggedin-manage">Your Videos</a>
                     <a href="#/home" className="loggedin-watch">Watch</a>
                 </div>
                 <div className="right-nav">
@@ -76,7 +76,7 @@ export default (props) => {
     ) : (
                 <div className="splash-nav">
             
-                        <div className="splash-left-nav">
+                        <div className="splash-left">
                             <a className="splash-header-logo" href="#/"><img src={window.logoURL} alt=""/></a>
                             <Link className="signup-btn" to="" onClick={() => props.openModal('signup')}>Join</Link>
                             <Link className="login-btn" to=""onClick={() => props.openModal('login')}>Log In</Link>

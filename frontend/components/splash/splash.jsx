@@ -113,7 +113,7 @@ class Splash extends React.Component {
                     <div className="bottom">
                        <a href="#/" className="footer-header-logo"><img src="https://fontmeme.com/permalink/200609/8c7313b0d8cd1284ac5a4372b4862e73.png" alt="" /></a>
                         <div className="links">
-                            <a className="tag" href="https://github.com/remm9/FoxeoFullstockProject"><img src="https://www.seekpng.com/png/full/192-1923313_2-februari-github-logo-png-white.png" alt=""/></a>
+                            <a className="tag" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitLogoURL} alt=""/></a>
                             <a className="tag-2" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src={window.linkSplashURL} alt=""/></a>
                         </div>
 
