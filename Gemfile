@@ -29,6 +29,7 @@ gem "websocket-extensions", ">= 0.1.5"
 
 gem "aws-sdk-s3"
 
+gem "rack", ">= 2.2.3"
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
