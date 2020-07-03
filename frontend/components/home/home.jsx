@@ -54,15 +54,16 @@ class Home extends React.Component {
         const videos = this.randomHomeList();
         const users = this.props.users;
         const videoList = videos.map(video => {
-            if (video) {
-                const owner = users.filter(user => user.id === video.owner_id)
-                if (owner) { 
-                    const videoOwner = owner.find(user => user.username)
             // const ownerVideo = users.filter(user => user.id === el.owner_id)
     
         // const videos = this.props.videos;
         // const videoList = videos.map(video => {
         //     const owner = users.filter(user => user.id === video.owner_id)
+            if (video) {
+                const owner = users.filter(user => user.id === video.owner_id)
+                if (owner) { 
+                    // console.log(owner.find(user => user.username).username)
+                    const videoOwner = owner.find(user => user.username)
                     return (
                         <ul key={video.id} >
                             <div className="home-list-item">
@@ -77,8 +78,6 @@ class Home extends React.Component {
                                         poster=""
                                         width="320" 
                                         height="240"
-                                        // onClick={this.eventHandeler(video.id)}
-                                        
                                         >    
                                     </video>
                                 </Link>
@@ -88,6 +87,8 @@ class Home extends React.Component {
                             </div> 
                         </ul>
                     )
+                } else {
+                    return false;
                 }
             }
         })

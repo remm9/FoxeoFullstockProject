@@ -16,8 +16,6 @@ class Upload extends React.Component {
         this.update = this.update.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.mapErrors = this.mapErrors.bind(this);
-        // const uploadErrors;
     }
 
     update(field) {
@@ -37,11 +35,8 @@ class Upload extends React.Component {
         } else {
             reader.onloadend = () =>
                 this.setState({ video_file: file, video_url: reader.result });
-            // console.log(file.name.toLowerCase().split(".")[1] === "mov")
             if (file) {
                 reader.readAsDataURL(file);
-            // } else {
-            //     this.setState({ video_url: "", video_file: null });
             }      
         }
     }
@@ -74,7 +69,7 @@ class Upload extends React.Component {
             }
         ).then(() => {
             this.setState(
-                { video_title: "", video_description: "", video_url: "" }
+                { video_title: "", video_description: "", video_url: "", upload_errors: null }
             )
                 document.querySelector('.upload-file').value="";
         });
