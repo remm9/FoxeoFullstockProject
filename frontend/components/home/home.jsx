@@ -39,13 +39,15 @@ class Home extends React.Component {
         const randomVideoList = [];
         const homeVideoList = [];
         
-        for(let i = 0; i < videos.length; i++) {
+        for(let i = 0; i < videos.length * 2; i++) {
             const random = keyArray[Math.floor(Math.random() * keyArray.length)];
-            if (!homeVideoList.includes(random)) homeVideoList.push(random)
-        }
-        homeVideoList.forEach(key => {
+            if (!homeVideoList.includes(random)) homeVideoList.push(random);
+        };
+
+        homeVideoList.slice(0, 12).forEach(key => {
             if (!randomVideoList.includes(videos[key])) randomVideoList.push(videos[key]);
-        })
+        });
+
         return randomVideoList;
     }
 
@@ -54,15 +56,9 @@ class Home extends React.Component {
         const videos = this.randomHomeList();
         const users = this.props.users;
         const videoList = videos.map(video => {
-            // const ownerVideo = users.filter(user => user.id === el.owner_id)
-    
-        // const videos = this.props.videos;
-        // const videoList = videos.map(video => {
-        //     const owner = users.filter(user => user.id === video.owner_id)
             if (video) {
                 const owner = users.filter(user => user.id === video.owner_id)
                 if (owner) { 
-                    // console.log(owner.find(user => user.username).username)
                     const videoOwner = owner.find(user => user.username)
                     return (
                         <ul key={video.id} >
@@ -83,12 +79,10 @@ class Home extends React.Component {
                                 </Link>
                                 <h2 className="video-title">{video.video_title}</h2>
                                 <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
-                                <h2 className="video-owner-name">{videoOwner.username}</h2>
+                                <h2 className="video-owner-name">{videoOwner ? videoOwner.username : ""}</h2>
                             </div> 
                         </ul>
                     )
-                } else {
-                    return false;
                 }
             }
         })
