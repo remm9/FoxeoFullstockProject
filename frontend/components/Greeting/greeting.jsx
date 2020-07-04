@@ -67,6 +67,8 @@ export default (props) => {
                     <a className="git-logo" href="https://github.com/remm9/FoxeoFullstockProject"><img src={window.gitBlackURL} alt="" /></a>
                     <a className="link-logo" href="https://linkedin.com/in/roman-gontcharov-7705856a/"><img src={window.linkSmallURL} alt="" /></a>
                 </div>
+                <div className="line"></div>
+                <a className="profile-link" href="https://remm9.github.io/">Portfolio</a>
 
                 <div className="ouline-2"></div>
                 {/* <button className="loggedin-logout" onClick={props.logout}>Log Out</button> */}

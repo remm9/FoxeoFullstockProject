@@ -39,13 +39,15 @@ class Home extends React.Component {
         const randomVideoList = [];
         const homeVideoList = [];
         
-        for(let i = 0; i < videos.length; i++) {
+        for(let i = 0; i < videos.length * 2; i++) {
             const random = keyArray[Math.floor(Math.random() * keyArray.length)];
-            if (!homeVideoList.includes(random)) homeVideoList.push(random)
-        }
-        homeVideoList.forEach(key => {
+            if (!homeVideoList.includes(random)) homeVideoList.push(random);
+        };
+
+        homeVideoList.slice(0, 12).forEach(key => {
             if (!randomVideoList.includes(videos[key])) randomVideoList.push(videos[key]);
-        })
+        });
+
         return randomVideoList;
     }
 
@@ -58,11 +60,6 @@ class Home extends React.Component {
                 const owner = users.filter(user => user.id === video.owner_id)
                 if (owner) { 
                     const videoOwner = owner.find(user => user.username)
-            // const ownerVideo = users.filter(user => user.id === el.owner_id)
-    
-        // const videos = this.props.videos;
-        // const videoList = videos.map(video => {
-        //     const owner = users.filter(user => user.id === video.owner_id)
                     return (
                         <ul key={video.id} >
                             <div className="home-list-item">
@@ -77,14 +74,12 @@ class Home extends React.Component {
                                         poster=""
                                         width="320" 
                                         height="240"
-                                        // onClick={this.eventHandeler(video.id)}
-                                        
                                         >    
                                     </video>
                                 </Link>
                                 <h2 className="video-title">{video.video_title}</h2>
                                 <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
-                                <h2 className="video-owner-name">{videoOwner.username}</h2>
+                                <h2 className="video-owner-name">{videoOwner ? videoOwner.username : ""}</h2>
                             </div> 
                         </ul>
                     )
