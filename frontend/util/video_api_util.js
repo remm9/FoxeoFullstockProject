@@ -13,7 +13,7 @@ export const fetchVideo = videoId =>  {
 export const createVideo = video => {
     return $.ajax({
         method: 'post',
-        url: `api.videos/`, // do i need to change api to `api.videos/${video.id}`???
+        url: `api/videos/`, 
         data: { video }
     })
 }
@@ -21,7 +21,7 @@ export const createVideo = video => {
 export const updateVideo = video => {
     return $.ajax({
         method: 'patch',
-        url: `api.videos/${video.id}`,
+        url: `api/videos/${video.id}`,
         data: { video }
     })
 }

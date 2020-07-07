@@ -42,7 +42,7 @@ class User extends React.Component {
                         <h2 className="user-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
                     </div>
                     <div className="buttons">
-                        <button className="edit-video">Edit video</button>
+                        <Link className="edit-video" to={`/edit/${video.id}`}>Edit</Link>
                         <button type="button" className="delete-video" onClick={() => this.handleDelete(video.id)}>Delete Video</button>
                     </div>
                 </ul>

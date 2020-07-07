@@ -8,9 +8,11 @@ import Modal from './modal/modal';
 import Splash from './splash/splash_container';
 import Home from './home/home_container';
 import Video from './video/video_container';
-import Upload from './upload/upload_container' 
-import Play from './play/play_container'
-import User from './user/user_container'
+import Edit from './edit/edit_container';
+import Upload from './upload/upload_container';
+import Play from './play/play_container';
+import User from './user/user_container';
+import Search from './search/search_container';
 
 
 const App = () => (
@@ -24,6 +26,8 @@ const App = () => (
         <Route path="/play/:id" component={Play} />
         <ProtectedRoute path="/user" component={User}/> 
         <ProtectedRoute path="/upload" component={Upload} />
+        <ProtectedRoute path="/edit/:id" component={Edit} />
+        <ProtectedRoute path="/search" component={Search} />
         <AuthRoute exact path='/' component={Splash} />
 
         

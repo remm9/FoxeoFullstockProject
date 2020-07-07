@@ -188,3 +188,36 @@
     border-bottom: 1px solid lightgray;
 }
 
+.search-form {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-input {
+    width: 250px;
+    outline-style: none;
+    height: 29px;
+    margin-right: 10px;
+    border: 1px solid lightgray;
+    border-radius: 3.5px;
+    text-indent: 15px;
+    color: grey;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 830px ) {
+    .search-input {
+        width: 150px;
+     }
+}
+
+#search-button {  
+    cursor: pointer;
+}
+
+#search-icon {
+    height: 14px;
+    margin-left: -55px;
+}
+

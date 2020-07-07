@@ -20,6 +20,16 @@ export default (props) => {
                     <a href="#/home" className="loggedin-watch">Watch</a>
                 </div>
                 <div className="right-nav">
+                    <form className="search-form">
+                        <input 
+                            className="search-input" 
+                            type="text"
+                            placeholder="Search videos"/>
+                        <button id="search-button">
+                            <img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt=""/>
+                            <a href="#/search"></a>
+                        </button>
+                    </form>
                     <div  className="dropdown">
                         <button className="dropbtn">{props.currentUser.username[0]}
                             <ul className="dropdown-content">

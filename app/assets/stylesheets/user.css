@@ -50,6 +50,11 @@
     border: 1px solid #7fc400;
     border-radius: 3.4px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .edit-video:hover {
