@@ -10,7 +10,6 @@ class Edit extends React.Component {
             video_description: "",
             edit_errors: ["Title cannot be empty", "Description cannot be empty"],
         }
-        // console.log(this.state)
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -29,7 +28,6 @@ class Edit extends React.Component {
 
     handleSubmit() {
         const { video_id, ...rest } = this.state
-        // this.state.edit_errors = ["Title cannot be empty", "Description cannot be empty"],
         this.props.updateVideo({ id: video_id, ...rest })
             .then(() => {
                 this.setState(
@@ -37,17 +35,7 @@ class Edit extends React.Component {
                 )  
             }) 
     }
-            
-            // .then(() => {
-                //     this.setState(
-                    //         { video_title: "", video_description: "" }
-                    //     )  
-                    // })       
-                    // .then((response) => {
-                        //     console.log(response.errors)
-                        // if (!response.errors) this.props.history.push("/#/user")
-                        //})
-                        
+
 
     handleTitleError() {
         if (this.state.video_title.length === 0) {

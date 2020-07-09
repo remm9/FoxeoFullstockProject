@@ -28,6 +28,9 @@
     <script type="text/javascript">
       window.linkSplashURL = "<%= image_url('linkedin-logo.png') %>";
     </script>
+    <script type="text/javascript">
+      window.screenShot = "<%= image_url('foxeo.png') %>";
+    </script>
     <% if current_user %>
       <script>
         window.currentUser = {
@@ -37,10 +40,10 @@
         };
       </script>
     <% end %>
-    <meta property="og:title" content="Bubble Pop" />
-    <meta property="og:description" content="Bubble Pop is a Puzzle Bobble or Bust-A-Move clone written in JavaScript and HTML" />
-    <meta property="og:url" content="https://lordrickyz.github.io/bubble-pop/" />
-    <meta property="og:image" content="https://lordrickyz.github.io/bubble-pop/dist/preview/bubbleLink.gif" />
+    <meta property="og:title" content="Foxeo" />
+    <meta property="og:description" content="Foxeo is a Vimeo's clone and is intended for storing and viewing videos." />
+    <meta property="og:url" content="https://foxeo.herokuapp.com/#/" />
+    <meta property="og:image" content="app/assets/images/foxeo.png" />
   </head>
 
   <body>
