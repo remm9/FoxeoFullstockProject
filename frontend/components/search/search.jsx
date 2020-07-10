@@ -1,16 +1,12 @@
 import React from 'react';
-// import { fetchVideos } from '../../actions/video_actions';
-// import { fetchUser } from '../../util/user_api_util';
-// import { fetchUsers } from '../../util/user_api_util';
-import Play from '../play/play_container'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class Search extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.state
     }
+
 
     componentDidMount() {
         this.props.fetchVideos();
@@ -23,9 +19,28 @@ class Search extends React.Component {
     }
 
     render() {
+        const keyWords = this.props.searchArray.split("%20");
         const videos = this.props.videos;
         const users = this.props.users;
-        const searchList = videos.map(video => {
+        const searchList = []
+        videos.forEach(video => {
+            keyWords.forEach(key => {
+                if (video.video_title.toLowerCase().includes(key) && !searchList.includes(video.video_title)) {
+                    searchList.push(video.video_title);
+                }
+            })
+        });
+
+        const searchResult = []
+        searchList.map(title => {
+            videos.forEach(video => {
+                if (video.video_title === title) {
+                    searchResult.push(video);
+                }
+            })
+        });
+
+        const searchListing = searchResult.map(video => {
             if (video) {
                 const owner = users.filter(user => user.id === video.owner_id)
                 if (owner) {
@@ -62,7 +77,7 @@ class Search extends React.Component {
                 <h1 className="home-title">search results for:</h1>
                 <div className="home-container">
                     <ul id="home-ul">
-                        <div id="video-list">{searchList}</div>
+                        <div id="video-list">{searchListing}</div>
                     </ul>
                     <div className="home-footer">
                         <h2 className="home-footer-1">@2020</h2>

@@ -5,13 +5,15 @@ import { fetchUser } from '../../actions/user_actons';
 import { fetchUsers } from '../../actions/user_actons';
 // import { login } from '../../actions/session_actions';
 
-const mSTP = state => {
-    const videos = Object.values(state.entities.videos)
-    const users = Object.values(state.entities.users)
+const mSTP = ( state, ownProps ) => {
+
+    const videos = Object.values(state.entities.videos);
+    const users = Object.values(state.entities.users);
     return ({
         currentUser: state.entities.users[state.session.id],
         videos,
         users,
+        searchArray: ownProps.location.search.split("=")[1],
     })
 };
 

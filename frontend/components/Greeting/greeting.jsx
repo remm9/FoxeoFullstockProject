@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
-
-
+import SearchBar from '../search/search_bar'
 
 export default (props) => {
-
-
-
+    
     const welcomePage = props.currentUser ? ( //create nav and side bar for currnt user 
         <div className="loggedin-page">
 
@@ -20,16 +17,8 @@ export default (props) => {
                     <a href="#/home" className="loggedin-watch">Watch</a>
                 </div>
                 <div className="right-nav">
-                    <form className="search-form">
-                        <input 
-                            className="search-input" 
-                            type="text"
-                            placeholder="Search videos"/>
-                        <button id="search-button">
-                            <img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt=""/>
-                            <a href="#/search"></a>
-                        </button>
-                    </form>
+                    <SearchBar/>
+                    
                     <div  className="dropdown">
                         <button className="dropbtn">{props.currentUser.username[0]}
                             <ul className="dropdown-content">
