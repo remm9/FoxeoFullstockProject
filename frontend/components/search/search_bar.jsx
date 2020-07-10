@@ -18,16 +18,16 @@ class SearchBar extends React.Component {
 
     handleSearch(e) {   
         e.preventDefault();
-        // this.setState( {
-        //     searchItem: "",
-        // })
+        this.setState( {
+            searchItem: "",
+        })
     };
 
     render() {
 
         return (
             <div className="search-form">
-                <form onSubmit={this.handleSearch} >
+                <form onClick={this.handleSearch} >
                     <input type="text"
                         className="search-input"
                         placeholder="Search videos"
