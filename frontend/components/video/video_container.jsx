@@ -6,8 +6,7 @@ import { login } from '../../actions/session_actions';
 
 const mSTP = state => {
     const videos = Object.values(state.entities.videos)
-    // console.log(state)
-    // debugger
+    
     return ({
         // users: state.entities.users,
         currentUser: state.entities.users[state.session.id],

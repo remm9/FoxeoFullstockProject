@@ -27,7 +27,6 @@ class Login extends React.Component {
     }
 
     mapErrors() {
-        // debugger
         if (this.props.errors.length) {
             return this.props.errors.map(error => {
                 return <p>{error}</p>
@@ -35,23 +34,12 @@ class Login extends React.Component {
         }
     }
 
-    // viewDemoClick(event) {
-    //     // debugger
-    //     event.preventDefault();
-    //     const demoUser = {
-    //         username: 'test',
-    //         password: 'hunter2'
-    //     };
-    //     this.props.processForm(demoUser);
-    // }
 
     render() {
         return (
             <div className="login-form">
-                {/* <div className="modal-child"> */}
                 <div>
                     <h2 className="login-header">Log in to Foxeo</h2>
-                    {/* <p className="close-x">x</p> */}
                 </div>
                 <form>
                     <input className="login-email"

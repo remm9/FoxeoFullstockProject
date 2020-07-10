@@ -12,10 +12,8 @@ class Splash extends React.Component {
     }
 
     viewDemoClick(event) {
-        // debugger
         event.preventDefault();
         const demoUser = {
-            // username: 'Demo User',
             email: 'test@gmail.com',
             password: 'hunter2'
         };

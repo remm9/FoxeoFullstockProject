@@ -48,7 +48,6 @@ class Upload extends React.Component {
         formData.append('video[video_title]', this.state.video_title);
         formData.append('video[video_description]', this.state.video_description);
         if (this.state.video_file) {
-            // debugger
             formData.append('video[video_url]', this.state.video_file)
         } else {
             return new Error("You must select a MOV file for upload")

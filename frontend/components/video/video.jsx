@@ -23,17 +23,11 @@ class Video extends React.Component {
     }
 
     userName(id) {
-        // debugger
-        // console.log(this.props)
-        // console.log(this.props.fetchUser(4))
-        // return this.props.fetchUser(id).username;
         return this.props.currentUser.userName
     }
 
     render() {
         const userVideos = this.props.videos.filter(video => video.owner_id == this.props.currentUser.id)
-        // console.log(this.props)
-        // debugger
         const videoList = userVideos.map(video => {
             return (
                 <ul key={video.id} >
@@ -49,14 +43,12 @@ class Video extends React.Component {
                                 poster=""
                                 width="320"
                                 height="240"
-                            // onClick={this.eventHandeler(video.id)}
 
                             >
                             </video>
                         </Link>
                         <h2 className="video-title">{video.video_title}</h2>
                         <h2 className="video-upload-date">uploaded {this.dateCreated(video.created_at)}</h2>
-                        {/* <h2>{this.userName(video.owner_id)}</h2> */}
                         <h2 className="video-user-name">{this.props.currentUser.username}</h2>
                     </div>
                 </ul>

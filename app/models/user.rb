@@ -21,18 +21,15 @@ class User < ApplicationRecord
     has_one_attached :movie
 
     has_many :videos
-        #foregn_key: :owner_id, #not sure if it's needed
-        #class_name: 'Video'
+        
 
     def self.find_by_credentials(email, password)
-        # debugger
         user = User.find_by(email: email)
         return nil unless user && user.is_password?(password)
         user
     end
 
     def is_password?(password)
-        # debugger
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end
 
