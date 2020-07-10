@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Foxeo</title>
+    <meta name="author" content="Roman Gontcharov" />
     <%= favicon_link_tag asset_path('favicon.ico') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -43,9 +44,11 @@
     <meta property="og:title" content="Foxeo" />
     <meta property="og:description" content="Foxeo is a Vimeo's clone and is intended for storing and viewing videos." />
     <meta property="og:url" content="https://foxeo.herokuapp.com/#/" />
-    <meta property="og:image" content="https://github.com/remm9/FoxeoFullstockProject/blob/master/app/assets/images/foxeo.png" />
+    <meta property="og:image" content="<%= image_url('foxeo.png') %>" />
+    
     <meta property="og:image:width" content="300" />
     <meta property="og:image:height" content="300" />
+    
   </head>
 
   <body>
