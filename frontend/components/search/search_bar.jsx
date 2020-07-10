@@ -27,17 +27,17 @@ class SearchBar extends React.Component {
 
         return (
             <div className="search-form">
-                <form onClick={this.handleSearch} >
+                <form >
                     <input type="text"
                         className="search-input"
                         placeholder="Search videos"
                         value={this.state.searchItem}
                         onChange={this.update()}
                     />
-                    <button id="search-button">
-                        <Link to={`/search?search=${this.state.searchItem}`}><img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" /></Link>
-                    </button>
                 </form>
+                <button id="search-button" onClick={this.handleSearch}>
+                    <Link to={`/search?search=${this.state.searchItem}`}><img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" /></Link>
+                </button>
             </div>
         );
     }

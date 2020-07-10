@@ -35,7 +35,7 @@ class Search extends React.Component {
         const searchResult = []
         searchList.map(title => {
             videos.forEach(video => {
-                if (video.video_title === title) {
+                if (video.video_title === title && searchResult.length <= 11) {
                     searchResult.push(video);
                 }
             })
