@@ -18,6 +18,7 @@ class Search extends React.Component {
         return dateCreated.toLocaleDateString();
     }
 
+
     render() {
         const keyWords = this.props.searchArray.split("%20");
         const videos = this.props.videos;
@@ -39,6 +40,14 @@ class Search extends React.Component {
                 }
             })
         });
+
+        const searchNumber = function() {
+            if (searchResult.length === 1) {
+                return "1 result for: "
+            } else {
+                return `${searchResult.length} results for:`
+            }
+        }
 
         const searchListing = searchResult.map(video => {
             if (video) {
@@ -74,7 +83,7 @@ class Search extends React.Component {
 
         return (
             <div>
-                <h1 className="home-title">search results for:</h1>
+                <h1 className="search-title"> {searchNumber()} <div className="search-words"> {keyWords.join(" ")}</div></h1>
                 <div className="home-container">
                     <ul id="home-ul">
                         <div id="video-list">{searchListing}</div>

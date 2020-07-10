@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchItem: ""
+            searchItem: "",
         };
         this.update = this.update.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
@@ -18,13 +18,16 @@ class SearchBar extends React.Component {
 
     handleSearch(e) {   
         e.preventDefault();
-    }
+        // this.setState( {
+        //     searchItem: "",
+        // })
+    };
 
     render() {
 
         return (
             <div className="search-form">
-                <form onSubmit={this.handleSearch}>
+                <form onSubmit={this.handleSearch} >
                     <input type="text"
                         className="search-input"
                         placeholder="Search videos"
