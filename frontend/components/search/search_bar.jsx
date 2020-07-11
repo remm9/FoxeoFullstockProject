@@ -16,8 +16,25 @@ class SearchBar extends React.Component {
         return e => this.setState({ searchItem: e.currentTarget.value });
     }
 
+    searchKeyPress(e) {
+        e = e || window.event;
+        if (e.keyCode == 13) {
+            document.getElementById('search-button').click();
+            return false;
+        }
+        return true;
+    }
+
     handleSearch(e) {   
         e.preventDefault();
+        // document.getElementById("search-input")
+        //     .addEventListener("keydown", function (event) {
+        //     console.log(event.keyCode)
+        //     // event.persist();
+        //     if (event.keyCode === 13) {
+        //         document.getElementById("search-button").click();
+        //     }
+        // });
         this.setState( {
             searchItem: "",
         })
@@ -26,18 +43,19 @@ class SearchBar extends React.Component {
     render() {
 
         return (
-            <div className="search-form">
+            <div id="search-form">
                 <form >
-                    <input type="text"
-                        className="search-input"
+                    <input onClick={this.searchKeyPress}
+                        type="text"
+                        id="search-input"
                         placeholder="Search videos"
                         value={this.state.searchItem}
                         onChange={this.update()}
                     />
                 </form>
-                <button id="search-button" onClick={this.handleSearch}>
-                    <Link to={`/search?search=${this.state.searchItem}`}><img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" /></Link>
-                </button>
+                    <button type="submit" id="search-button" onClick={this.handleSearch}>
+                        <Link to={`/search?search=${this.state.searchItem}`}><img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" /></Link>
+                    </button>
             </div>
         );
     }

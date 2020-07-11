@@ -188,13 +188,13 @@
     border-bottom: 1px solid lightgray;
 }
 
-.search-form {
+#search-form {
     align-self: center;
     display: flex;
     flex-direction: row;
 }
 
-.search-input {
+#search-input {
     width: 250px;
     outline-style: none;
     height: 29px;
@@ -207,7 +207,7 @@
 }
 
 @media only screen and (max-width: 830px ) {
-    .search-input {
+    #search-input {
         width: 150px;
      }
 }
