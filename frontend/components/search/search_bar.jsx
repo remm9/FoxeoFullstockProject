@@ -25,16 +25,14 @@ class SearchBar extends React.Component {
         return true;
     }
 
-    handleSearch(e) {   
-        e.preventDefault();
-        // document.getElementById("search-input")
-        //     .addEventListener("keydown", function (event) {
-        //     console.log(event.keyCode)
-        //     // event.persist();
-        //     if (event.keyCode === 13) {
-        //         document.getElementById("search-button").click();
-        //     }
-        // });
+    handleSearch() {   
+        document.getElementById("search-input")
+            .addEventListener("keydown", function (event) {
+            // event.persist();
+            if (event.keyCode === 13) {
+                document.getElementById("search-button").click();
+            }
+        });
         this.setState( {
             searchItem: "",
         })
@@ -45,17 +43,17 @@ class SearchBar extends React.Component {
         return (
             <div id="search-form">
                 <form >
-                    <input onClick={this.searchKeyPress}
+                    <input //onKeyDown={this.searchKeyPress}
                         type="text"
                         id="search-input"
                         placeholder="Search videos"
                         value={this.state.searchItem}
                         onChange={this.update()}
                     />
-                </form>
                     <button type="submit" id="search-button" onClick={this.handleSearch}>
                         <Link to={`/search?search=${this.state.searchItem}`}><img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" /></Link>
                     </button>
+                </form>
             </div>
         );
     }

@@ -21,6 +21,10 @@ class User < ApplicationRecord
     has_one_attached :movie
 
     has_many :videos
+
+    has_many :comments,
+        through: :videos,
+        source: :comment
         
 
     def self.find_by_credentials(email, password)

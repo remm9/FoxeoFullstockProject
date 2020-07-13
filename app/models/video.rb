@@ -16,7 +16,10 @@ class Video < ApplicationRecord
     has_one_attached :video_url
     has_one_attached :preview
 
+    has_many :comments
+
     belongs_to :owner,
         foreign_key: :owner_id,
         class_name: "User"
+    
 end
