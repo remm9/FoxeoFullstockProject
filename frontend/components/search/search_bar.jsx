@@ -25,7 +25,8 @@ class SearchBar extends React.Component {
         return true;
     }
 
-    handleSearch() {   
+    handleSearch(e) {   
+        e.preventDefault();
         document.getElementById("search-input")
             .addEventListener("keydown", function (event) {
             // event.persist();
@@ -38,13 +39,18 @@ class SearchBar extends React.Component {
         })
     };
 
+    handleSubmit(e) {
+        e.preventDefault();
+        
+    };
+
     render() {
 
         return (
             <div id="search-form">
-                <form >
+                <form onSubmit={this.handleSubmit}>
                     <input //onKeyDown={this.searchKeyPress}
-                        type="text"
+                        type="search"
                         id="search-input"
                         placeholder="Search videos"
                         value={this.state.searchItem}
