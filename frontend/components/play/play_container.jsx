@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Play from './play';
 import { fetchVideo } from '../../actions/video_actions';
 import { fetchUsers } from '../../actions/user_actons';
-import { fetchComments } from '../../util/comment_api_util';
+import { fetchComments } from '../../actions/comment_actions';
 
 const mSTP = (state, ownProps) => {
     const users = Object.values(state.entities.users)

@@ -9,7 +9,6 @@ const receiveAllComments = comments => ({
     comments
 });
 
-
 const receiveComment = comment => ({
     type: RECEIVE_COMMENT,
     comment
@@ -23,6 +22,9 @@ const removeComment = commentId => ({
 export const fetchComments = () => dispatch => {
     return CommentAPIUtil.fetchComments()
         .then(comments => dispatch(receiveAllComments(comments)))
+        // .then(error => {
+        //     return dispatch(receiveVideoErrors(error.responseJSON));
+        // });        
 }
 
 export const fetchComment = commentId => dispatch => {

@@ -3,26 +3,20 @@ import React from 'react';
 class Comment extends React.Component {
 
     constructor(props) {
-        
-        super(props)
+        super(props)    
         this.state = {
             body: "",
-            video_id: this.props.video.id,
+            video_id: this.props.id,
             comment_errors: null,
         }
         this.update = this.update.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-
+    
     update() {
         return e => this.setState({ body: e.target.value })
     }
-
-    componentDidMount() {
-        // this.props.fetchVideo(this.props.match.params.id)
-        // this.props.fetchComments();
-    }
-
+    
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -38,16 +32,16 @@ class Comment extends React.Component {
             (response) => {
                 this.setState(
                     { comment_errors: response.responseJSON },
-                )
-            }
-        ).then(() => {
-            this.setState(
-                { body: "", video_id: "", comment_errors: null }
-            )
-        });
-    }
-
-
+                    )
+                }
+                ).then(() => {
+                    this.setState(
+                        { body: "", video_id: "", comment_errors: null }
+                        )
+                    });
+                }
+                
+                
     render() {
         return ( 
             <div>
