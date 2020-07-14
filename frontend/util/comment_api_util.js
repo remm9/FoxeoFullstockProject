@@ -6,14 +6,14 @@ export const fetchComments = () => {
 
 export const fetchComment = commentId => {
     return $.ajax({
-        url: `api/comment/${commentId}`
+        url: `api/comments/${commentId}`
     })
 }
 
 export const createComment = comment => {
     return $.ajax({
         method: 'post',
-        url: `api/comment/`,
+        url: `api/comments/`,
         data: { comment }
     })
 }

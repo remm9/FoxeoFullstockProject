@@ -13,6 +13,7 @@ import Upload from './upload/upload_container';
 import Play from './play/play_container';
 import User from './user/user_container';
 import Search from './search/search_container';
+import Comment from './comment/comment_container'
 
 
 const App = () => (
@@ -28,6 +29,7 @@ const App = () => (
         <ProtectedRoute path="/upload" component={Upload} />
         <ProtectedRoute path="/edit/:id" component={Edit} />
         <ProtectedRoute path="/search" component={Search} />
+        <Route path="/comment" component={Comment}/>
         <AuthRoute exact path='/' component={Splash} />
 
         

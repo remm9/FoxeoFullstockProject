@@ -10,8 +10,7 @@
 #  video_id   :integer          not null
 #
 class Comment < ApplicationRecord
-    validates :body, :author_id, presence: true
-    validates :author_id, uniqueness: true
+    validates :body, :author_id, :video_id, presence: true
 
     belongs_to :author,
         foreign_key: :author_id,

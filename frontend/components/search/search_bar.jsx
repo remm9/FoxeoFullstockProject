@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
             searchItem: "",
         };
         this.update = this.update.bind(this);
-        this.handleSearch = this.handleSearch.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update() {
@@ -22,13 +22,13 @@ class SearchBar extends React.Component {
             document.getElementById('search-button').click();
             return false;
         }
-        return true;
+        return true;        
     }
 
-    handleSearch(e) {   
-        e.preventDefault();
-        document.getElementById("search-input")
-            .addEventListener("keydown", function (event) {
+    handleSubmit() {   
+        // e.preventDefault();
+        document.getElementById("search-form")
+        .addEventListener("keydown", function (event) {
             // event.persist();
             if (event.keyCode === 13) {
                 document.getElementById("search-button").click();
@@ -39,24 +39,19 @@ class SearchBar extends React.Component {
         })
     };
 
-    handleSubmit(e) {
-        e.preventDefault();
-        
-    };
-
     render() {
 
         return (
             <div id="search-form">
-                <form onSubmit={this.handleSubmit}>
-                    <input //onKeyDown={this.searchKeyPress}
-                        type="search"
+                <form >
+                    <input
+                        type="text"
                         id="search-input"
                         placeholder="Search videos"
                         value={this.state.searchItem}
                         onChange={this.update()}
                     />
-                    <button type="submit" id="search-button" onClick={this.handleSearch}>
+                    <button type="submit" id="search-button" onClickCapture={this.handleSubmit}>
                         <Link to={`/search?search=${this.state.searchItem}`}><img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" /></Link>
                     </button>
                 </form>

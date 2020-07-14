@@ -1,4 +1,5 @@
 import React from 'react';
+import Comment from '../comment/comment_container'
 
 
 
@@ -15,6 +16,7 @@ class Play extends React.Component {
 
     componentDidMount() {
         this.props.fetchUsers();
+        // this.props.fetchComments();
         this.props.fetchVideo(this.props.match.params.id).then(() => {
             const video = document.querySelector('.video-player');
             video.muted = !video.muted;
@@ -42,6 +44,7 @@ class Play extends React.Component {
                     <h2 className="owner-name">{owner.username}</h2> 
                     <h2 className="play-description">{this.props.video.video_description}</h2>
                 </div>
+                <Comment />
                 <div className="home-footer">
                     <h2 className="home-footer-1">@2020</h2>
                     <h2 className="home-footer-2">
