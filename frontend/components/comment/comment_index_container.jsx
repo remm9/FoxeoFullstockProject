@@ -5,7 +5,7 @@ import * as Actions from '../../actions/comment_actions';
 const mSTP = (state, ownProps) => {
     return {
         state,
-        ownProps
+        id: ownProps.video.id 
     }
 }
 

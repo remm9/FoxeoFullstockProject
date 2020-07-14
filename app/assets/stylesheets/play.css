@@ -21,6 +21,9 @@
     align-self: flex-start;
     margin-top: 20px;
     margin-left: 60px;
+    width: 70vw;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 20px;
 }
 
 .play-description {

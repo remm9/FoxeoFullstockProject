@@ -12,10 +12,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchComments: () => dispatch(fetchComments()),
-        fetchComment: commentId => dispatch(fetchComment(commentId)),
         createComment: comment => dispatch(createComment(comment)),
-        updateComment: comment => dispatch(updateComment(comment)),
-        deleteComment: commentId => dispatch(deleteComment(commentId))
     }
 }
 
