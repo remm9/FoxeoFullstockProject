@@ -1,7 +1,6 @@
 import React from 'react';
-import Comment from '../comment/comment_container'
-
-
+import CommentIndex from '../comment/comment_index_container';
+import Comment from '../comment/comment_container';
 
 class Play extends React.Component {
 
@@ -44,6 +43,7 @@ class Play extends React.Component {
                     <h2 className="owner-name">{owner.username}</h2> 
                     <h2 className="play-description">{this.props.video.video_description}</h2>
                 </div>
+                <CommentIndex video={this.props.video} />
                 <Comment video={this.props.video}/>
                 <div className="home-footer">
                     <h2 className="home-footer-1">@2020</h2>
