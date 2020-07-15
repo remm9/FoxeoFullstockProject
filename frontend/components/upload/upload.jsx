@@ -11,6 +11,7 @@ class Upload extends React.Component {
             owner_id: null,
             video_file: null, 
             video_url: null,
+            // play_count: 0,
             upload_errors: null,
         };
         this.update = this.update.bind(this);

@@ -22,16 +22,30 @@ class SearchBar extends React.Component {
             document.getElementById('search-button').click();
             return false;
         }
-        return true;        
+        return true;
     }
 
     handleSubmit() {   
-        // e.preventDefault();
-        document.getElementById("search-form")
-        .addEventListener("keydown", function (event) {
+        // e.preventDefault(e);
+        // document.getElementById("search-input").addEventListener("keydown", function (e) {
+        //     if (!e) {
+        //         const e = window.event;
+        //     }
+
+        //     // Prevent a blank line.
+        //     e.preventDefault();
+
+        //     // Enter is pressed.
+        //     if (e.keyCode === 13) {
+        //             document.getElementById('search-button').click();
+        //     }
+        // }, false);
+        
+        document.getElementById("search-input")
+            .addEventListener("keydown", function (event) {
             // event.persist();
             if (event.keyCode === 13) {
-                document.getElementById("search-button").click();
+                document.getElementById("search-submit").click();
             }
         });
         this.setState( {
@@ -43,7 +57,7 @@ class SearchBar extends React.Component {
 
         return (
             <div id="search-form">
-                <form >
+                <form>
                     <input
                         type="text"
                         id="search-input"
@@ -51,7 +65,10 @@ class SearchBar extends React.Component {
                         value={this.state.searchItem}
                         onChange={this.update()}
                     />
-                    <button type="submit" id="search-button" onClickCapture={this.handleSubmit}>
+                    <button type="submit" id="search-submit">
+                        <Link to={`/search?search=${this.state.searchItem}`}><img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" /></Link>
+                    </button>
+                    <button type="submit" id="search-button" onClick={this.handleSubmit}>
                         <Link to={`/search?search=${this.state.searchItem}`}><img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" /></Link>
                     </button>
                 </form>

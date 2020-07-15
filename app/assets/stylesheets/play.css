@@ -35,13 +35,48 @@
     font-weight: 500;
 }
 
+.owner-name-initial {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 20px;
+}
+
+.owner-initial {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    border: 1px solid rgb(226, 73, 59);
+    background-color: rgb(238, 73, 58);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
 .owner-name {
     font-weight: bold;
-    margin-top: 15px;
+    margin-left: 10px;
 }
 
 .play-date {
     color: grey;
     margin-top: 5px;
+    font-size: 14px;
+    margin-left: 3px;
+}
+
+.header-like {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#search-submit {
+    display:none;
 }
 
