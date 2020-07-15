@@ -1,8 +1,10 @@
 import React from 'react';
+
 class CommentIndex extends React.Component {
 
     constructor(props) {
         super(props)
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     dateCreated(date) {
@@ -22,6 +24,11 @@ class CommentIndex extends React.Component {
         return user[0].username
     }
 
+    handleDelete(id) {
+        this.props.deleteComment(id)
+            .then(window.location.reload())
+    }
+
     render() {
         const comments = Object.values(this.props.state.entities.comments);
         const videoComments = comments.filter(comment => comment.video_id === this.props.id)
@@ -29,15 +36,21 @@ class CommentIndex extends React.Component {
             return (
                 <ul key={comment.id} >
                     <div className="comment-list-item">
-                        <h2 className="comment-author-initial">{this.authorInitial(comment.author_id)}</h2>
-                        <div className="comment-body">
-                            <div className="name-date">
-                                <h2 className="comment-author-name">{this.authorName(comment.author_id)}</h2>
-                                <h2 className="comment-upload-date"> commented on {this.dateCreated(comment.created_at)}</h2>
+                        <div id="left-side">
+                            <h2 className="comment-author-initial">{this.authorInitial(comment.author_id)}</h2>
+                            <div className="comment-body">
+                                <div className="name-date">
+                                    <h2 className="comment-author-name">{this.authorName(comment.author_id)}</h2>
+                                    <h2 className="comment-upload-date"> commented on {this.dateCreated(comment.created_at)}</h2>
+                                </div>
+                                <h2 className="comment-text">{comment.body}</h2>
                             </div>
-                            <h2 className="comment-text">{comment.body}</h2>
                         </div>
+                            {/* {this.props.currentUser.id === comment.author_id ? <button id="delete-button"onClick={() => this.handleDelete(comment.id)}>Edit</button> : null}     */}
+                            {this.props.currentUser.id === comment.author_id ? <button id="delete-button"onClick={() => this.handleDelete(comment.id)}>Delete</button> : null}    
+                        
                     </div>
+                
                 </ul>
             )
         })

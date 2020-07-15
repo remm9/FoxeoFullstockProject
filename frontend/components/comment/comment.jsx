@@ -25,6 +25,7 @@ class Comment extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
+        
         const formData = new FormData();
         formData.append('comment[body]', this.state.body);
         formData.append('comment[video_id]', this.state.video_id);
@@ -39,13 +40,12 @@ class Comment extends React.Component {
                 this.setState(
                     { comment_errors: response.responseJSON },
                     )
-                }
-                ).then(() => {
-                    this.setState(
-                        { body: "", video_id: "", comment_errors: null }
-                        )
-                    });
-                }
+        }).then(() => {
+            this.setState(
+                { body: "", video_id: "", comment_errors: null }
+            )}
+        ).then(window.location.reload())};//.then(() => this.props.history.location.push(`/play/${this.state.video_id}`))};
+                    
                 
                 
     render() {

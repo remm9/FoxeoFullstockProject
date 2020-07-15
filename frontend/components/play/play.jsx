@@ -26,7 +26,8 @@ class Play extends React.Component {
     render() {
         if (!this.props.video) { return null }
         const users = this.props.users;
-        const owner = users.filter(user => user.id === this.props.video.owner_id)[0]
+        const owner = users.filter(user => user.id === this.props.video.owner_id)[0];
+        if (!owner) { return null };
         return (
             <div id="video-container">
                 <video
@@ -43,8 +44,8 @@ class Play extends React.Component {
                     <h2 className="owner-name">{owner.username}</h2> 
                     <h2 className="play-description">{this.props.video.video_description}</h2>
                 </div>
-                <CommentIndex video={this.props.video} />
-                <Comment video={this.props.video}/>
+                <CommentIndex video={this.props.video}/>
+                <Comment video={this.props.video} history={this.props.history}/>
                 <div className="home-footer">
                     <h2 className="home-footer-1">@2020</h2>
                     <h2 className="home-footer-2">

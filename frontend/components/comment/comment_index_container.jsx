@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
 import * as Actions from '../../actions/comment_actions';
+import { deleteComment } from '../../actions/comment_actions'
 
 const mSTP = (state, ownProps) => {
     return {
         state,
-        id: ownProps.video.id 
+        id: ownProps.video.id,
+        currentUser: state.entities.users[state.session.id],
     }
 }
 
