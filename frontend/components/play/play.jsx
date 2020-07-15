@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentIndex from '../comment/comment_index_container';
 import Comment from '../comment/comment_container';
+import Like from '../like/like_container'
 
 class Play extends React.Component {
 
@@ -46,6 +47,7 @@ class Play extends React.Component {
                 </div>
                 <CommentIndex video={this.props.video}/>
                 <Comment video={this.props.video} history={this.props.history}/>
+                <Like />
                 <div className="home-footer">
                     <h2 className="home-footer-1">@2020</h2>
                     <h2 className="home-footer-2">
