@@ -136,6 +136,7 @@
     margin-top: 7px;
     cursor: pointer;
     display: none;
+    margin-right: 10px;
 }
 
 .comment-list-item:hover > #delete-button {

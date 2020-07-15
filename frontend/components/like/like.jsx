@@ -7,7 +7,7 @@ class Like extends React.Component {
 
     render() {
         return ( 
-            <h1>Like</h1>
+            <button className="like-video-button"> Like</button>
         )
     }
 }

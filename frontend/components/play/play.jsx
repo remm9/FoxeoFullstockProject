@@ -29,6 +29,7 @@ class Play extends React.Component {
         const users = this.props.users;
         const owner = users.filter(user => user.id === this.props.video.owner_id)[0];
         if (!owner) { return null };
+        console.log(this.props)
         return (
             <div id="video-container">
                 <video
@@ -36,18 +37,22 @@ class Play extends React.Component {
                     controls="controls"
                     src={this.props.video.video_url}
                     autoPlay="autoplay"
-                    muted 
-                >
+                    muted >
                 </video>
+                {/* <div className="like"><Like id="like"/></div> */}
                 <div id="play-info">
-                    <h1 className="play-title">{this.props.video.video_title}</h1>
+                    <h1 className="play-title">{this.props.video.video_title}<Like /></h1>
                     <h2 className="play-date">{this.dateCreated(this.props.video.created_at)}</h2>
                     <h2 className="owner-name">{owner.username}</h2> 
+                    <div className="play-count">
+                        <img src="https://img.icons8.com/windows/48/000000/play.png" />
+                        <h2 >{this.props.history.length}</h2>
+                    </div>
                     <h2 className="play-description">{this.props.video.video_description}</h2>
+                    {/* <h2 className="comment-count"></h2> */}
                 </div>
                 <CommentIndex video={this.props.video}/>
                 <Comment video={this.props.video} history={this.props.history}/>
-                <Like />
                 <div className="home-footer">
                     <h2 className="home-footer-1">@2020</h2>
                     <h2 className="home-footer-2">
