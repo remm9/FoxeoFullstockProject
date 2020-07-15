@@ -42,7 +42,7 @@ class Play extends React.Component {
                 <div id="play-info">
                     <div className="header-like">
                         <h1 className="play-title">{this.props.video.video_title}</h1>
-                        <Like />
+                        <Like video={this.props.video} props={this.props}/>
                     </div>
                     <h2 className="play-date">{this.dateCreated(this.props.video.created_at)}</h2>
                     <div className="owner-name-initial">

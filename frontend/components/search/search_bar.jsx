@@ -45,7 +45,7 @@ class SearchBar extends React.Component {
             .addEventListener("keydown", function (event) {
             // event.persist();
             if (event.keyCode === 13) {
-                document.getElementById("search-submit").click();
+                document.getElementById("search-submit").submit();
             }
         });
         this.setState( {

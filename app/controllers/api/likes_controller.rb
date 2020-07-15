@@ -1,4 +1,4 @@
-class LikesController < ApplicationController
+class Api::LikesController < ApplicationController
     
     def index
         @likes = Like.all
@@ -17,7 +17,7 @@ class LikesController < ApplicationController
 
     def create
         @like = Like.new(like_params)
-        @like.author_id = current_user.id 
+        @like.liker_id = current_user.id 
         if @like.save
             render :show
         else
@@ -32,6 +32,7 @@ class LikesController < ApplicationController
     end
 
     def like_params 
-        params.require(:like).permit(:body, :author_id, :video_id)
+        params.require(:like).permit(:liker_id, :video_id)
     end
+
 end

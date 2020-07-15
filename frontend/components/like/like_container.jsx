@@ -3,8 +3,13 @@ import Like from './like';
 import { fetchLikes, createLike, deleteLike} from '../../actions/like_actions';
 
 const mSTP = (state, ownProps) => {
+    const video = ownProps.video;
+    const likes = state.entities.likes;
+    const currentUserId = state.session.id;
     return {
-        state,
+        likes,
+        video,
+        currentUserId,
     }
 }
 

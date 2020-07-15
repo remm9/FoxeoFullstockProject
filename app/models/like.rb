@@ -9,8 +9,8 @@
 #  updated_at :datetime         not null
 #
 class Like < ApplicationRecord
-    validates :body, :author_id, :video_id, presence: true
-    validates :author_id, :video_id, uniqueness: true
+    validates :liker_id, :video_id, presence: true
+    validates :liker_id, :video_id, uniqueness: true
 
     belongs_to :liker,
         foreign_key: :liker_id,
