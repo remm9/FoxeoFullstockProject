@@ -25,6 +25,10 @@ class User < ApplicationRecord
     has_many :comments,
         through: :videos,
         source: :comment
+
+    has_many :likes,
+        through: :videos,
+        source: :like
         
 
     def self.find_by_credentials(email, password)

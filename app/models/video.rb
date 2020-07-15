@@ -18,6 +18,8 @@ class Video < ApplicationRecord
 
     has_many :comments
 
+    has_many :likes
+
     belongs_to :owner,
         foreign_key: :owner_id,
         class_name: "User"

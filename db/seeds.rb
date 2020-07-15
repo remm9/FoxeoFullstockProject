@@ -45,3 +45,4 @@ video12 = Video.create!(video_title: "Alisa's fur", video_description: "The fox 
 video12.video_url.attach(io: open("https://foxeo-seeds.s3.amazonaws.com/videoplayback+(1).mp4"), filename: "videoplayback+(1).mp4")
 video13 = Video.create!(video_title: "NYC", video_description: "Office view on Brooklyn Bridge", owner_id: lem.id)
 video13.video_url.attach(io: open("https://foxeo-seeds.s3.amazonaws.com/IMG_9589.MOV"), filename: "IMG_9589.MOV")
+
