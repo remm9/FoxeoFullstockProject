@@ -14,6 +14,7 @@ class User extends React.Component {
 
     componentDidMount() {
         this.props.fetchVideos();
+        this.props.fetchComments();
         // this.props.deleteVideo(videoId);
     };
 
@@ -32,7 +33,8 @@ class User extends React.Component {
     }
 
     render() {
-        const userVideos = this.props.videos.filter(video => video.owner_id == this.props.currentUser.id)
+        const userComments = this.props.comments.filter(comment => comment.author_id == this.props.currentUser.id);
+        const userVideos = this.props.videos.filter(video => video.owner_id == this.props.currentUser.id);
         const videoList = userVideos.map(video => {
             return (
                 <ul key={video.id} className="user-ul">
@@ -58,7 +60,7 @@ class User extends React.Component {
                 <h2 className="user-email">{this.props.currentUser.email}</h2>
                 <div className="user-stats">
                     <h2 className="first">Videos: {userVideos.length}</h2>
-                    <h2 className="second">Comments:</h2>
+                    <h2 className="second">Comments: {userComments.length}</h2>
                     <h2 className="last">Likes:</h2>
                 </div>
                 <h1 className="video-list-header">Your Videos</h1>
