@@ -49,7 +49,7 @@ class Play extends React.Component {
                         <h2 className="owner-initial">{owner.username.split("")[0]}</h2> 
                         <h2 className="owner-name">{owner.username}</h2> 
                     </div>
-                    <div className="video-info">
+                    {/* <div className="video-info">
                         <div className="play-count">
                             <img src="https://img.icons8.com/windows/48/000000/play.png" />
                             <h2 >{this.props.history.length / 2}</h2>
@@ -62,7 +62,7 @@ class Play extends React.Component {
                             <img src="https://img.icons8.com/material-outlined/50/000000/topic.png" />
                             <h2>1</h2>
                         </div>
-                    </div>
+                    </div> */}
                     <h2 className="play-description">{this.props.video.video_description}</h2>
                     {/* <h2 className="comment-count"></h2> */}
                 </div>
