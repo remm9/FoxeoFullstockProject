@@ -1,0 +1,27 @@
+div.liked-container {
+    height: calc(100vh - 66px);
+    overflow-y: scroll;
+    margin-left: 227px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;   
+}
+
+#liked-footer {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-left: 60px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    bottom: 0;
+    position: inherit;
+}
+
+.liked-page-containter {
+    margin-left: 227px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;   
+}
