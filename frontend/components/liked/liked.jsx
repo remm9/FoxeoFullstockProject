@@ -112,7 +112,7 @@ class Liked extends React.Component {
                                 </Link>
                             </div>
                             <div className="staff-liked">
-                                Your staff
+                                Your stuff
                             </div>
                             <div className="staff-content">
                                 <Link className="liked-videos" to={`/videos`}>
