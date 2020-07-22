@@ -1,15 +1,10 @@
 import React from 'react';
-import { fetchVideos } from '../../actions/video_actions';
-import { fetchUser } from '../../util/user_api_util';
-import Play from '../play/play_container'
 import { Link } from 'react-router-dom'
 
 class Liked extends React.Component {
 
     constructor(props) {
         super(props);
-        
-        // console.log(props)
         this.userName = this.userName.bind(this)
     }
 
@@ -46,20 +41,14 @@ class Liked extends React.Component {
         }
         for (let i = 0; i < videoList.length; i++) {
 
-        // }
-        // const likedVideoList = videoList.map(video => {
             if (videoList[i] === undefined) { return null};
             likedVideoList.push( 
-            // return (
                 <ul key={videoList[i].id} >
-                    <div className="home-list-item">
-                        <div className="home-video-header">
-                            <h2 className="home-video-header-1">Added to</h2>
-                            <h2 className="home-video-header-2">Foxeo Staff Picks</h2>
-                        </div>
+                    <div className="liked-list-item">
+                    
                         <Link to={`/play/${videoList[i].id}`}>
                             <video
-                                className="home-video"
+                                className="liked-video"
                                 src={videoList[i].video_url}
                                 poster=""
                                 width="320"
@@ -67,20 +56,24 @@ class Liked extends React.Component {
                             >
                             </video>
                         </Link>
-                        <h2 className="video-title">{videoList[i].video_title}</h2>
-                        <h2 className="video-upload-date">uploaded {this.dateCreated(videoList[i].created_at)}</h2>
-                        <h2 className="video-user-name">{this.props.currentUser.username}</h2>
+                        <h2 className="liked-video-title">{videoList[i].video_title}</h2>
+                        <h2 className="liked-upload-date">uploaded {this.dateCreated(videoList[i].created_at)}</h2>
                     </div>
                 </ul>
             )
         }
 
         return (
-            <div>
-                <h1 className="video-page-title">Your Liked Videos</h1>
+            <div id="liked-container">
+                <div className="liked-page-title">
+                    <Link className="liked-username" to={`/user/${this.props.currentUser.id}`}>
+                        <h1 >{this.props.currentUser.username}</h1> 
+                    </Link>
+                    <h1 className="liked-subtitle"> / Likes</h1>
+                </div>
                 <div className="liked-page-container">
-                    <ul id="home-ul">
-                        <div id="video-page-list">{likedVideoList}</div> 
+                    <ul id="liked-ul">
+                        <div id="liked-page-list">{likedVideoList}</div> 
                     </ul>
                     <div id="liked-footer">
                         <h2 className="home-footer-1">@2020</h2>

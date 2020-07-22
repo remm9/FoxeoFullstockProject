@@ -28,7 +28,7 @@ export default (props) => {
                                 <div className="a-items">
                                     <a href="#/videos" className="sidebar-videos">Videos</a>
                                     {/* <a>Comments</a> */}
-                                    <a href="#/liked" className="sidebar-videos">Liked</a>
+                                    <a href="#/liked" className="sidebar-videos">Likes</a>
                                 </div>
                                 <Link to="" className="loggedin-logout" onClick={props.logout}>Log Out</Link>
                             </ul>
