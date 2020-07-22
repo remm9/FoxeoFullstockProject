@@ -1,16 +1,18 @@
 // Place all the styles related to the Likes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// .like {
-//     color: white;
-//     position:absolute;
-//     float:right;
-//     width:90vw;
-//     min-height:10px;
-//     // background-color:#000;
-//     margin-top: 15px;
-//     z-index:300000;
-// }
+#like {
+    fill: white;
+    // position:absolute;
+    // background-color:#000;
+    margin-top: -417px;
+    margin-left: 80vw;
+    position: relative;
+    background-color: transparent;
+    margin-top: 15px;
+    z-index:300000;
+    float: right;
+}
 
 .like-video-button {
     width: 100px;
@@ -70,5 +72,9 @@
     height: 26px;
     margin-left: 30px;
     margin-right: 7px;
+}
+
+.far fas-heart {
+    color: red;
 }
 

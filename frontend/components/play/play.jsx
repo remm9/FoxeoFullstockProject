@@ -37,8 +37,8 @@ class Play extends React.Component {
                     src={this.props.video.video_url}
                     autoPlay="autoplay"
                     muted >
+                <div className="like"><Like id="like" video={this.props.video} props={this.props}/></div> 
                 </video>
-                {/* <div className="like"><Like id="like"/></div> */}
                 <div id="play-info">
                     <div className="header-like">
                         <h1 className="play-title">{this.props.video.video_title}</h1>

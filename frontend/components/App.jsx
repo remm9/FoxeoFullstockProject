@@ -8,6 +8,7 @@ import Modal from './modal/modal';
 import Splash from './splash/splash_container';
 import Home from './home/home_container';
 import Video from './video/video_container';
+import Liked from './liked/liked_container';
 import Edit from './edit/edit_container';
 import Upload from './upload/upload_container';
 import Play from './play/play_container';
@@ -24,6 +25,7 @@ const App = () => (
         <GreetingContainer/>
         <ProtectedRoute path="/home" component={Home} />
         <Route path="/videos" component={Video} />
+        <Route path="/liked" component={Liked} />
         <Route path="/play/:id" component={Play} />
         <ProtectedRoute path="/user" component={User}/> 
         <ProtectedRoute path="/upload" component={Upload} />
