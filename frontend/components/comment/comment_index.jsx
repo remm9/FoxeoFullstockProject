@@ -32,6 +32,14 @@ class CommentIndex extends React.Component {
     render() {
         const comments = Object.values(this.props.state.entities.comments);
         const videoComments = comments.filter(comment => comment.video_id === this.props.id)
+
+        const commentNumber = function () {
+            if (videoComments.length === 1) {
+                return "1 Comment"
+            } else {
+                return `${videoComments.length} Comments`
+            }
+        }
         const commentList = videoComments.map(comment => {
             return (
                 <ul key={comment.id} >
@@ -57,7 +65,7 @@ class CommentIndex extends React.Component {
 
         return (
             <div id="comment-list">
-                <h1 className="comment-page-title">{videoComments.length} Comments</h1>
+                <h1 className="comment-page-title">{commentNumber()}</h1>
                 <div className="comment-page-container">
                     <ul id="comment-ul">
                         <div id="comment-page-list">{commentList}</div>
