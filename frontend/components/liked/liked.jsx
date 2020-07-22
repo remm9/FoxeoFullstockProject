@@ -23,14 +23,33 @@ class Liked extends React.Component {
     }
 
     render() {
+        const userVideos = this.props.videos.filter(video => video.owner_id == this.props.currentUser.id)
         const userLikes = this.props.likes.filter(like => Object.values(like)[0].liker_id == this.props.currentUser.id);
         const userLikedVideos = Object.values(userLikes);
         const videoListArray = [];
         const videoList = [];
         const likedVideoList = [];
+
         for (let i = 0; i < userLikedVideos.length; i++) {
             videoListArray.push(Object.values(userLikedVideos[i])[0].video_id)
         }
+
+        const likesNumber = function () {
+            if (likedVideoList.length === 1) {
+                return "1 Like"
+            } else {
+                return `${likedVideoList.length} Likes:`
+            }
+        }
+
+        const videosNumber = function () {
+            if (userVideos.length === 1) {
+                return "1 Video"
+            } else {
+                return `${userVideos.length} Videos:`
+            }
+        }
+
         for (let i = 0; i < videoListArray.length; i++) {
             let video = this.props.videos.filter(video => video.id === videoListArray[i]);
             if (video === undefined) { 
@@ -39,6 +58,7 @@ class Liked extends React.Component {
                 videoList.push(video[0])
             };
         }
+
         for (let i = 0; i < videoList.length; i++) {
 
             if (videoList[i] === undefined) { return null};
@@ -72,9 +92,40 @@ class Liked extends React.Component {
                     <h1 className="liked-subtitle"> / Likes</h1>
                 </div>
                 <div className="liked-page-container">
-                    <ul id="liked-ul">
-                        <div id="liked-page-list">{likedVideoList}</div> 
-                    </ul>
+                    <div className="liked-content">
+                        <ul id="liked-ul">
+                            <div id="liked-page-list">{likedVideoList}</div> 
+                        </ul>
+                        <div className="liked-right-side">
+                            <div className="browse-liked">
+                                Browse Likes
+                            </div>
+                            <div className="browse-content">
+                                <p className="browse-text" >Likes are an easy way to keep track of the videos you enjoy. 
+                                    Use likes to bookmark videos you want to watch again and 
+                                    again and again and again.
+                                </p>
+                                {/* <div><i class="fa fa-heart" aria-hidden="true"></i></div> */}
+                                {/* <svg className="liked-heart" xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewBox="0 0 24 24"><path d="M12 9.229c.234-1.12 1.547-6.229 5.382-6.229 2.22 0 4.618 1.551 4.618 5.003 0 3.907-3.627 8.47-10 12.629-6.373-4.159-10-8.722-10-12.629 0-3.484 2.369-5.005 4.577-5.005 3.923 0 5.145 5.126 5.423 6.231zm-12-1.226c0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-7.962-9.648-9.028-12-3.737-2.338-5.262-12-4.27-12 3.737z" /></svg> */}
+                                <Link className="liked-username" to={`/user/${this.props.currentUser.id}`}>
+                                    <h2 className="liked-author-initial">{this.props.currentUser.username[0]}</h2>
+                                </Link>
+                            </div>
+                            <div className="staff-liked">
+                                Your staff
+                            </div>
+                            <div className="staff-content">
+                                <Link className="liked-videos" to={`/videos`}>
+                                    {videosNumber()}
+                                </Link>
+                                <div className="arrow-after"></div>
+                                <div className="solid-line"/>
+                                <Link className="liked-likes" to={`/liked`}>
+                                    {likesNumber()}
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                     <div id="liked-footer">
                         <h2 className="home-footer-1">@2020</h2>
                         <h2 className="home-footer-2">
