@@ -38,7 +38,7 @@ class Liked extends React.Component {
             if (likedVideoList.length === 1) {
                 return "1 Like"
             } else {
-                return `${likedVideoList.length} Likes:`
+                return `${likedVideoList.length} Likes`
             }
         }
 
@@ -46,7 +46,7 @@ class Liked extends React.Component {
             if (userVideos.length === 1) {
                 return "1 Video"
             } else {
-                return `${userVideos.length} Videos:`
+                return `${userVideos.length} Videos`
             }
         }
 
