@@ -45,7 +45,7 @@ class SearchBar extends React.Component {
             .addEventListener("keydown", function (event) {
             // event.persist();
             if (event.keyCode === 13) {
-                document.getElementById("search-submit").submit();
+                document.getElementById("search-submit").click();
             }
         });
         this.setState( {
@@ -65,12 +65,13 @@ class SearchBar extends React.Component {
                         value={this.state.searchItem}
                         onChange={this.update()}
                     />
-                    <button type="submit" id="search-submit">
+                    <button type="submit" id="search-submit" onClick={this.searchKeyPress}
+>
                         <Link to={`/search?search=${this.state.searchItem}`}><img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" /></Link>
                     </button>
                     <button type="submit" id="search-button" onClick={this.handleSubmit}>
                         <Link to={`/search?search=${this.state.searchItem}`}><img id="search-icon" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" /></Link>
-                    </button>
+                    </button> 
                 </form>
             </div>
         );

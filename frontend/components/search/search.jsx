@@ -26,7 +26,9 @@ class Search extends React.Component {
         const searchList = []
         videos.forEach(video => {
             keyWords.forEach(key => {
-                if (video.video_title.toLowerCase().includes(key) && !searchList.includes(video.video_title)) {
+                if (video.video_title.toLowerCase().includes(key) 
+                    && !searchList.includes(video.video_title)
+                    && key !== "") {
                     searchList.push(video.video_title);
                 }
             })
