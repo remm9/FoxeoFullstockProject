@@ -7,6 +7,9 @@ class Play extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            playCount: 0,
+        }
     }
     
     dateCreated(date) {
@@ -24,7 +27,10 @@ class Play extends React.Component {
             video.play();
         });
     }
-    
+
+    componentDidUpdate() {
+
+    }
     
     render() {
         if (!this.props.video) { return null }
