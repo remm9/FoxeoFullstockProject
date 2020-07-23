@@ -44,8 +44,8 @@ class Comment extends React.Component {
             this.setState(
                 { body: "", video_id: "", comment_errors: null }
             )}
-        // ).then(window.location.reload())};
-        ).then(() => this.props.history.push(`/play/${this.props.id}`))};
+        ).then(window.location.reload())};
+        // ).then(() => this.props.history.push(`/play/${this.props.id}`))};
                     
                 
                 
