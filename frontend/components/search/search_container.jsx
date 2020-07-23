@@ -3,7 +3,6 @@ import Search from './search'
 import { fetchVideos } from '../../actions/video_actions';
 import { fetchUser } from '../../actions/user_actons';
 import { fetchUsers } from '../../actions/user_actons';
-// import { login } from '../../actions/session_actions';
 
 const mSTP = ( state, ownProps ) => {
 
@@ -21,7 +20,6 @@ const mDTP = dispatch => ({
     fetchVideos: () => dispatch(fetchVideos()),
     fetchUser: userId => dispatch(fetchUser(userId)),
     fetchUsers: () => dispatch(fetchUsers()),
-    // login: user => dispatch(login(user))
 });
 
 

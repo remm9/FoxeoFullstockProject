@@ -63,6 +63,8 @@ class Play extends React.Component {
                     controls="controls"
                     src={this.props.video.video_url}
                     autoPlay="autoplay"
+                    width="720"
+                    height="470"
                     muted >
                     <div className="like"><Like id="like" video={this.props.video} props={this.props}/></div> 
                 </video>
