@@ -58,7 +58,7 @@ class Play extends React.Component {
                     src={this.props.video.video_url}
                     autoPlay="autoplay"
                     muted >
-                <div className="like"><Like id="like" video={this.props.video} props={this.props}/></div> 
+                    <div className="like"><Like id="like" video={this.props.video} props={this.props}/></div> 
                 </video>
                 <div id="play-info">
                     <div className="header-like">
@@ -87,9 +87,8 @@ class Play extends React.Component {
                         </div>
                     </div>
                     <h2 className="play-description">{this.props.video.video_description}</h2>
-                    {/* <h2 className="comment-count"></h2> */}
                 </div>
-                <CommentIndex video={this.props.video}/>
+                <CommentIndex video={this.props.video} history={this.props.history}/>
                 <Comment video={this.props.video} history={this.props.history}/>
                 <div className="home-footer">
                     <h2 className="home-footer-1">@2020</h2>

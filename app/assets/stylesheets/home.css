@@ -112,7 +112,7 @@ div.video-page-container {
     font-weight: 500;
 }
 
-.video-page-title {
+/* .video-page-title {
     overflow-y: scroll;
     align-self: start;
     font-size: 27px;
@@ -120,7 +120,7 @@ div.video-page-container {
     margin-top: 33px;
     margin-bottom: 17px;
     font-weight: 500;
-}
+} */
 
 .home-video-header {
     display: flex;

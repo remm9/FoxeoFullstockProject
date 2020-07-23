@@ -4,10 +4,12 @@ import * as Actions from '../../actions/comment_actions';
 import { deleteComment } from '../../actions/comment_actions'
 
 const mSTP = (state, ownProps) => {
+    // console.log(ownProps.history)
     return {
         state,
         id: ownProps.video.id,
         currentUser: state.entities.users[state.session.id],
+        history: ownProps.history
     }
 }
 

@@ -26,7 +26,8 @@ class CommentIndex extends React.Component {
 
     handleDelete(id) {
         this.props.deleteComment(id)
-            .then(window.location.reload())
+            // .then(window.location.reload())
+            .then(() => this.props.history.push(`/play/${this.props.id}`))
     }
 
     render() {
