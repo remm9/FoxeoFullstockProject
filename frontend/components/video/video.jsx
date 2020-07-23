@@ -63,14 +63,14 @@ class Video extends React.Component {
         }
 
         return (
-            <div>
-                <div className="video-page-title">
+            <div id="video-index">
+                <div className="video-index-title">
                     <Link className="liked-username" to={`/user/${this.props.currentUser.id}`}>
                         <h1 >{this.props.currentUser.username}</h1>
                     </Link>
                     <h1 className="liked-subtitle"> / Videos</h1>
                 </div>
-                <div className="video-page-container">
+                <div className="video-index-container">
                     <div className="liked-content">
                         <ul id="liked-ul">
                             <div id="liked-page-list">{videoList}</div>

@@ -1,28 +1,24 @@
-div.video-container {
+#video-index {
     height: calc(100vh - 66px);
     overflow-y: scroll;
-    margin-left: 227px;
+    margin-left: 227px; 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;   
 }
 
 #video-footer {
     display: inline-flex;
     align-self: flex-start;
-    margin-left: 60px;
-    margin-bottom: 25px;
+    margin-left: 100px;
+    padding-bottom: 25px;
     margin-top: 25px;
-    bottom: 0;
-    position: absolute;
+    position: inherit;
 }
 
-.video-page-title {
-    overflow-y: scroll;
+.video-index-title {
     align-self: start;
     font-size: 27px;
-    margin-left: 324px;
+    margin-left: 100px;
     margin-top: 33px;
     margin-bottom: 17px;
     font-weight: 500;
@@ -42,6 +38,7 @@ div.video-container {
     margin-left: auto;
     margin-right: 150px;
     margin-top: 60px;
+    margin-bottom: 110px;
 }
 
 .your-videos {
