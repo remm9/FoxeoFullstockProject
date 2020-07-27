@@ -12,6 +12,7 @@ const mSTP = (state, ownProps) => {
     const comments = Object.values(state.entities.comments)
     return {
         video: state.entities.videos[ownProps.match.params.id],
+        currentUser: state.entities.users[state.session.id],
         users,
         likes,
         comments,

@@ -8,8 +8,13 @@ class Play extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            playCount: 0,
+            updated: false,
+            count: 0,
         }
+        this.playCount = this.playCount.bind(this);
+        this.playNumber = this.playNumber.bind(this);
+        this.likesNumber = this.likesNumber.bind(this);
+        this.commentsNumber = this.commentsNumber.bind(this);
     }
     
     dateCreated(date) {
@@ -28,9 +33,49 @@ class Play extends React.Component {
         });
     }
 
-    componentDidUpdate() {
-
+    componentDidUpdate(prevProps) {
+        if (prevProps.likes.length !== this.props.likes.length) {
+            this.props.fetchLikes();
+            this.likesNumber();
+        } else if (prevProps.comments.length !== this.props.comments.length) {
+            this.props.fetchLikes();
+            this.commentsNumber();
+        }
+        
     }
+
+    playCount() {
+        this.setState({ count: this.state.count + 1 })
+    }
+
+    playNumber() {
+        if (this.state.count === 1) {
+            return "1 View"
+        } else {
+            return `${this.state.count} Views`
+        }
+    }
+
+    likesNumber() {
+        if (!this.props.video) return null;
+        const videoLikes = this.props.likes.filter(like => Object.values(like)[0].video_id == this.props.video.id);
+        if (videoLikes.length === 1) {
+            return "1 Like"
+        } else {
+            return `${videoLikes.length} Likes`
+        }
+    }
+
+    commentsNumber() {
+        if (!this.props.video) return null;
+        const videoComments = this.props.comments.filter(comment => comment.video_id == this.props.video.id);
+        if (videoComments.length === 1) {
+            return "1 Comment"
+        } else {
+            return `${videoComments.length} Comments`
+        }
+    }
+
     
     render() {
         if (!this.props.video) { return null }
@@ -39,21 +84,21 @@ class Play extends React.Component {
         const videoComments = this.props.comments.filter(comment => comment.video_id == this.props.video.id);
         const owner = users.filter(user => user.id === this.props.video.owner_id)[0];
 
-        const likesNumber = function () {
-            if (videoLikes.length === 1) {
-                return "1 Like"
-            } else {
-                return `${videoLikes.length} Likes`
-            }
-        }
+        // const likesNumber = function () {
+        //     if (videoLikes.length === 1) {
+        //         return "1 Like"
+        //     } else {
+        //         return `${videoLikes.length} Likes`
+        //     }
+        // }
 
-        const commentsNumber = function () {
-            if (videoComments.length === 1) {
-                return "1 Comment"
-            } else {
-                return `${videoComments.length} Comments`
-            }
-        }
+        // const commentsNumber = function () {
+        //     if (videoComments.length === 1) {
+        //         return "1 Comment"
+        //     } else {
+        //         return `${videoComments.length} Comments`
+        //     }
+        // }
 
         if (!owner) { return null };
         return (
@@ -62,6 +107,7 @@ class Play extends React.Component {
                     className="video-player"
                     controls="controls"
                     src={this.props.video.video_url}
+                    onPlay={this.playCount}
                     autoPlay="autoplay"
                     muted >
                     <div className="like"><Like id="like" video={this.props.video} props={this.props}/></div> 
@@ -77,19 +123,21 @@ class Play extends React.Component {
                         <h2 className="owner-name">{owner.username}</h2> 
                     </div>
                     <div className="video-info">
-                        {/* <div className="play-count">
+                        <div className="play-count">
                             <img src="https://img.icons8.com/windows/48/000000/play.png" />
-                            <h2 >{this.props.history.length / 2}</h2>
-                        </div> */}
+                            <h2 >{this.state.count}</h2>
+                            <div className="hidden-views">{this.playNumber()}</div>
+
+                        </div>
                         <div className="likes-count">
                             <img src="https://img.icons8.com/windows/32/000000/like.png" />
                             <h2>{videoLikes.length}</h2>
-                            <div className="hidden-likes">{likesNumber()}</div>
+                            <div className="hidden-likes">{this.likesNumber()}</div>
                         </div>
                         <div className="comments-count">
                             <img src="https://img.icons8.com/material-outlined/50/000000/topic.png" />
                             <h2>{videoComments.length}</h2>
-                            <div className="hidden-comments">{commentsNumber()}</div>
+                            <div className="hidden-comments">{this.commentsNumber()}</div>
                         </div>
                     </div>
                     <h2 className="play-description">{this.props.video.video_description}</h2>
