@@ -84,22 +84,6 @@ class Play extends React.Component {
         const videoComments = this.props.comments.filter(comment => comment.video_id == this.props.video.id);
         const owner = users.filter(user => user.id === this.props.video.owner_id)[0];
 
-        // const likesNumber = function () {
-        //     if (videoLikes.length === 1) {
-        //         return "1 Like"
-        //     } else {
-        //         return `${videoLikes.length} Likes`
-        //     }
-        // }
-
-        // const commentsNumber = function () {
-        //     if (videoComments.length === 1) {
-        //         return "1 Comment"
-        //     } else {
-        //         return `${videoComments.length} Comments`
-        //     }
-        // }
-
         if (!owner) { return null };
         return (
             <div id="video-container">
