@@ -34,14 +34,6 @@ class Api::CommentsController < ApplicationController
         end
     end
 
-    # def destroy
-    #     @comment = Comment.find(params[:id])
-    #     @comment.destroy
-        
-    #     # @comments = Comment.all
-    #     render :index
-    # end
-
     def destroy
         @comment = Comment.find(params[:id])
         @comment.destroy
