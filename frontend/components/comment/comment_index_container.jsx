@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
-import * as Actions from '../../actions/comment_actions';
-import { deleteComment } from '../../actions/comment_actions'
+import { fetchComments, updateComment, deleteComment } from '../../actions/comment_actions'
 
 const mSTP = (state, ownProps) => {
-    // console.log(ownProps.history)
     return {
         state,
         id: ownProps.video.id,
         currentUser: state.entities.users[state.session.id],
+        comments: state.entities.comments,
         history: ownProps.history
     }
 }
@@ -16,8 +15,6 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchComments: () => dispatch(fetchComments()),
-        fetchComment: commentId => dispatch(fetchComment(commentId)),
-        createComment: comment => dispatch(createComment(comment)),
         updateComment: comment => dispatch(updateComment(comment)),
         deleteComment: commentId => dispatch(deleteComment(commentId))
     }

@@ -7,10 +7,11 @@ class Comment extends React.Component {
         this.state = {
             body: "",
             video_id: this.props.id,
-            comment_errors: null,
+            clicked_in: false,
         }
         this.update = this.update.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
     
     update() {
@@ -25,28 +26,17 @@ class Comment extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
-        
-        const formData = new FormData();
-        formData.append('comment[body]', this.state.body);
-        formData.append('comment[video_id]', this.state.video_id);
-        $.ajax({
-            url: '/api/comments',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false
-        }).then(
-            (response) => {
+        this.props.createComment({body: this.state.body, video_id: this.state.video_id})
+            .then(() => {
                 this.setState(
-                    { comment_errors: response.responseJSON },
-                    )
-        }).then(() => {
-            this.setState(
-                { body: "", video_id: "", comment_errors: null }
-            )}
-        ).then(window.location.reload())};
-        // ).then(() => this.props.history.push(`/play/${this.props.id}`))};
-                    
+                    {body: "", video_id: ""}
+                )
+            })
+    } 
+    
+    handleClick() {
+        this.setState({ clicked_in: true})
+    }
                 
                 
     render() {
@@ -57,16 +47,19 @@ class Comment extends React.Component {
                     <h2 className="comment-form-header">Add a new comment</h2>
                     <label>
                         <textarea 
+                            // onClick={this.handleClick()}
                             type="body" 
                             placeholder="Add a comment"
                             value={this.state.body}
                             onChange={this.update()}
                             className="create-comment-body"/>
                     </label>
-                    <div className="comment-submit-button">
-                        <button type="submit">Add comment</button> 
-                        <p className="submit-button-text">Remember to be cool and play nice</p>                    
-                    </div>
+                    {/* { this.state.clicked_in ? (  */}
+                        <div className="comment-submit-button">
+                            <button type="submit">Add comment</button> 
+                            <p className="submit-button-text">Remember to be cool and play nice</p>                    
+                        </div>
+                        {/* ) : (null) } */}
                 </form>
             </div>
         )

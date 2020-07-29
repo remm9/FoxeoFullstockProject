@@ -7,6 +7,16 @@ class CommentIndex extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchComments();
+    }
+
+    componentDidUpdate(prev) {
+        if (Object.values(prev.comments).length !== Object.values(this.props.comments).length) {
+            this.props.fetchComments();
+        }
+    }
+
     dateCreated(date) {
         const dateCreated = new Date(date)
         return dateCreated.toLocaleDateString();
@@ -26,8 +36,7 @@ class CommentIndex extends React.Component {
 
     handleDelete(id) {
         this.props.deleteComment(id)
-            .then(window.location.reload())
-            // .then(() => this.props.history.push(`/play/${this.props.id}`))
+            // .then(window.location.reload())
     }
 
     render() {

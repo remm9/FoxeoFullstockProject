@@ -19,30 +19,15 @@ class Like extends React.Component {
     
     handleLike(e) {
         e.preventDefault();
-        console.log(this.props.history)
-
-        const formData = new FormData();
-        formData.append('like[liker_id]', this.state.liker_id);
-        formData.append('like[video_id]', this.state.video_id);
-        $.ajax({
-            url: '/api/likes',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false
-        // }).then(() => this.props.history.push(`/play/${this.state.video_id}`))
-        }).then(window.location.reload())
+        this.props.createLike({liker_id: this.props.currentUserId, video_id: this.props.video.id})
     };
 
     handleDislike(id) {
         this.props.deleteLike(id)
-            // .then(() => this.props.history.push(`/play/${this.state.video_id}`))
-            .then(window.location.reload())
     };
 
     render() {
         const likes = this.props.likes;
-
         let like = {};
         let isLiked = false;
         for (let i = 0; i < likes.length; i++) {

@@ -37,7 +37,10 @@ class Api::CommentsController < ApplicationController
     def destroy
         @comment = Comment.find(params[:id])
         @comment.destroy
-        render :index
+        respond_to do |f|
+            f.html { redirect_to :index }
+            f.json { head :no_content }
+        end
     end
 
     def comment_params 
