@@ -107,12 +107,12 @@ class Play extends React.Component {
                         <h2 className="owner-name">{owner.username}</h2> 
                     </div>
                     <div className="video-info">
-                        <div className="play-count">
+                        {/* <div className="play-count">
                             <img src="https://img.icons8.com/windows/48/000000/play.png" />
                             <h2 >{this.state.count}</h2>
                             <div className="hidden-views">{this.playNumber()}</div>
 
-                        </div>
+                        </div> */}
                         <div className="likes-count">
                             <img src="https://img.icons8.com/windows/32/000000/like.png" />
                             <h2>{videoLikes.length}</h2>
