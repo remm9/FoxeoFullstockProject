@@ -37,14 +37,7 @@ class Comment extends React.Component {
     
     handleClick() {
         document.getElementById('create-comment-body').onclick = this.setState({ clicked_in: true})
-    }
-
-    handleUnClick() {
-        document.getElementById('create-comment-body').onclick = this.setState({ clicked_in: false})
-    }
-
-
-                
+    }       
                 
     render() {
         return ( 
@@ -54,12 +47,12 @@ class Comment extends React.Component {
                     <h2 className="comment-form-header">Add a new comment</h2>
                     <label>
                         <textarea 
+                            id="create-comment-body"/>
                             onClick={this.handleClick}
                             type="body" 
                             placeholder="Add a comment"
                             value={this.state.body}
                             onChange={this.update()}
-                            id="create-comment-body"/>
                     </label>
                     { this.state.clicked_in ? ( 
                         <div className="comment-submit-button">
