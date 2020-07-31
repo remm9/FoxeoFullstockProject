@@ -38,7 +38,7 @@ class Play extends React.Component {
             this.props.fetchLikes();
             this.likesNumber();
         } else if (prevProps.comments.length !== this.props.comments.length) {
-            this.props.fetchLikes();
+            this.props.fetchComments();
             this.commentsNumber();
         }
         
@@ -83,7 +83,8 @@ class Play extends React.Component {
         const videoLikes = this.props.likes.filter(like => Object.values(like)[0].video_id == this.props.video.id);
         const videoComments = this.props.comments.filter(comment => comment.video_id == this.props.video.id);
         const owner = users.filter(user => user.id === this.props.video.owner_id)[0];
-
+        console.log(videoLikes)
+        console.log(this.props.likes)
         if (!owner) { return null };
         return (
             <div id="video-container">

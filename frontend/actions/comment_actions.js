@@ -21,10 +21,7 @@ const removeComment = commentId => ({
 
 export const fetchComments = () => dispatch => {
     return CommentAPIUtil.fetchComments()
-        .then(comments => dispatch(receiveAllComments(comments)))
-        // .then(error => {
-        //     return dispatch(receiveVideoErrors(error.responseJSON));
-        // });        
+        .then(comments => dispatch(receiveAllComments(comments)))       
 }
 
 export const fetchComment = commentId => dispatch => {

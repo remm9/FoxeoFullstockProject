@@ -29,13 +29,14 @@ class Comment extends React.Component {
         this.props.createComment({body: this.state.body, video_id: this.state.video_id})
             .then(() => {
                 this.setState(
-                    {body: "", video_id: ""}
+                    {body: ""}
                 )
             })
     } 
     
     handleClick() {
-        this.setState({ clicked_in: true})
+        document.getElementsByClassName('create-comment-body').onClick({ clicked_in: true })
+            // .then(this.setState({ clicked_in: true})) 
     }
                 
                 
@@ -47,7 +48,7 @@ class Comment extends React.Component {
                     <h2 className="comment-form-header">Add a new comment</h2>
                     <label>
                         <textarea 
-                            // onClick={this.handleClick()}
+                            // onClick={this.handleClick}
                             type="body" 
                             placeholder="Add a comment"
                             value={this.state.body}
@@ -59,7 +60,7 @@ class Comment extends React.Component {
                             <button type="submit">Add comment</button> 
                             <p className="submit-button-text">Remember to be cool and play nice</p>                    
                         </div>
-                        {/* ) : (null) } */}
+                        {/* ): (null) } */}
                 </form>
             </div>
         )

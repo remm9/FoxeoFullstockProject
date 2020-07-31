@@ -7,16 +7,14 @@ import { fetchLikes } from '../../actions/like_actions';
 
 const mSTP = (state, ownProps) => {
     const users = Object.values(state.entities.users)
-    const history = ownProps.history;
     const likes = Object.values(state.entities.likes)
     const comments = Object.values(state.entities.comments)
     return {
         video: state.entities.videos[ownProps.match.params.id],
         currentUser: state.entities.users[state.session.id],
         users,
-        likes,
         comments,
-        history,
+        likes,
     }
 };
 
