@@ -10,6 +10,7 @@ class Play extends React.Component {
         this.state = {
             updated: false,
             count: 0,
+            likes: this.props.likes,
         }
         this.playCount = this.playCount.bind(this);
         this.playNumber = this.playNumber.bind(this);
@@ -34,6 +35,7 @@ class Play extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
+        // console.log(prevProps.likes.length)
         if (prevProps.likes.length !== this.props.likes.length) {
             this.props.fetchLikes();
             this.likesNumber();
@@ -83,8 +85,7 @@ class Play extends React.Component {
         const videoLikes = this.props.likes.filter(like => Object.values(like)[0].video_id == this.props.video.id);
         const videoComments = this.props.comments.filter(comment => comment.video_id == this.props.video.id);
         const owner = users.filter(user => user.id === this.props.video.owner_id)[0];
-        console.log(videoLikes)
-        console.log(this.props.likes)
+        // console.log(this.props.likes, this.state)
         if (!owner) { return null };
         return (
             <div id="video-container">

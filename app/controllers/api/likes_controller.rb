@@ -28,10 +28,11 @@ class Api::LikesController < ApplicationController
     def destroy
         @like = Like.find(params[:id])
         @like.destroy
-        respond_to do |f|
-            f.html { redirect_to :index }
-            f.json { head :no_content }
-        end
+        render :index
+        # respond_to do |f|
+        #     f.html { redirect_to :index }
+        #     f.json { head :no_content }
+        # end
     end
 
     def like_params 
