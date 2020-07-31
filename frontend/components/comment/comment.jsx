@@ -12,7 +12,6 @@ class Comment extends React.Component {
         this.update = this.update.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleClick = this.handleClick.bind(this)
-        this.handleUnClick = this.handleUnClick.bind(this)
     }
     
     update() {
@@ -47,12 +46,12 @@ class Comment extends React.Component {
                     <h2 className="comment-form-header">Add a new comment</h2>
                     <label>
                         <textarea 
-                            id="create-comment-body"/>
-                            onClick={this.handleClick}
                             type="body" 
                             placeholder="Add a comment"
                             value={this.state.body}
                             onChange={this.update()}
+                            onClick={this.handleClick}
+                            id="create-comment-body"/>
                     </label>
                     { this.state.clicked_in ? ( 
                         <div className="comment-submit-button">
