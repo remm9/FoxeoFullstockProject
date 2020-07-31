@@ -63,7 +63,7 @@
     font-weight: 500;
 }
 
-.create-comment-body {
+#create-comment-body {
     width: 63vw;
     margin-left: 20px;
     margin-top: 3px;

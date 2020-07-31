@@ -12,6 +12,7 @@ class Comment extends React.Component {
         this.update = this.update.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleClick = this.handleClick.bind(this)
+        this.handleUnClick = this.handleUnClick.bind(this)
     }
     
     update() {
@@ -29,15 +30,14 @@ class Comment extends React.Component {
         this.props.createComment({body: this.state.body, video_id: this.state.video_id})
             .then(() => {
                 this.setState(
-                    {body: "", video_id: ""}
+                    {body: ""}
                 )
             })
     } 
     
     handleClick() {
-        this.setState({ clicked_in: true})
-    }
-                
+        document.getElementById('create-comment-body').onclick = this.setState({ clicked_in: true})
+    }       
                 
     render() {
         return ( 
@@ -47,19 +47,19 @@ class Comment extends React.Component {
                     <h2 className="comment-form-header">Add a new comment</h2>
                     <label>
                         <textarea 
-                            // onClick={this.handleClick()}
+                            id="create-comment-body"/>
+                            onClick={this.handleClick}
                             type="body" 
                             placeholder="Add a comment"
                             value={this.state.body}
                             onChange={this.update()}
-                            className="create-comment-body"/>
                     </label>
-                    {/* { this.state.clicked_in ? (  */}
+                    { this.state.clicked_in ? ( 
                         <div className="comment-submit-button">
                             <button type="submit">Add comment</button> 
                             <p className="submit-button-text">Remember to be cool and play nice</p>                    
                         </div>
-                        {/* ) : (null) } */}
+                        ): (null) }
                 </form>
             </div>
         )
