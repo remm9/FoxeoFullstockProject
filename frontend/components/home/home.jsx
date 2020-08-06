@@ -15,11 +15,6 @@ class Home extends React.Component {
         this.props.fetchVideos();
         this.props.fetchUsers();
     };
-    
-    // componentWillMount() {
-    //     this.randomHomeList();
-
-    // }
 
     dateCreated(date) {
         const dateCreated = new Date(date)

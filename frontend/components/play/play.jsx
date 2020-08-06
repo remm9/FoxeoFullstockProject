@@ -11,6 +11,7 @@ class Play extends React.Component {
             updated: false,
             count: 0,
             likes: this.props.likes,
+            video: this.props.video
         }
         this.playCount = this.playCount.bind(this);
         this.playNumber = this.playNumber.bind(this);
@@ -24,6 +25,8 @@ class Play extends React.Component {
     }
 
     componentDidMount() {
+        if (!this.state.video) return null;
+        console.log(this.state.video)
         this.props.fetchUsers();
         this.props.fetchComments();
         this.props.fetchLikes();
@@ -31,11 +34,13 @@ class Play extends React.Component {
             const video = document.querySelector('.video-player');
             video.muted = !video.muted;
             video.play();
+            this.setState({
+            })
         });
     }
 
     componentDidUpdate(prevProps) {
-        // console.log(prevProps.likes.length, this.props.likes.length)
+        // console.log(prevProps.likes.length, this.state.likes)
         if (prevProps.likes.length !== this.props.likes.length) {
             this.props.fetchLikes();
             this.likesNumber();
