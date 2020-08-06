@@ -30,7 +30,6 @@ div.video-page-container {
 
 #video-page-list {
     display: flex;
-    flex-direction: column;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100vw;
@@ -155,6 +154,57 @@ div.video-page-container {
     height: 15px;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+.home-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#scroll-container {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    margin-right: 25px;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+#slideLeft {
+    cursor: pointer;
+    height: fit-content;
+    align-self: center;
+    background-color: transparent;
+}
+
+#slideLeft > img {
+    zoom: 68%;
+    padding: 15px;
+}
+
+#slideRight {
+    cursor: pointer;
+    height: fit-content;
+    align-self: center;
+    background-color: transparent;
+}
+
+#slideRight > img {
+    zoom: 72%;
+    padding: 15px;
+}
+
+#slideRight:hover {
+    background-color: rgba(245, 244, 244, 0.781);
+    border: 0.1px solid rgba(245, 244, 244, 0.781);
+    border-radius: 3.5px;
+}
+
+#slideLeft:hover {
+    border: 0.1px solid rgba(245, 244, 244, 0.781);
+    background-color: rgba(245, 244, 244, 0.781);
+    border-radius: 3.5px;
 }
 
 

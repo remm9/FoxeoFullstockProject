@@ -14,10 +14,13 @@ const receiveLike = like => ({
     like
 });
 
-const removeLike = likeId => ({
-    type: REMOVE_LIKE,
-    likeId
-});
+const removeLike = likeId => {
+    return {
+        type: REMOVE_LIKE,
+        likeId
+
+    }
+};
 
 export const fetchLikes = () => dispatch => {
     return LikeAPIUtil.fetchLikes()

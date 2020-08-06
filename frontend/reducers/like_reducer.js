@@ -13,7 +13,9 @@ const likesReducer = (oldState = {}, action) => {
             newState[action.like.id] = action.like;
             return newState;
         case REMOVE_LIKE:
+            // debugger
             delete newState[action.likeId];
+            // debugger
             return newState;
         default:
             return oldState;

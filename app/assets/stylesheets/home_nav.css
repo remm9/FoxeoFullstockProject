@@ -54,6 +54,7 @@
     margin-left: 10px;
     cursor: pointer;
     text-decoration: none;
+    align-self: center;
 }
 
 .nav-new-video {
