@@ -10,7 +10,6 @@
 #
 class Like < ApplicationRecord
     validates :liker_id, :video_id, presence: true
-    # validates :video_id, uniqueness: true
 
     belongs_to :liker,
         foreign_key: :liker_id,

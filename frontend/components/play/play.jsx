@@ -25,8 +25,8 @@ class Play extends React.Component {
     }
 
     componentDidMount() {
-        if (!this.state.video) return null;
-        console.log(this.state.video)
+        // if (!this.state.video) return null;
+        // console.log(this.state.video)
         this.props.fetchUsers();
         this.props.fetchComments();
         this.props.fetchLikes();
