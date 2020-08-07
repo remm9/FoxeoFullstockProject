@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { openModal } from '../../actions/modal_actions';
 
 class Login extends React.Component {
     constructor(props) {
@@ -8,10 +7,13 @@ class Login extends React.Component {
         this.state = {
             email: '',
             password: '',
-            errors: []
+            errors: [],
+            switched: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSwitch = this.handleSwitch.bind(this);
+        this.mapErrors = this.mapErrors.bind(this);
+        this.handleErrors = this.handleErrors.bind(this);
     }
 
     componentDidMount() {
@@ -39,17 +41,27 @@ class Login extends React.Component {
     }
 
     handleSwitch() {
-        this.setState({ errors: [] })
-        this.props.openModal('signup')
+        this.setState({ switched: true }, function () {
+            this.props.openModal('login')
+        });
     }
 
     mapErrors() {
-        if (this.props.errors.length) {
-            return this.props.errors.map(error => {
-                return <p>{error}</p>
+        if (this.state.errors.length) {
+            return this.state.errors.map((error, i) => {
+                return <p key={i}>{error}</p>
             })
         }
     }
+
+    handleErrors() {
+        console.log(this.state.switched)
+        if (this.state.switched) {
+            <div className="errors">{this.mapErrors()}</div>
+        } else {
+            <div className="errors">{this.mapErrors()}</div>
+        }
+    };
 
 
     render() {
@@ -72,14 +84,18 @@ class Login extends React.Component {
                         onChange={this.handleInput('password')}
                     />
                     
-                    <div className="errors">{this.mapErrors()}</div>
+                    <div>{this.handleErrors()}</div>
+                    {/* { this.state.switched ? 
+                        <div className="errors">{this.handleErrors()}</div> :
+                        <div className="errors">{this.mapErrors()}</div>
+                    } */}
             
                     
                     <button className="login-button" onClick={this.handleSubmit}>Log in with email</button>
 
                     <div className="login-footer">Don't have an account?
                         {/* <button className="login-form-btn" onClick={() => this.props.openModal('signup')}>Join</button> */}
-                        <button className="login-form-btn" onClick={this.handleSwitch}>Join</button>
+                        <button className="login-form-btn" onClick={ this.handleSwitch}> Join</button>
                     </div>
                 </form>
             </div>
