@@ -80,8 +80,7 @@ class Signup extends React.Component {
                             placeholder="First and Last names"
                             onChange={this.handleInput('username')}
                         />
-                
-                   
+                       
                         <input className="signup-email"
                             type="text"
                             value={this.state.email}

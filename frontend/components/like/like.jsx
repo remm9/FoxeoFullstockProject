@@ -8,6 +8,7 @@ class Like extends React.Component {
         this.state = {
             liker_id: this.props.currentUserId,
             video_id: this.props.video.id,
+            liked: false
         }
         this.handleLike = this.handleLike.bind(this);
         this.handleDislike = this.handleDislike.bind(this);
@@ -30,13 +31,21 @@ class Like extends React.Component {
         const likes = this.props.likes;
         let like = {};
         let isLiked = false;
-        for (let i = 0; i < likes.length; i++) {
-            let likeObject = Object.values(likes[i])
-            if (likeObject[0].liker_id === this.props.currentUserId && likeObject[0].video_id === this.props.video.id) {
-                like = likes[i]
-                isLiked = true
-            }
-        }
+        if (!likes) return null;
+        const liked = Object.values(likes).filter(like => {
+    
+            console.log(like.liker_id === this.props.currentUserId, like.video_id === this.props.video.id)
+            (like.liker_id === this.props.currentUserId) && (like.video_id === this.props.video_id)
+        })
+        console.log(liked)
+
+        // for (let i = 0; i < likes.length; i++) {
+        //     let likeObject = Object.values(likes[i])
+        //     if (likeObject[0].liker_id === this.props.currentUserId && likeObject[0].video_id === this.props.video.id) {
+        //         like = likes[i]
+        //         isLiked = true
+        //     }
+        // }
 
         return ( 
             <div>
