@@ -42,7 +42,7 @@ class Login extends React.Component {
 
     handleSwitch() {
         this.setState({ switched: true }, function () {
-            this.props.openModal('login')
+            this.props.openModal('signup')
         });
     }
 
@@ -55,11 +55,10 @@ class Login extends React.Component {
     }
 
     handleErrors() {
-        console.log(this.state.switched)
-        if (this.state.switched) {
-            <div className="errors">{this.mapErrors()}</div>
+        if (!this.state.switched) {
+            return <div className="errors">{this.mapErrors()}</div>
         } else {
-            <div className="errors">{this.mapErrors()}</div>
+            return null;
         }
     };
 

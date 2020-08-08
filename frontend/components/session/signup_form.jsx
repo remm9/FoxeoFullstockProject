@@ -15,6 +15,7 @@ class Signup extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSwitch = this.handleSwitch.bind(this);
         this.mapErrors = this.mapErrors.bind(this);
+        this.handleErrors = this.handleErrors.bind(this);
 
     }
 
@@ -60,10 +61,11 @@ class Signup extends React.Component {
     }
 
     handleErrors() {
+        // debugger
         if (!this.state.switched) {
-            <div className="errors">{this.mapErrors()}</div>
+            return <div className="errors">{this.mapErrors()}</div>
         } else {
-            <div className="errors">{this.mapErrors()}</div>
+            return null;
         }
     };
 
