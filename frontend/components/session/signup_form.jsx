@@ -30,7 +30,11 @@ class Signup extends React.Component {
     mapErrors() {
         if (this.props.errors.length) {
             return this.props.errors.map(error => {
-                return <p>{error}</p>
+                if (error.includes('Username')) {
+                    return <p>First and Last names can't be blank</p>
+                } else {
+                    return <p>{error}</p>
+                }
             })
         }
     }
@@ -43,7 +47,7 @@ class Signup extends React.Component {
                         <input className="signup-username"
                             type="text"
                             value={this.state.username}
-                            placeholder="First and last names"
+                            placeholder="First and Last names"
                             onChange={this.handleInput('username')}
                         />
                 

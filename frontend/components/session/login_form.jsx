@@ -8,8 +8,20 @@ class Login extends React.Component {
         this.state = {
             email: '',
             password: '',
+            errors: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSwitch = this.handleSwitch.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({ errors: this.props.errors})
+    }
+
+    componentDidUpdate(prev) {
+        if (prev.errors.length !== this.props.errors.length) {
+            this.setState( {errors: this.props.errors} )
+        }
     }
 
     handleInput(type) {
@@ -24,6 +36,11 @@ class Login extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
             // .then(() => this.props.history.push('/users')); //change to /videos later
+    }
+
+    handleSwitch() {
+        this.setState({ errors: [] })
+        this.props.openModal('signup')
     }
 
     mapErrors() {
@@ -45,7 +62,7 @@ class Login extends React.Component {
                     <input className="login-email"
                         type="text"
                         value={this.state.email}
-                        placeholder="Email adress"
+                        placeholder="Email address"
                         onChange={this.handleInput('email')}
                     />
                     <input className="login-password"
@@ -61,7 +78,8 @@ class Login extends React.Component {
                     <button className="login-button" onClick={this.handleSubmit}>Log in with email</button>
 
                     <div className="login-footer">Don't have an account?
-                        <button className="login-form-btn" onClick={() => this.props.openModal('signup')}>Join</button>
+                        {/* <button className="login-form-btn" onClick={() => this.props.openModal('signup')}>Join</button> */}
+                        <button className="login-form-btn" onClick={this.handleSwitch}>Join</button>
                     </div>
                 </form>
             </div>
