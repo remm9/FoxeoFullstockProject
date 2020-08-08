@@ -9,8 +9,24 @@ class Signup extends React.Component {
             username: '',
             email: '',
             password: '',
+            errors: [],
+            switched: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSwitch = this.handleSwitch.bind(this);
+        this.mapErrors = this.mapErrors.bind(this);
+        this.handleErrors = this.handleErrors.bind(this);
+
+    }
+
+    componentDidMount() {
+        this.setState({ errors: this.props.errors })
+    }
+
+    componentDidUpdate(prev) {
+        if (prev.errors.length !== this.props.errors.length) {
+            this.setState({ errors: this.props.errors })
+        }
     }
 
     handleInput(type) {
@@ -20,20 +36,38 @@ class Signup extends React.Component {
     }
 
     handleSubmit(event) {
-
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
             // .then(() => this.props.history.push('/users')); //change to /videos later
     }
 
+    handleSwitch() {
+        this.setState({ switched: true }, function () {
+            this.props.openModal('login')
+        });
+    }
+
     mapErrors() {
-        if (this.props.errors.length) {
-            return this.props.errors.map(error => {
-                return <p>{error}</p>
+        if (this.state.errors.length) {
+            return this.state.errors.map((error, i) => {
+                if (error.includes('Username')) {
+                    return <p key={i}>First and Last names can't be blank</p>
+                } else {
+                    return <p key={i}>{error}</p>
+                }
             })
         }
     }
+
+    handleErrors() {
+        // debugger
+        if (!this.state.switched) {
+            return <div className="errors">{this.mapErrors()}</div>
+        } else {
+            return null;
+        }
+    };
 
     render() {
         return (
@@ -43,15 +77,14 @@ class Signup extends React.Component {
                         <input className="signup-username"
                             type="text"
                             value={this.state.username}
-                            placeholder="First and last names"
+                            placeholder="First and Last names"
                             onChange={this.handleInput('username')}
                         />
-                
-                   
+                       
                         <input className="signup-email"
                             type="text"
                             value={this.state.email}
-                            placeholder="Email adress"
+                            placeholder="Email address"
                             onChange={this.handleInput('email')}
                         />
                         <input className="signup-password"
@@ -61,12 +94,19 @@ class Signup extends React.Component {
                             onChange={this.handleInput('password')}
                         />
 
-                    <div className="errors">{this.mapErrors()}</div>
-                
+                    {/* <div className="errors">{this.mapErrors()}</div> */}
+                    {/* {this.state.switched ?
+                        <div className="errors">{this.handleErrors()}</div> :
+                        <div className="errors">{this.mapErrors()}</div>
+                    }
+                 */}
+                    <div>{this.handleErrors()}</div>
+                    
                     <button className="signup-button" onClick={this.handleSubmit}>Join with email</button>
 
                     <div className="signup-footer">Already have an account?
-                        <button className="signup-form-btn" onClick={() => this.props.openModal('login')}>Log In</button>
+                        {/* <button className="signup-form-btn" onClick={() => this.props.openModal('login')}>Log In</button> */}
+                        <button className="signup-form-btn" onClick={this.handleSwitch}>Log In</button>
                     </div>
                 </form>
             </div>

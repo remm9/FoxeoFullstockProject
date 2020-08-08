@@ -17,7 +17,6 @@ class Api::LikesController < ApplicationController
 
     def create
         @like = Like.new(like_params)
-        @like.liker_id = current_user.id 
         if @like.save
             render :show
         else
@@ -28,11 +27,10 @@ class Api::LikesController < ApplicationController
     def destroy
         @like = Like.find(params[:id])
         @like.destroy
-        render :index
-        # respond_to do |f|
-        #     f.html { redirect_to :index }
-        #     f.json { head :no_content }
-        # end
+        respond_to do |f|
+            f.html { redirect_to :index }
+            f.json { head :no_content }
+        end
     end
 
     def like_params 

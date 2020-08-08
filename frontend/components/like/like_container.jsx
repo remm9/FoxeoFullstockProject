@@ -8,13 +8,19 @@ const mSTP = (state, ownProps) => {
     const video = ownProps.video;
     const likes = state.entities.likes;
     const currentUserId = state.session.id;
+<<<<<<< HEAD
     const updateLikes = ownProps.updateLikes;
     // debugger
+=======
+>>>>>>> 8ad2a1f76478014a00fb74109b85d0fb5bd2115a
     return {
-        likes,
         video,
+        likes,
         currentUserId,
+<<<<<<< HEAD
         updateLikes: updateLikes,
+=======
+>>>>>>> 8ad2a1f76478014a00fb74109b85d0fb5bd2115a
     }
 }
 

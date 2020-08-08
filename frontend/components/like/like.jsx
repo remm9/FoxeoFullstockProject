@@ -9,7 +9,7 @@ class Like extends React.Component {
         this.state = {
             liker_id: this.props.currentUserId,
             video_id: this.props.video.id,
-            likes: null,
+            liked: false
         }
         this.handleLike = this.handleLike.bind(this);
         this.handleDislike = this.handleDislike.bind(this);
@@ -17,7 +17,13 @@ class Like extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchLikes();
+        this.props.fetchLikes()
+    }
+
+    componentDidUpdate(prev) {
+        if (Object.keys(prev.likes).length !== Object.keys(this.props.likes).length) {
+            this.props.fetchLikes();
+        }
     }
     
     handleLike(e) {
@@ -38,23 +44,18 @@ class Like extends React.Component {
 
     render() {
         const likes = this.props.likes;
-        let like = {};
-        let isLiked = false;
-        for (let i = 0; i < likes.length; i++) {
-            let likeObject = Object.values(likes[i])
-            if (likeObject[0].liker_id === this.props.currentUserId && likeObject[0].video_id === this.props.video.id) {
-                like = likes[i]
-                isLiked = true
-            }
-        }
-
-        let likesButton = isLiked ? 
-            <button className="like-video-button" onClick={() => this.handleDislike(Object.keys(like)[0])}> Unlike</button> :
-            <button className="like-video-button" onClick={this.handleLike}> Like</button>
-
-
+        const liked = Object.values(likes).filter(like => 
+            like.liker_id === this.props.currentUserId && like.video_id === this.props.video.id)  
+            
         return ( 
-            <div>{likesButton}</div>
+            <div>{liked.length !== 0 ?
+                <button
+                    className="like-video-button"
+                    onClick={() => this.handleDislike(liked[0].id)}>
+                    Unlike
+                </button> :
+                    <button className="like-video-button" onClick={this.handleLike}> Like</button>
+            }</div>
         )
     }
 }

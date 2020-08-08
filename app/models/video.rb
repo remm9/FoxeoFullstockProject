@@ -24,7 +24,7 @@ class Video < ApplicationRecord
         foreign_key: :owner_id,
         class_name: "User"
 
-    def all_likes 
+    def all_likes
         likes.all
     end
     

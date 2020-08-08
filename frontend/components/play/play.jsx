@@ -10,8 +10,7 @@ class Play extends React.Component {
         if (!this.props.video) return null;
         this.state = {
             likes: this.props.likes,
-            count: 0,
-            // likes: null
+            video: this.props.video
         }
         this.playCount = this.playCount.bind(this);
         this.playNumber = this.playNumber.bind(this);
@@ -45,16 +44,16 @@ class Play extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        // debugger
-        if (prevProps.likes.length !== this.props.likes.length) {
+        // console.log(Object.keys(prevProps.likes).length, Object.keys(this.props.likes).length)
+        if (Object.keys(prevProps.likes).length !== Object.keys(this.props.likes).length) { 
+        // if (prevProps.likes.length !== this.props.likes.length) {
             this.props.fetchLikes();
             this.likesNumber();
         } else 
         if (prevProps.comments.length !== this.props.comments.length) {
             this.props.fetchComments();
             this.commentsNumber();
-        }
-        
+        }   
     }
 
     playCount() {
@@ -71,7 +70,7 @@ class Play extends React.Component {
 
     likesNumber() {
         if (!this.props.video) return null;
-        const videoLikes = this.state.likes ? Object.values(this.state.likes) : [];
+        const videoLikes = this.props.likes.filter(like => like.video_id == this.props.video.id);
         if (videoLikes.length === 1) {
             return "1 Like"
         } else {
@@ -93,7 +92,7 @@ class Play extends React.Component {
     render() {
         if (!this.props.video) { return null }
         const users = this.props.users;
-        const videoLikes = this.state.likes ? Object.values(this.state.likes) : [];
+        const videoLikes = this.props.likes.filter(like => like.video_id == this.props.video.id);
         const videoComments = this.props.comments.filter(comment => comment.video_id == this.props.video.id);
         const owner = users.filter(user => user.id === this.props.video.owner_id)[0];
         if (!owner) { return null };
@@ -105,14 +104,10 @@ class Play extends React.Component {
                     src={this.props.video.video_url}
                     onPlay={this.playCount}
                     autoPlay="autoplay"
+                    width="720"
+                    height="470"
                     muted >
-                    <div className="like">
-                        <Like id="like" 
-                            video={this.props.video} 
-                            props={this.props} 
-                            updateLikes={this.updateLikes}
-                        />
-                    </div> 
+                    {/* <div className="like"><Like id="like" video={this.props.video} props={this.props}/></div>  */}
                 </video>
                 <div id="play-info">
                     <div className="header-like">

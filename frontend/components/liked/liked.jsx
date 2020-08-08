@@ -23,15 +23,14 @@ class Liked extends React.Component {
     }
 
     render() {
+        // debugger
         const userVideos = this.props.videos.filter(video => video.owner_id == this.props.currentUser.id)
-        const userLikes = this.props.likes.filter(like => Object.values(like)[0].liker_id == this.props.currentUser.id);
-        const userLikedVideos = Object.values(userLikes);
+        const userLikes = this.props.likes.filter(like => like.liker_id === this.props.currentUser.id);
         const videoListArray = [];
         const videoList = [];
         const likedVideoList = [];
-
-        for (let i = 0; i < userLikedVideos.length; i++) {
-            videoListArray.push(Object.values(userLikedVideos[i])[0].video_id)
+        for (let i = 0; i < userLikes.length; i++) {
+            videoListArray.push(userLikes[i].video_id)
         }
 
         const likesNumber = function () {

@@ -55,11 +55,9 @@ div.upload-component {
     padding-left: 92px; 
     font-size: 15px;
     outline-color: transparent;
-    /* text-indent: 15px; */
-    /* background-color: rgb(0, 173, 239); */
 }
 
-.upload-button {
+#upload-button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -71,6 +69,14 @@ div.upload-component {
     background-color: #7fc400;
     border-radius: 4px;
     border-color: #7fc400;
+}
+
+#upload-button:hover {
+    background-color: rgb(51, 131, 35);
+    fill: white;
+    color: white;
+    cursor: pointer;
+    transition-delay: 0.1s;
 }
 
 .upload-svg {

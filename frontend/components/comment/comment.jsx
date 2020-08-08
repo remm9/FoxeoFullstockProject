@@ -46,12 +46,12 @@ class Comment extends React.Component {
                     <h2 className="comment-form-header">Add a new comment</h2>
                     <label>
                         <textarea 
-                            id="create-comment-body"
-                            onClick={this.handleClick}
                             type="body" 
                             placeholder="Add a comment"
                             value={this.state.body}
-                            onChange={this.update()}/>
+                            onChange={this.update()}
+                            onClick={this.handleClick}
+                            id="create-comment-body"/>
                     </label>
                     { this.state.clicked_in ? ( 
                         <div className="comment-submit-button">
