@@ -7,8 +7,8 @@ const mSTP = (state, ownProps) => {
     const likes = state.entities.likes;
     const currentUserId = state.session.id;
     return {
-        likes,
         video,
+        likes,
         currentUserId,
     }
 }

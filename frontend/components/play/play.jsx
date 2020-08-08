@@ -11,6 +11,7 @@ class Play extends React.Component {
             updated: false,
             count: 0,
             likes: this.props.likes,
+            video: this.props.video
         }
         this.playCount = this.playCount.bind(this);
         this.playNumber = this.playNumber.bind(this);
@@ -35,15 +36,15 @@ class Play extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        // console.log(prevProps.likes.length, this.props.likes.length)
-        if (prevProps.likes.length !== this.props.likes.length) {
+        // console.log(Object.keys(prevProps.likes).length, Object.keys(this.props.likes).length)
+        if (Object.keys(prevProps.likes).length !== Object.keys(this.props.likes).length) { 
+        // if (prevProps.likes.length !== this.props.likes.length) {
             this.props.fetchLikes();
             this.likesNumber();
         } else if (prevProps.comments.length !== this.props.comments.length) {
             this.props.fetchComments();
             this.commentsNumber();
-        }
-        
+        }   
     }
 
     playCount() {
@@ -60,7 +61,7 @@ class Play extends React.Component {
 
     likesNumber() {
         if (!this.props.video) return null;
-        const videoLikes = this.props.likes.filter(like => Object.values(like)[0].video_id == this.props.video.id);
+        const videoLikes = this.props.likes.filter(like => like.video_id == this.props.video.id);
         if (videoLikes.length === 1) {
             return "1 Like"
         } else {
@@ -82,7 +83,7 @@ class Play extends React.Component {
     render() {
         if (!this.props.video) { return null }
         const users = this.props.users;
-        const videoLikes = this.props.likes.filter(like => Object.values(like)[0].video_id == this.props.video.id);
+        const videoLikes = this.props.likes.filter(like => like.video_id == this.props.video.id);
         const videoComments = this.props.comments.filter(comment => comment.video_id == this.props.video.id);
         const owner = users.filter(user => user.id === this.props.video.owner_id)[0];
         if (!owner) { return null };

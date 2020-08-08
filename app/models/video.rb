@@ -23,5 +23,9 @@ class Video < ApplicationRecord
     belongs_to :owner,
         foreign_key: :owner_id,
         class_name: "User"
+
+    def all_likes
+        likes.all
+    end
     
 end
