@@ -24,7 +24,7 @@ class Video extends React.Component {
 
     render() {
         const userVideos = this.props.videos.filter(video => video.owner_id == this.props.currentUser.id);
-        const userLikes = this.props.likes.filter(like => Object.values(like)[0].liker_id == this.props.currentUser.id);
+        const userLikes = this.props.likes.filter(like => like.liker_id == this.props.currentUser.id);
         const videoList = userVideos.map(video => {
             return (
                 <ul key={video.id} >
