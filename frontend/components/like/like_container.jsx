@@ -6,12 +6,10 @@ const mSTP = (state, ownProps) => {
     const video = ownProps.video;
     const likes = state.entities.likes;
     const currentUserId = state.session.id;
-    const history = ownProps.props.history
     return {
-        likes,
         video,
+        likes,
         currentUserId,
-        history
     }
 }
 
