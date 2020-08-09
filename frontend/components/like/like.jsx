@@ -9,7 +9,6 @@ class Like extends React.Component {
         this.state = {
             liker_id: this.props.currentUserId,
             video_id: this.props.video.id,
-            liked: false
         }
         this.handleLike = this.handleLike.bind(this);
         this.handleDislike = this.handleDislike.bind(this);
@@ -39,7 +38,6 @@ class Like extends React.Component {
 
     handleDislike(id) {
         this.props.deleteLike(id)
-        // .then(this.props.updateLikes(this.props.likes))
     };
 
     render() {

@@ -10,7 +10,8 @@ class Play extends React.Component {
         if (!this.props.video) return null;
         this.state = {
             likes: this.props.likes,
-            video: this.props.video
+            video: this.props.video,
+            count: 0
         }
         this.playCount = this.playCount.bind(this);
         this.playNumber = this.playNumber.bind(this);
@@ -44,9 +45,7 @@ class Play extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        // console.log(Object.keys(prevProps.likes).length, Object.keys(this.props.likes).length)
         if (Object.keys(prevProps.likes).length !== Object.keys(this.props.likes).length) { 
-        // if (prevProps.likes.length !== this.props.likes.length) {
             this.props.fetchLikes();
             this.likesNumber();
         } else 
@@ -57,7 +56,7 @@ class Play extends React.Component {
     }
 
     playCount() {
-        this.setState({ count: this.state.count + 1 })
+        // this.setState({ count: this.state.count + 1 })
     }
 
     playNumber() {

@@ -41,9 +41,11 @@ class Login extends React.Component {
     }
 
     handleSwitch() {
-        this.setState({ switched: true }, function () {
+        // debugger
+        this.setState({ errors: [] }, function () {
             this.props.openModal('signup')
         });
+        // debugger
     }
 
     mapErrors() {
@@ -55,8 +57,9 @@ class Login extends React.Component {
     }
 
     handleErrors() {
+        debugger
         if (!this.state.switched) {
-            return <div className="errors">{this.mapErrors()}</div>
+            return <div className="errors">{this.mapErrors}</div>
         } else {
             return null;
         }
@@ -64,6 +67,7 @@ class Login extends React.Component {
 
 
     render() {
+        console.log(this.state.errors)
         return (
             <div className="login-form">
                 <div>
@@ -83,7 +87,9 @@ class Login extends React.Component {
                         onChange={this.handleInput('password')}
                     />
                     
-                    <div>{this.handleErrors()}</div>
+                    <div className="errors">{this.mapErrors()}</div>
+                
+                
                     {/* { this.state.switched ? 
                         <div className="errors">{this.handleErrors()}</div> :
                         <div className="errors">{this.mapErrors()}</div>
