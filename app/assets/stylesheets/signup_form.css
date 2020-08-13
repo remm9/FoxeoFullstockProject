@@ -74,6 +74,10 @@
   cursor: pointer;
 }
 
+.signup-button:hover {
+  background-color: #639802;
+}
+
 
 .signup-footer {
   font-size: 14px;

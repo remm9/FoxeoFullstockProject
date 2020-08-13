@@ -79,6 +79,10 @@
   cursor: pointer;
 }
 
+.login-button:hover {
+  background-color: #639802;
+}
+
 
 .login-footer {
   font-size: 14px;
