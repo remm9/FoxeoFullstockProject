@@ -2,14 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 import SignUpForm from './signup_form';
-import { Link } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { resetErrors } from '../../actions/session_actions'
 
 const mSTP = ({ errors }) => ({
-
         formType: 'signup',
         errors: errors.session,
-        // navLink: <Link to="/login">Please Login</Link>,
 });
 
 const mDTP = dispatch => ({
@@ -20,11 +18,8 @@ const mDTP = dispatch => ({
         </button>
     ),
     openModal: () => dispatch(openModal('login')),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    resetErrors: () => dispatch(resetErrors())
 })
-
-// const mDTP = dispatch => ({
-//     createNewUser: formUser => dispatch(createNewUser(formUser))
-// })
 
 export default connect(mSTP, mDTP)(SignUpForm);

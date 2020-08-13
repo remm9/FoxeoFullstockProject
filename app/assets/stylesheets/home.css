@@ -207,4 +207,9 @@ div.video-page-container {
     border-radius: 3.5px;
 }
 
+.carousel {
+    background: linear-gradient(to right, white, transparent 90%);
+}
+
+
 

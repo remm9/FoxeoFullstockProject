@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { openModal } from '../../actions/modal_actions';
 
 class Login extends React.Component {
     constructor(props) {
@@ -7,23 +8,8 @@ class Login extends React.Component {
         this.state = {
             email: '',
             password: '',
-            errors: [],
-            switched: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleSwitch = this.handleSwitch.bind(this);
-        this.mapErrors = this.mapErrors.bind(this);
-        this.handleErrors = this.handleErrors.bind(this);
-    }
-
-    componentDidMount() {
-        this.setState({ errors: this.props.errors})
-    }
-
-    componentDidUpdate(prev) {
-        if (prev.errors.length !== this.props.errors.length) {
-            this.setState( {errors: this.props.errors} )
-        }
     }
 
     handleInput(type) {
@@ -37,47 +23,31 @@ class Login extends React.Component {
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            // .then(() => this.props.history.push('/users')); //change to /videos later
-    }
-
-    handleSwitch() {
-        // debugger
-        this.setState({ errors: [] }, function () {
-            this.props.openModal('signup')
-        });
-        // debugger
+        // .then(() => this.props.history.push('/users')); //change to /videos later
     }
 
     mapErrors() {
-        if (this.state.errors.length) {
-            return this.state.errors.map((error, i) => {
+        // debugger
+        if (this.props.errors.length) {
+            return this.props.errors.map((error, i)=> {
                 return <p key={i}>{error}</p>
             })
         }
     }
 
-    handleErrors() {
-        debugger
-        if (!this.state.switched) {
-            return <div className="errors">{this.mapErrors}</div>
-        } else {
-            return null;
-        }
-    };
-
-
     render() {
-        console.log(this.state.errors)
         return (
             <div className="login-form">
+                {/* <div className="modal-child"> */}
                 <div>
                     <h2 className="login-header">Log in to Foxeo</h2>
+                    {/* <p className="close-x">x</p> */}
                 </div>
                 <form>
                     <input className="login-email"
                         type="text"
                         value={this.state.email}
-                        placeholder="Email address"
+                        placeholder="Email adress"
                         onChange={this.handleInput('email')}
                     />
                     <input className="login-password"
@@ -86,21 +56,14 @@ class Login extends React.Component {
                         placeholder="Password"
                         onChange={this.handleInput('password')}
                     />
-                    
+
                     <div className="errors">{this.mapErrors()}</div>
-                
-                
-                    {/* { this.state.switched ? 
-                        <div className="errors">{this.handleErrors()}</div> :
-                        <div className="errors">{this.mapErrors()}</div>
-                    } */}
-            
-                    
+
+
                     <button className="login-button" onClick={this.handleSubmit}>Log in with email</button>
 
                     <div className="login-footer">Don't have an account?
-                        {/* <button className="login-form-btn" onClick={() => this.props.openModal('signup')}>Join</button> */}
-                        <button className="login-form-btn" onClick={ this.handleSwitch}> Join</button>
+                        <button className="login-form-btn" onClick={() => this.props.openModal('signup')}>Join</button>
                     </div>
                 </form>
             </div>
