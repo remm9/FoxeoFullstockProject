@@ -8,6 +8,7 @@ div.video-page-container {
     height: calc(100vh - 150px);
     overflow-y: scroll;
     margin-left: 227px;
+    
 }
 
 #video-list {
@@ -44,6 +45,16 @@ div.video-page-container {
     border-radius: 5.5px;
     margin: 15px;
     box-shadow: 0 4px 8px 0 rgba(113, 113, 113, 0.2), 0 6px 20px 0 rgba(142, 142, 142, 0.1);
+}
+
+#gradient {
+    width: 10%;
+    position: absolute;
+    height: 80%;
+    margin-top: -669px;
+    float: right;
+    left: 90%;
+    background: linear-gradient(to left, #fff, transparent 100%);
 }
 
 .home-video {

@@ -110,6 +110,7 @@ class Home extends React.Component {
                     <ul id="home-ul"> 
                         <div id="video-list">{videoList}</div>                            
                     </ul>
+                    <div id="gradient"></div>
                     <div className="home-footer">
                         <h2 className="home-footer-1">@2020</h2>
                         <h2 className="home-footer-2">
