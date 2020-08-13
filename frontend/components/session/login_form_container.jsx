@@ -1,15 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../actions/session_actions';
+import { login, resetErrors } from '../../actions/session_actions';
 import LogInForm from './login_form';
-import { Link } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mSTP = ({ errors }) => {
     return {
         formType: 'login',
         errors: errors.session,
-        // navLink: <Link to="/signup">Please Join</Link>,
     }
 }
 
@@ -21,7 +19,8 @@ const mDTP = dispatch => ({
         </button>
     ),
     openModal: () => dispatch(openModal('signup')),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    resetErrors: () => dispatch(resetErrors())
 })
 
 export default connect(mSTP, mDTP)(LogInForm);

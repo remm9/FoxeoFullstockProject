@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-// import { openModal } from '../../actions/modal_actions';
 
 class Login extends React.Component {
     constructor(props) {
@@ -10,6 +8,7 @@ class Login extends React.Component {
             password: '',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSwitch = this.handleSwitch.bind(this);
     }
 
     handleInput(type) {
@@ -19,15 +18,12 @@ class Login extends React.Component {
     }
 
     handleSubmit(event) {
-
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-        // .then(() => this.props.history.push('/users')); //change to /videos later
     }
 
     mapErrors() {
-        // debugger
         if (this.props.errors.length) {
             return this.props.errors.map((error, i)=> {
                 return <p key={i}>{error}</p>
@@ -35,13 +31,16 @@ class Login extends React.Component {
         }
     }
 
+    handleSwitch() {
+        this.props.resetErrors()
+        this.props.openModal('signup')
+    }
+
     render() {
         return (
             <div className="login-form">
-                {/* <div className="modal-child"> */}
                 <div>
                     <h2 className="login-header">Log in to Foxeo</h2>
-                    {/* <p className="close-x">x</p> */}
                 </div>
                 <form>
                     <input className="login-email"
@@ -63,7 +62,7 @@ class Login extends React.Component {
                     <button className="login-button" onClick={this.handleSubmit}>Log in with email</button>
 
                     <div className="login-footer">Don't have an account?
-                        <button className="login-form-btn" onClick={() => this.props.openModal('signup')}>Join</button>
+                        <button className="login-form-btn" onClick={this.handleSwitch}>Join</button>
                     </div>
                 </form>
             </div>

@@ -90,6 +90,7 @@
   width: fit-content;
   padding: 0px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .signup-form-btn:hover {

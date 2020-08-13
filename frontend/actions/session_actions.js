@@ -1,4 +1,4 @@
-import { siggnup, loggout, loggin } from '../util/session_api_util';
+import * as apiUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -11,7 +11,8 @@ const receiveErrors = (errors) => ({
 })
 
 const clearErrors = () => ({
-    type: CLEAR_ERRORS
+    type: CLEAR_ERRORS,
+    errors: []
 })
 
 const receiveCurrentUser = (user) => ({
@@ -25,7 +26,7 @@ const logoutCurrentUser = () => ({
 
 
 export const signup = user => dispatch => (
-    siggnup(user).then(user => (
+    apiUtil.signup(user).then(user => (
         dispatch(receiveCurrentUser(user))
     ), err => (
         dispatch(receiveErrors(err.responseJSON))
@@ -33,15 +34,14 @@ export const signup = user => dispatch => (
 );
 
 export const login = user => dispatch => {
-    return loggin(user).then(user => {
+    return apiUtil.login(user).then(user => {
         dispatch(receiveCurrentUser(user))
     }, err => (
         dispatch(receiveErrors(err.responseJSON))
     ))
 };
 
-export const logout = () => dispatch => loggout()
+export const logout = () => dispatch => apiUtil.logout()
     .then(() => dispatch(logoutCurrentUser())); 
 
-export const resetErrors = () => dispatch => resetErrors()
-    .then(() => dispatch(clearErrors()));
+export const resetErrors = () => dispatch(clearErrors());

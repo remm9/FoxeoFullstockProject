@@ -43,7 +43,7 @@ class Home extends React.Component {
         const buttonRight = document.getElementById('slideRight');
         if (!buttonRight) return null;
         buttonRight.onclick = function () {
-            document.getElementById('video-list').scrollLeft -= 200;
+            document.getElementById('video-list').scrollLeft += 200;
             // document.getElementById('video-list').scrollLeft((document.getElementById('video-list').scrollLeft += 200) - 669);
             // document.getElementById('video-list').animate({scrollLeft: 20}, 669);
         };

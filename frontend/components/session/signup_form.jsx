@@ -7,7 +7,6 @@ class Signup extends React.Component {
             username: '',
             email: '',
             password: '',
-            errors: this.props.errors
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSwitch = this.handleSwitch.bind(this);
@@ -38,15 +37,11 @@ class Signup extends React.Component {
     }
 
     handleSwitch() {
-        debugger
-        // this.props.resetErrors()
-        this.setState({ errors: []})
-        .then(() => this.props.openModal())
-        debugger
+        this.props.resetErrors()
+        this.props.openModal('login')
     }
 
     render() {
-        // debugger
         return (
             <div className="signup-form">
                 <h2 className="signup-header">Join Foxeo</h2>
