@@ -72,11 +72,10 @@ div.video-page-container {
     -webkit-mask-size: 100% 98%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: top;
-    /* box-shadow: 0 0 8px rgba(158, 158, 158, 0.6);
-    -moz-box-shadow: 0 0 8px rgba(155, 155, 155, 0.6);
-    -webkit-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
-    -o-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
-    box-shadow: lightgray; */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    mask-size: 100% 98%;
+    mask-repeat: no-repeat;
+    mask-position: top;
 }
 
 .video-title {
