@@ -8,21 +8,10 @@ import { login } from '../../actions/session_actions';
 const mSTP = state => {
     const videos = Object.values(state.entities.videos)
     const users = Object.values(state.entities.users)
-    // console.log(videos)
-    // console.log(users)
-    // const videoId = ownProps.match.params.videoId
-    // const video = entities.videos[videoId];
-
-    // if (video) {
-    //     owner = entities.users[video.owner_id];
-    // }
     return ({
         currentUser: state.entities.users[state.session.id],
         videos,
         users,
-        
-        // video,
-        // owner
     })
 };
 

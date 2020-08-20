@@ -1,8 +1,4 @@
 import React from 'react';
-import { fetchVideos } from '../../actions/video_actions';
-import { fetchUser } from '../../util/user_api_util';
-import { fetchUsers } from '../../util/user_api_util';
-import Play from '../play/play_container'
 import {Link} from 'react-router-dom'
 
 class Home extends React.Component {
@@ -40,20 +36,23 @@ class Home extends React.Component {
     }
 
     slideRight() {
+        // debugger
         const buttonRight = document.getElementById('slideRight');
         if (!buttonRight) return null;
         buttonRight.onclick = function () {
-            document.getElementById('video-list').scrollLeft += 200;
+            // document.getElementById('home-ul').scrollLeft += 200;
+            document.getElementsByTagName('home-ul').scrollLeft += 200;
             // document.getElementById('video-list').scrollLeft((document.getElementById('video-list').scrollLeft += 200) - 669);
             // document.getElementById('video-list').animate({scrollLeft: 20}, 669);
         };
+        // debugger
     }
         
     slideLeft() {
         const buttonLeft = document.getElementById('slideLeft');
         if (!buttonLeft) return null;
         buttonLeft.onlick = function () {
-            document.getElementById('video-list').scrollLeft -= 200;
+            document.getElementById('home-ul').scrollLeft -= 200;
         };
     }
 
@@ -98,12 +97,12 @@ class Home extends React.Component {
                 <div className="home-nav">
                     <h1 className="home-title">Home</h1>
                     <div id="scroll-container">
-                        <button id="slideLeft" type="button">
+                        <button id="slideLeft" type="button" onClick={this.slideLeft}>
                             <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTQuMTkgMTYuMDA1bDcuODY5IDcuODY4LTIuMTI5IDIuMTI5LTkuOTk2LTkuOTk3TDE5LjkzNyA2LjAwMmwyLjEyNyAyLjEyOXoiLz48L3N2Zz4=' />
-                            {this.slideLeft()}</button>
-                        <button id="slideRight" type="button">
+                        </button>
+                        <button id="slideRight" type="button" onClick={this.slideRight}>
                             <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTguNjI5IDE1Ljk5N2wtNy4wODMtNy4wODFMMTMuNDYyIDdsOC45OTcgOC45OTdMMTMuNDU3IDI1bC0xLjkxNi0xLjkxNnoiLz48L3N2Zz4=' />
-                            {this.slideRight()}</button>
+                        </button>
                     </div>
                 </div>
                 <div className="home-container">

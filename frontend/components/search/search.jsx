@@ -87,7 +87,7 @@ class Search extends React.Component {
             <div>
                 <h1 className="search-title"> {searchNumber()} <div className="search-words"> {keyWords.join(" ")}</div></h1>
                 <div className="home-container">
-                    <ul id="home-ul">
+                    <ul id="home-search-ul">
                         <div id="video-list">{searchListing}</div>
                     </ul>
                     <div className="home-footer">
