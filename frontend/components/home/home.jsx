@@ -41,7 +41,8 @@ class Home extends React.Component {
         if (!buttonRight) return null;
         buttonRight.onclick = function () {
             // document.getElementById('home-ul').scrollLeft += 200;
-            document.getElementsByTagName('home-ul').scrollLeft += 200;
+            let el = document.getElementById('video-list')
+            el.slideLeft += 50;
             // document.getElementById('video-list').scrollLeft((document.getElementById('video-list').scrollLeft += 200) - 669);
             // document.getElementById('video-list').animate({scrollLeft: 20}, 669);
         };
@@ -109,7 +110,7 @@ class Home extends React.Component {
                     <ul id="home-ul"> 
                         <div id="video-list">{videoList}</div>                            
                     </ul>
-                    <div id="gradient"></div>
+                    {/* <div id="gradient"></div>
                     <div className="home-footer">
                         <h2 className="home-footer-1">@2020</h2>
                         <h2 className="home-footer-2">
@@ -117,7 +118,7 @@ class Home extends React.Component {
                             <svg viewBox="0 0 20 20" className="_3Weix"><path d="M10 18a1.23 1.23 0 01-.8-.4 14.25 14.25 0 00-4.4-3.7C2.5 12.3 0 10.7 0 7.5a5.52 5.52 0 011.6-3.9A5.73 5.73 0 016 2a5.25 5.25 0 014 1.9A5.85 5.85 0 0114 2c2.9 0 6 2.2 6 5.5s-2.5 4.8-4.8 6.4a15.51 15.51 0 00-4.4 3.7 1.23 1.23 0 01-.8.4z" fill="rgb(255,0,0)"></path></svg>
                             NYC
                         </h2>
-                    </div>
+                    </div> */}
                 </div>   
             </div>
         )
