@@ -1,8 +1,4 @@
 import React from 'react';
-import { fetchVideos } from '../../actions/video_actions';
-import { fetchUser } from '../../util/user_api_util';
-import { fetchUsers } from '../../util/user_api_util';
-import Play from '../play/play_container'
 import {Link} from 'react-router-dom'
 
 class Home extends React.Component {
@@ -40,20 +36,24 @@ class Home extends React.Component {
     }
 
     slideRight() {
+        // debugger
         const buttonRight = document.getElementById('slideRight');
         if (!buttonRight) return null;
         buttonRight.onclick = function () {
-            document.getElementById('video-list').scrollLeft += 200;
+            // document.getElementById('home-ul').scrollLeft += 200;
+            let el = document.getElementById('video-list')
+            el.slideLeft += 50;
             // document.getElementById('video-list').scrollLeft((document.getElementById('video-list').scrollLeft += 200) - 669);
             // document.getElementById('video-list').animate({scrollLeft: 20}, 669);
         };
+        // debugger
     }
         
     slideLeft() {
         const buttonLeft = document.getElementById('slideLeft');
         if (!buttonLeft) return null;
         buttonLeft.onlick = function () {
-            document.getElementById('video-list').scrollLeft -= 200;
+            document.getElementById('home-ul').scrollLeft -= 200;
         };
     }
 
@@ -98,18 +98,19 @@ class Home extends React.Component {
                 <div className="home-nav">
                     <h1 className="home-title">Home</h1>
                     <div id="scroll-container">
-                        <button id="slideLeft" type="button">
+                        <button id="slideLeft" type="button" onClick={this.slideLeft}>
                             <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTQuMTkgMTYuMDA1bDcuODY5IDcuODY4LTIuMTI5IDIuMTI5LTkuOTk2LTkuOTk3TDE5LjkzNyA2LjAwMmwyLjEyNyAyLjEyOXoiLz48L3N2Zz4=' />
-                            {this.slideLeft()}</button>
-                        <button id="slideRight" type="button">
+                        </button>
+                        <button id="slideRight" type="button" onClick={this.slideRight}>
                             <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTguNjI5IDE1Ljk5N2wtNy4wODMtNy4wODFMMTMuNDYyIDdsOC45OTcgOC45OTdMMTMuNDU3IDI1bC0xLjkxNi0xLjkxNnoiLz48L3N2Zz4=' />
-                            {this.slideRight()}</button>
+                        </button>
                     </div>
                 </div>
                 <div className="home-container">
                     <ul id="home-ul"> 
                         <div id="video-list">{videoList}</div>                            
                     </ul>
+                    {/* <div id="gradient"></div>
                     <div className="home-footer">
                         <h2 className="home-footer-1">@2020</h2>
                         <h2 className="home-footer-2">
@@ -117,7 +118,7 @@ class Home extends React.Component {
                             <svg viewBox="0 0 20 20" className="_3Weix"><path d="M10 18a1.23 1.23 0 01-.8-.4 14.25 14.25 0 00-4.4-3.7C2.5 12.3 0 10.7 0 7.5a5.52 5.52 0 011.6-3.9A5.73 5.73 0 016 2a5.25 5.25 0 014 1.9A5.85 5.85 0 0114 2c2.9 0 6 2.2 6 5.5s-2.5 4.8-4.8 6.4a15.51 15.51 0 00-4.4 3.7 1.23 1.23 0 01-.8.4z" fill="rgb(255,0,0)"></path></svg>
                             NYC
                         </h2>
-                    </div>
+                    </div> */}
                 </div>   
             </div>
         )
