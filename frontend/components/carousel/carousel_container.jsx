@@ -7,11 +7,11 @@ const mSTP = state => {
     const currentUser = state.entities.users[state.session.id]
     const videos = Object.values(state.entities.videos)
     const users = Object.values(state.entities.users)
-    return({
+    return {
         currentUser,
         videos,
         users
-    })
+    }
 }
 
 const mDTP = dispatch => ({
