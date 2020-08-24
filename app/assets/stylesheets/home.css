@@ -18,7 +18,7 @@ div.video-page-container {
     width: 140vw;
     margin-left: 40px;
     height: 669px;
-    position: absolute;
+    /* position: absolute; */
 }
 
 @media only screen and (max-width: 1150px ) {
