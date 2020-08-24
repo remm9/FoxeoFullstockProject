@@ -14,7 +14,8 @@ import Upload from './upload/upload_container';
 import Play from './play/play_container';
 import User from './user/user_container';
 import Search from './search/search_container';
-import Comment from './comment/comment_container'
+import Comment from './comment/comment_container';
+import Carousel from './carousel/carousel_container';
 
 
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
         <Modal />
         <GreetingContainer/>
         <ProtectedRoute path="/home" component={Home} />
+        <ProtectedRoute path="/carousel" component={Carousel} />
         <Route path="/videos" component={Video} />
         <Route path="/liked" component={Liked} />
         <Route path="/play/:id" component={Play} />
