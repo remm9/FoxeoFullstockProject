@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Greeting from './greeting';
-import { logout } from '../../actions/session_actions';
+import { logout, resetErrors } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions'
 
 const mSTP = state => ({
@@ -10,6 +10,7 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
     logout: () => dispatch(logout()),
     openModal: (str) => dispatch(openModal(str)),
+    resetErrors: () => dispatch(resetErrors())
 });
 
 
