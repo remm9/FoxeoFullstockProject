@@ -20,6 +20,12 @@ class Splash extends React.Component {
         this.props.processForm(demoUser);
     }
 
+    handleUpload() {
+        debugger
+        this.props.resetErrors()
+        this.props.openModal('signup')
+    }
+
     render() {
         return (
             <div className="splash-container">
@@ -45,7 +51,8 @@ class Splash extends React.Component {
                         <p className="text-section">
                             Get together with your entire team using single safe, enterprise-level video solution.
                         </p>
-                        <button className="btn" onClick={() => this.props.openModal('signup')}>
+                        {/* <button className="btn" onClick={() => this.props.openModal('signup')}> */}
+                        <button className="btn" onClick={this.handleUpload}>
                             <h2 className="btn-text">Go live </h2> 
                             <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19"><g fill="#1A2E3A" fillRule="evenodd"><path fillRule="nonzero" d="M12.566 8.51v1.061l-.53-.53.53-.53zm-3.56-2.45L10.065 5l4.066 4.066-4.066 4.066-1.06-1.06 3.004-3.006L9.005 6.06z"></path><path d="M5 8.35h8v1.5H5z"></path></g></svg>
                             </button>
