@@ -39,9 +39,9 @@ class Greeting extends React.Component {
                         <SearchBar/>
                         
                         <div  className="dropdown">
-                            <button className="dropbtn">{props.currentUser.username[0]}
+                            <button className="dropbtn">{this.props.currentUser.username[0]}
                                 <ul className="dropdown-content">
-                                    <div className="user-name">{props.currentUser.username}</div>
+                                    <div className="user-name">{this.props.currentUser.username}</div>
                                     <a id="user-profile-link" href="#/user">View Profile</a>
                 
                                     <div className="a-items">
@@ -49,7 +49,7 @@ class Greeting extends React.Component {
                                         {/* <a>Comments</a> */}
                                         <a href="#/liked" className="sidebar-videos">Likes</a>
                                     </div>
-                                    <Link to="" className="loggedin-logout" onClick={props.logout}>Log Out</Link>
+                                    <Link to="" className="loggedin-logout" onClick={this.props.logout}>Log Out</Link>
                                 </ul>
                             </button> 
                         </div>
