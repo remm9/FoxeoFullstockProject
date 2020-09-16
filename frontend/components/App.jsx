@@ -25,7 +25,7 @@ const App = () => (
         <Modal />
         <GreetingContainer/>
         <ProtectedRoute path="/home" component={Home} />
-        <ProtectedRoute path="/carousel" component={Carousel} />
+        {/* <ProtectedRoute path="/carousel" component={Carousel} /> */}
         <Route path="/videos" component={Video} />
         <Route path="/liked" component={Liked} />
         <Route path="/play/:id" component={Play} />

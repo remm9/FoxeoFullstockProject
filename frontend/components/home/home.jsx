@@ -17,32 +17,33 @@ class Home extends React.Component {
         return dateCreated.toLocaleDateString();
     }
 
-    randomHomeList() {
-        const videos = this.props.videos;
-        const keyArray = Object.keys(videos);
-        const randomVideoList = [];
-        const homeVideoList = [];
+    // randomHomeList() {
+    //     const videos = this.props.videos;
+    //     const keyArray = Object.keys(videos);
+    //     const randomVideoList = [];
+    //     const homeVideoList = [];
         
-        for(let i = 0; i < videos.length * 2; i++) {
-            const random = keyArray[Math.floor(Math.random() * keyArray.length)];
-            if (!homeVideoList.includes(random)) homeVideoList.push(random);
-        };
+    //     for(let i = 0; i < videos.length * 2; i++) {
+    //         const random = keyArray[Math.floor(Math.random() * keyArray.length)];
+    //         if (!homeVideoList.includes(random)) homeVideoList.push(random);
+    //     };
 
-        homeVideoList.slice(0, 12).forEach(key => {
-            if (!randomVideoList.includes(videos[key])) randomVideoList.push(videos[key]);
-        });
+    //     homeVideoList.slice(0, 12).forEach(key => {
+    //         if (!randomVideoList.includes(videos[key])) randomVideoList.push(videos[key]);
+    //     });
 
-        return randomVideoList;
-    }
+    //     return randomVideoList;
+    // }
 
     slideRight() {
-        // debugger
+        debugger
         const buttonRight = document.getElementById('slideRight');
         if (!buttonRight) return null;
         buttonRight.onclick = function () {
+            document.getElementsById('video-list').slideRight += 100;
             // document.getElementById('home-ul').scrollLeft += 200;
-            let el = document.getElementById('video-list')
-            el.slideLeft += 50;
+            // let el = document.getElementById('video-list')
+            // el.slideLeft += 50;
             // document.getElementById('video-list').scrollLeft((document.getElementById('video-list').scrollLeft += 200) - 669);
             // document.getElementById('video-list').animate({scrollLeft: 20}, 669);
         };
@@ -50,16 +51,17 @@ class Home extends React.Component {
     }
         
     slideLeft() {
-        const buttonLeft = document.getElementById('slideLeft');
-        if (!buttonLeft) return null;
-        buttonLeft.onlick = function () {
-            document.getElementById('home-ul').scrollLeft -= 200;
-        };
+        debugger
+        // const buttonLeft = document.getElementById('slideLeft');
+        // if (!buttonLeft) return null;
+        // buttonLeft.onlick = function () {
+        //     document.getElementById('home-ul').scrollLeft -= 200;
+        // };
     }
 
     
     render() {
-        const videos = this.randomHomeList();
+        const videos = this.props.videos;
         const users = this.props.users;
         const videoList = videos.map(video => {
             if (video) {
@@ -97,20 +99,23 @@ class Home extends React.Component {
             <div>
                 <div className="home-nav">
                     <h1 className="home-title">Home</h1>
-                    {/* <div id="scroll-container">
-                        <button id="slideLeft" type="button" onClick={this.slideLeft}>
+
+                    <div id="scroll-container">
+                        <button id="slideLeft" onClick={this.slideLeft}>
+
                             <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTQuMTkgMTYuMDA1bDcuODY5IDcuODY4LTIuMTI5IDIuMTI5LTkuOTk2LTkuOTk3TDE5LjkzNyA2LjAwMmwyLjEyNyAyLjEyOXoiLz48L3N2Zz4=' />
                         </button>
-                        <button id="slideRight" type="button" onClick={this.slideRight}>
+                        <button id="slideRight" onClick={this.slideRight}>
                             <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTguNjI5IDE1Ljk5N2wtNy4wODMtNy4wODFMMTMuNDYyIDdsOC45OTcgOC45OTdMMTMuNDU3IDI1bC0xLjkxNi0xLjkxNnoiLz48L3N2Zz4=' />
                         </button>
                     </div> */}
                 </div>
                 <div className="home-container">
-                    <ul id="home-ul"> 
-                        <div id="video-list">{videoList}</div>                            
-                    </ul>
-                    <div id="gradient"></div>
+                    {/* <ul id="home-ul">  */}
+                    <div id="video-list">{videoList}</div>                            
+                    {/* </ul> */}
+                    {/* <div id="gradient"></div> */}
+
                     <div className="home-footer">
                         <h2 className="home-footer-1">@2020</h2>
                         <h2 className="home-footer-2">
