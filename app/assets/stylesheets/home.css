@@ -14,21 +14,21 @@ div.video-page-container {
 #video-list {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 140vw;
+    /* flex-wrap: wrap; */
+    width: 400vw;
     margin-left: 40px;
     height: 669px;
     /* position: absolute; */
 }
 
-@media only screen and (max-width: 1150px ) {
+/* @media only screen and (max-width: 1150px ) {
     #video-list {
         flex-direction: column;
     }
     #video-page-list {
         flex-direction: column;
     }
-}
+} */
 
 #video-page-list {
     display: flex;
