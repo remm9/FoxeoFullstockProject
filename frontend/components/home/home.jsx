@@ -108,7 +108,7 @@ class Home extends React.Component {
                         <button id="slideRight" onClick={this.slideRight}>
                             <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTguNjI5IDE1Ljk5N2wtNy4wODMtNy4wODFMMTMuNDYyIDdsOC45OTcgOC45OTdMMTMuNDU3IDI1bC0xLjkxNi0xLjkxNnoiLz48L3N2Zz4=' />
                         </button>
-                    </div> */}
+                    </div> 
                 </div>
                 <div className="home-container">
                     {/* <ul id="home-ul">  */}
